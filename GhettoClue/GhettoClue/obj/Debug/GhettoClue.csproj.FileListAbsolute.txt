@@ -1,1 +1,14 @@
 C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.exe.config
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.exe.config
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.csprojResolveAssemblyReference.cache
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\App.g.cs
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue_MarkupCompile.cache
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.exe
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.pdb
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\MainWindow.baml
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\MainWindow.g.cs
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.g.resources
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.Properties.Resources.resources
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.csproj.GenerateResource.Cache
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.exe
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.pdb
