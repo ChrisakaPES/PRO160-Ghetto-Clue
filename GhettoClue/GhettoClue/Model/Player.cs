@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace GhettoClue.Model
 {
-    class Player
+    public class Player
     {
+
     }
 }
