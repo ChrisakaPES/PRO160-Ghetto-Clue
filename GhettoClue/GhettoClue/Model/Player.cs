@@ -8,6 +8,6 @@ namespace GhettoClue.Model
 {
     public class Player
     {
-
+        public int MyProperty { get; set; }
     }
 }
