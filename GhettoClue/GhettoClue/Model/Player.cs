@@ -16,7 +16,7 @@ namespace GhettoClue.Model
     {
         public Characters Name { get; set; }
         public string background { get; set; }
-        public ObservableCollection<Cards> hand { get; set; }
+        public ObservableCollection<Cards> Cards { get; set; }
         
     }
 

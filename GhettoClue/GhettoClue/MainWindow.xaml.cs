@@ -30,32 +30,33 @@ namespace GhettoClue
             players = new List<Player>
             {
                 new Player{ Name = Characters.Lafawnduh, background = "not yet defined", 
-                    hand = new ObservableCollection<Cards>
+                    Cards = new ObservableCollection<Cards>
                     {
-                        new Cards { character = CharacterCards.Ladasha}
-                    }},
-                    new Player{ Name = Characters.JuanCarlos, background = "not yet defined", 
-                    hand = new ObservableCollection<Cards>
-                    {
-                        new Cards { leathals = Weapons.Shank}
-                    }},
-                    new Player{ Name = Characters.Ladasha, background = "not yet defined", 
-                    hand = new ObservableCollection<Cards>
-                    {
-                        new Cards { location = Rooms.LightRoom}
-                    }},
-                    new Player{ Name = Characters.Watermelondria, background = "not yet defined", 
-                    hand = new ObservableCollection<Cards>
-                    {
-                        new Cards { leathals = Weapons.DaHeata}
-                    }}
-             };
+                        new Cards { character = CharacterCards.Ladasha},
+                        new Cards { leathals = Weapons.PoisonedLean}
+                    }
+                    //new Player{ Name = Characters.JuanCarlos, background = "not yet defined", 
+                    //Cards = new ObservableCollection<Cards>
+                    //{
+                    //    new Cards { leathals = Weapons.Shank}
+                    //}},
+                    //new Player{ Name = Characters.Ladasha, background = "not yet defined", 
+                    //Cards = new ObservableCollection<Cards>
+                    //{
+                    //    new Cards { location = Rooms.LightRoom}
+                    //}},
+                    //new Player{ Name = Characters.Watermelondria, background = "not yet defined", 
+                    //Cards = new ObservableCollection<Cards>
+                    //{
+                    //    new Cards { leathals = Weapons.DaHeata}
+                    //}}
+                }};
             player.ItemsSource = players;
         }
         private void player_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int i = player.SelectedIndex;
-            CardGrid.ItemsSource = players[i].hand;
+            CardGrid.ItemsSource = players[i].Cards;
 
         }
 
@@ -65,12 +66,6 @@ namespace GhettoClue
             //takes away display screen
 
 
-        }
-
-
-        private void rect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            //handles moving pawns           
         }
 
         private void roll_Click(object sender, RoutedEventArgs e)
