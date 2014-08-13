@@ -20,7 +20,7 @@ using System.Collections.ObjectModel;
 
 namespace GhettoClue
 {
-<<<<<<< HEAD
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -82,7 +82,7 @@ namespace GhettoClue
             
         }
     }
-=======
+
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
@@ -130,6 +130,5 @@ namespace GhettoClue
 			//}
 		}
 	}
->>>>>>> origin/master
 }
 
