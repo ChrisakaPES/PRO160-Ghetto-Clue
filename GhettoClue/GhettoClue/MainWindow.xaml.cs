@@ -35,22 +35,22 @@ namespace GhettoClue
                 new Player{ Name = Characters.Lafawnduh, background = "not yet defined", 
                     hand = new ObservableCollection<Cards>
                     {
-                        new Cards { chara = CharacterCards.Ladasha, leathals = Weapons.PoisonedLean, location = Rooms.KFC}
+                        new Cards { character = CharacterCards.Ladasha}
                     }},
                     new Player{ Name = Characters.JuanCarlos, background = "not yet defined", 
                     hand = new ObservableCollection<Cards>
                     {
-                        new Cards { chara = CharacterCards.Jake, leathals = Weapons.Shank, location = Rooms.Laundrymat}
+                        new Cards { leathals = Weapons.Shank}
                     }},
                     new Player{ Name = Characters.Ladasha, background = "not yet defined", 
                     hand = new ObservableCollection<Cards>
                     {
-                        new Cards { chara = CharacterCards.DaMarcus, leathals = Weapons.Smack, location = Rooms.LightRoom}
+                        new Cards { location = Rooms.LightRoom}
                     }},
                     new Player{ Name = Characters.Watermelondria, background = "not yet defined", 
                     hand = new ObservableCollection<Cards>
                     {
-                        new Cards { chara = CharacterCards.Lafawnduh, leathals = Weapons.DaHeata, location = Rooms.Prison}
+                        new Cards { leathals = Weapons.DaHeata}
                     }}
              };
             player.ItemsSource = players;

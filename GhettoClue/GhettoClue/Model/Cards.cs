@@ -8,7 +8,7 @@ namespace GhettoClue.Model
 {
     public class Cards
     {
-        public CharacterCards chara { get; set; }
+        public CharacterCards character { get; set; }
         public Rooms location { get; set; }
         public Weapons leathals { get; set; }
         public bool show {get; set;}
