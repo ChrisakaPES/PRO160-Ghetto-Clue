@@ -56,9 +56,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Cards.cs" />
-    <Compile Include="UserControls\Die.xaml.cs">
-      <DependentUpon>Die.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,11 +70,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Characters.cs" />
     <Compile Include="Model\DetectiveList.cs" />
     <Compile Include="Model\Player.cs" />
-    <Compile Include="Model\Rooms.cs" />
-    <Compile Include="Model\Weapons.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -105,7 +99,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="UserControls\" />
   </ItemGroup>
   <ItemGroup>

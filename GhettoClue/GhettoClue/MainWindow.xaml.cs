@@ -62,7 +62,6 @@ namespace GhettoClue
 
         }
 
-
         private void play_Click(object sender, RoutedEventArgs e)
         {
 
