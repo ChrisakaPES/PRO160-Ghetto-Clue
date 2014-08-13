@@ -32,3 +32,16 @@ F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PR
 >>>>>>> origin/master
 C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.exe
 C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.pdb
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.exe.config
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.exe
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.pdb
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.exe
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.pdb
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.csprojResolveAssemblyReference.cache
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\MainWindow.baml
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\MainWindow.g.cs
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\App.g.cs
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue_MarkupCompile.cache
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.g.resources
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.Properties.Resources.resources
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.csproj.GenerateResource.Cache

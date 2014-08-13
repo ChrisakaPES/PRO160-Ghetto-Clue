@@ -15,9 +15,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GhettoClue.Model;
-using System.Collections.ObjectModel;
-
 namespace GhettoClue
 {
 
@@ -88,6 +85,17 @@ namespace GhettoClue
             //	case 1:
             //		die_Face.Background
             //}
+        }
+
+        private void gameboard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            System.Windows.Point position = e.GetPosition(this);
+            double pX = position.X;
+            double pY = position.Y;
+
+            Canvas.SetLeft(Token1, pX - 20);
+            Canvas.SetTop(Token1, pY - 30);
+
         }
     }
 }

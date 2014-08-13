@@ -57,7 +57,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Canvas x:Name="gameboard" Grid.Column="0" Grid.Row="1" Background="LightGray" Grid.RowSpan="2">
+        <Canvas x:Name="gameboard" Grid.Column="0" Grid.Row="1" Background="LightGray" Grid.RowSpan="2" MouseLeftButtonDown="gameboard_MouseLeftButtonDown">
             <Grid x:Name="gameGrid" Height="761" Width="908" Canvas.Top="-43">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30*"/>
@@ -138,6 +138,9 @@
                 <Label Background="AliceBlue" Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="3" Content="room"/>
 
             </Grid>
+            <Label x:Name="Token1" Canvas.Left="850" Canvas.Top="500">
+                <Image Source="Tokens/Token(1).png"/>
+            </Label>
         </Canvas>
 
         <Button x:Name="suggest" Content="SUGGEST" Margin="77,44,65,271" Grid.Row="1" Grid.Column="2" />
