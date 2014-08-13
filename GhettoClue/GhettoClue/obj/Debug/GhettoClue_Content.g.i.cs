@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/sixsided_dice_faces_clip_art_hight.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/3.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/4.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/5.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/6.png")]
 
 
