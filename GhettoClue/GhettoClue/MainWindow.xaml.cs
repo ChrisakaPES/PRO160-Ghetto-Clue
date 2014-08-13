@@ -42,7 +42,7 @@ namespace GhettoClue
 
         private void roll_Click(object sender, RoutedEventArgs e)
         {
-
+            //rolls the dice and displays the number in the label
         }
     }
 }

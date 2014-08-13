@@ -41,32 +41,12 @@
                     <ColumnDefinition Width="70*"/>
                     <ColumnDefinition Width="70*"/>
                 </Grid.ColumnDefinitions>
-
-                <Rectangle Grid.Column="0" Grid.Row="0" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="1" Grid.Row="0" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="2" Grid.Row="0" Fill="Brown" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="3" Grid.Row="0" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="4" Grid.Row="0" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="5" Grid.Row="0" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="6" Grid.Row="0" Fill="DarkGray" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="7" Grid.Row="0" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="8" Grid.Row="0" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="0" Grid.Row="1" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="0" Grid.Row="2" Fill="Yellow" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="0" Grid.Row="3" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="0" Grid.Row="4" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="0" Grid.Row="5" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="0" Grid.Row="6" Fill="Green" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="0" Grid.Row="7" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="0" Grid.Row="8" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="1" Grid.Row="1" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="2" Grid.Row="1" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="3" Grid.Row="1" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="4" Grid.Row="1" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="5" Grid.Row="1" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="6" Grid.Row="1" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="7" Grid.Row="1" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="8" Grid.Row="1" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="1" Grid.Row="2" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="2" Grid.Row="2" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="3" Grid.Row="2" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
@@ -75,24 +55,18 @@
                 <Rectangle Grid.Column="6" Grid.Row="2" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="7" Grid.Row="2" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="8" Grid.Row="2" Fill="Red" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="1" Grid.Row="3" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="2" Grid.Row="3" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="3" Grid.Row="3" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="4" Grid.Row="3" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="5" Grid.Row="3" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="6" Grid.Row="3" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="7" Grid.Row="3" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="8" Grid.Row="3" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="1" Grid.Row="4" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="2" Grid.Row="4" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="3" Grid.Row="4" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="4" Grid.Row="4" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="5" Grid.Row="4" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="6" Grid.Row="4" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="7" Grid.Row="4" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="8" Grid.Row="4" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="0" Grid.Row="5" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="1" Grid.Row="5" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="2" Grid.Row="5" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="3" Grid.Row="5" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="4" Grid.Row="5" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
@@ -108,30 +82,18 @@
                 <Rectangle Grid.Column="6" Grid.Row="6" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="7" Grid.Row="6" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="8" Grid.Row="6" Fill="Cyan" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="1" Grid.Row="7" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="2" Grid.Row="7" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="3" Grid.Row="7" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="4" Grid.Row="7" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="5" Grid.Row="7" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="6" Grid.Row="7" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="7" Grid.Row="7" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="8" Grid.Row="7" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="1" Grid.Row="8" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="2" Grid.Row="8" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="3" Grid.Row="8" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="4" Grid.Row="8" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="5" Grid.Row="8" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Rectangle Grid.Column="6" Grid.Row="8" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="7" Grid.Row="8" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
-                <Rectangle Grid.Column="8" Grid.Row="8" Fill="Black" Stroke="Gray" StrokeThickness="3" MouseLeftButtonDown="rect_MouseLeftButtonDown"/>
                 <Label Background="AliceBlue" Margin="5,0,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2" Content="room"/>
                 <Label Background="AliceBlue" Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Column="7" Content="room"/>
-                <Label Background="AliceBlue" Margin="0,78,0,0" Grid.RowSpan="3" Grid.ColumnSpan="2" Grid.Row="6" Content="room"/>
+                <Label Background="AliceBlue" Margin="0,0,0,-1" Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Row="7" Content="room"/>
                 <Label Background="AliceBlue" Margin="0,78,0,0" Grid.RowSpan="3" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="6" Content="room"/>
-                <Label Background="AliceBlue" Grid.RowSpan="2" Grid.Column="4" Grid.Row="3" Content="cellar"/>
-                <Label Background="AliceBlue" Margin="5,0,0,0" Grid.RowSpan="3" Grid.ColumnSpan="2" Grid.Row="3" Content="room"/>
+                <Label Background="AliceBlue" Grid.RowSpan="3" Grid.Column="4" Grid.Row="3" Content="cellar" Margin="0,1,0,79"/>
+                <Label Background="AliceBlue" Margin="0,1,5,78" Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="3" Content="room"/>
                 <Label Background="AliceBlue" Grid.RowSpan="3" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="3" Content="room"/>
-                <Label Background="AliceBlue" Margin="0,78,97,0" Grid.RowSpan="3" Grid.ColumnSpan="4" Grid.Column="3" Grid.Row="6" Content="room"/>
+                <Label Background="AliceBlue" Margin="0,0,97,-1" Grid.RowSpan="2" Grid.ColumnSpan="4" Grid.Column="3" Grid.Row="7" Content="room"/>
                 <Label Background="AliceBlue" Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="3" Content="room"/>
 
             </Grid>
