@@ -50,21 +50,13 @@ namespace GhettoClue {
         
         #line 48 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DataGrid detectiveGrid;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 49 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid CardGrid;
         
         #line default
         #line hidden
         
         
-        #line 61 "..\..\MainWindow.xaml"
+        #line 60 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Canvas gameboard;
         
@@ -72,7 +64,7 @@ namespace GhettoClue {
         #line hidden
         
         
-        #line 62 "..\..\MainWindow.xaml"
+        #line 61 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid gameGrid;
         
@@ -80,7 +72,7 @@ namespace GhettoClue {
         #line hidden
         
         
-        #line 144 "..\..\MainWindow.xaml"
+        #line 143 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button suggest;
         
@@ -88,7 +80,7 @@ namespace GhettoClue {
         #line hidden
         
         
-        #line 145 "..\..\MainWindow.xaml"
+        #line 144 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button accuse;
         
@@ -96,7 +88,7 @@ namespace GhettoClue {
         #line hidden
         
         
-        #line 146 "..\..\MainWindow.xaml"
+        #line 145 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button play;
         
@@ -104,7 +96,7 @@ namespace GhettoClue {
         #line hidden
         
         
-        #line 147 "..\..\MainWindow.xaml"
+        #line 146 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button roll;
         
@@ -112,7 +104,7 @@ namespace GhettoClue {
         #line hidden
         
         
-        #line 149 "..\..\MainWindow.xaml"
+        #line 148 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button show;
         
@@ -120,7 +112,7 @@ namespace GhettoClue {
         #line hidden
         
         
-        #line 151 "..\..\MainWindow.xaml"
+        #line 150 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label die_Face;
         
@@ -167,16 +159,21 @@ namespace GhettoClue {
             #line hidden
             return;
             case 2:
-            this.detectiveGrid = ((System.Windows.Controls.DataGrid)(target));
-            return;
-            case 3:
             this.CardGrid = ((System.Windows.Controls.DataGrid)(target));
             return;
-            case 4:
+            case 3:
             this.gameboard = ((System.Windows.Controls.Canvas)(target));
             return;
-            case 5:
+            case 4:
             this.gameGrid = ((System.Windows.Controls.Grid)(target));
+            return;
+            case 5:
+            
+            #line 85 "..\..\MainWindow.xaml"
+            ((System.Windows.Shapes.Rectangle)(target)).MouseLeftButtonDown += new System.Windows.Input.MouseButtonEventHandler(this.rect_MouseLeftButtonDown);
+            
+            #line default
+            #line hidden
             return;
             case 6:
             
@@ -531,41 +528,33 @@ namespace GhettoClue {
             #line hidden
             return;
             case 50:
-            
-            #line 130 "..\..\MainWindow.xaml"
-            ((System.Windows.Shapes.Rectangle)(target)).MouseLeftButtonDown += new System.Windows.Input.MouseButtonEventHandler(this.rect_MouseLeftButtonDown);
-            
-            #line default
-            #line hidden
-            return;
-            case 51:
             this.suggest = ((System.Windows.Controls.Button)(target));
             return;
-            case 52:
+            case 51:
             this.accuse = ((System.Windows.Controls.Button)(target));
             return;
-            case 53:
+            case 52:
             this.play = ((System.Windows.Controls.Button)(target));
             
-            #line 146 "..\..\MainWindow.xaml"
+            #line 145 "..\..\MainWindow.xaml"
             this.play.Click += new System.Windows.RoutedEventHandler(this.play_Click);
             
             #line default
             #line hidden
             return;
-            case 54:
+            case 53:
             this.roll = ((System.Windows.Controls.Button)(target));
             
-            #line 147 "..\..\MainWindow.xaml"
+            #line 146 "..\..\MainWindow.xaml"
             this.roll.Click += new System.Windows.RoutedEventHandler(this.roll_Click);
             
             #line default
             #line hidden
             return;
-            case 55:
+            case 54:
             this.show = ((System.Windows.Controls.Button)(target));
             return;
-            case 56:
+            case 55:
             this.die_Face = ((System.Windows.Controls.Label)(target));
             return;
             }

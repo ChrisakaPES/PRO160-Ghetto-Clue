@@ -45,7 +45,6 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <DataGrid x:Name="detectiveGrid" Grid.Column="1" Grid.RowSpan="3" Height="446" VerticalAlignment="Top" Background="Aqua"/>
         <DataGrid x:Name="CardGrid" Grid.Column="1" Grid.Row="2" Background="BlanchedAlmond" ItemsSource="{Binding}"/>
 
        
