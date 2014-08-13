@@ -15,3 +15,5 @@ C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoCl
 F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.exe.config
 F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.exe
 F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.pdb
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\Die.baml
+C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\Die.g.cs
