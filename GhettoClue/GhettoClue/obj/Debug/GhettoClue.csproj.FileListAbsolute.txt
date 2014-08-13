@@ -30,3 +30,5 @@ F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PR
 F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.Properties.Resources.resources
 F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.csproj.GenerateResource.Cache
 >>>>>>> origin/master
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.exe
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.pdb
