@@ -15,5 +15,18 @@ C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoCl
 F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.exe.config
 F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.exe
 F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.pdb
+<<<<<<< HEAD
 C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\Die.baml
 C:\Users\Gabby Miller\Documents\GitHub\Me\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\Die.g.cs
+=======
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.csprojResolveAssemblyReference.cache
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\MainWindow.baml
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\MainWindow.g.cs
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\App.g.cs
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue_MarkupCompile.cache
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.g.resources
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.exe
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.pdb
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.Properties.Resources.resources
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.csproj.GenerateResource.Cache
+>>>>>>> origin/master

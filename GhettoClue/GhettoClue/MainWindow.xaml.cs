@@ -1,5 +1,7 @@
-﻿using System;
+﻿using GhettoClue.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +20,7 @@ using System.Collections.ObjectModel;
 
 namespace GhettoClue
 {
+<<<<<<< HEAD
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -79,5 +82,54 @@ namespace GhettoClue
             
         }
     }
+=======
+	/// <summary>
+	/// Interaction logic for MainWindow.xaml
+	/// </summary>
+	public partial class MainWindow : Window
+	{
+		//CollectionList for Detective Notes
+		//public ObservableCollection<DetectiveList<Player>> Players { get; set; }
+
+		public MainWindow()
+		{
+			InitializeComponent();
+
+			//Populating the detective list
+			//Players = new ObservableCollection<DetectiveList<Player>>();
+
+			//Players.Add(new DetectiveList<Player>(new Player()));
+			//DataContext = this;
+		}
+
+		private void play_Click(object sender, RoutedEventArgs e)
+		{
+			
+			//takes away display screen
+
+
+		}
+			
+
+		private void rect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			//handles moving pawns           
+		}
+
+		private void roll_Click(object sender, RoutedEventArgs e)
+		{
+			//rolls the dice and displays the number in the label
+			Random gen = new Random();
+			int temp = 0;
+			temp = gen.Next(1, 7);
+
+			//switch(temp)
+			//{
+			//	case 1:
+			//		die_Face.Background
+			//}
+		}
+	}
+>>>>>>> origin/master
 }
 
