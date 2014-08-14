@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tokens/token(1).png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tokens/weave.png")]
 
 

@@ -45,6 +45,7 @@ namespace GhettoClue
 					  new Weapons { leathals = Weapons.weapon.Shank}
 				  }}};
 			player.ItemsSource = players;
+
 		}
 		private void player_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
@@ -52,6 +53,10 @@ namespace GhettoClue
 			CharacterGrid.ItemsSource = players[i].characterCards;
 			WeaponGrid.ItemsSource = players[i].weaponCards;
 			RoomGrid.ItemsSource = players[i].roomCards;
+
+            CharacterDGrid.ItemsSource = players[i].characterCards;
+            WeaponDGrid.ItemsSource = players[i].weaponCards;
+            RoomDGrid.ItemsSource = players[i].roomCards;
 		}
 
 		private void play_Click(object sender, RoutedEventArgs e)
