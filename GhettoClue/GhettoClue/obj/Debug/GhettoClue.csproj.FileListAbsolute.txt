@@ -45,3 +45,5 @@ C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\Ghe
 C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.g.resources
 C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.Properties.Resources.resources
 C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.csproj.GenerateResource.Cache
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\Die.baml
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\Die.g.cs

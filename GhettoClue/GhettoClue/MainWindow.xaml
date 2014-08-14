@@ -144,7 +144,11 @@
         <Button x:Name="accuse" Content="ACCUSE" Margin="77,125,65,189" Grid.Row="1" Grid.Column="2"/>
         <Button x:Name="play" Content="Start Game" Click="play_Click" Margin="68,32,65,36" Grid.Row="3" Grid.Column="2"/>
         <Button x:Name="roll" Content="ROLL" Click="roll_Click" Margin="58,16,55,71" Grid.Row="4" Grid.Column="2" />
-        <Label Background="Brown" Margin="58,64,61,9" Grid.Row="4" Grid.Column="2" />
+        <Image x:Name="die_placement" Margin="58,64,61,9" Grid.Row="4" Grid.Column="2" Height="50" Width="50">
+            <Image.Source>
+                <BitmapImage UriSource="Images/1.png" />
+            </Image.Source>
+        </Image>
         <Button x:Name="show" Content="DISPROVE" Margin="48,10,43,73" Grid.Row="2" Grid.Column="2" />
 
     </Grid>
