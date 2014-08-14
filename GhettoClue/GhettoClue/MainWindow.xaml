@@ -8,8 +8,10 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
-            <RowDefinition Height="361*"/>
-            <RowDefinition Height="356*"/>
+            <RowDefinition Height="343*"/>
+            <RowDefinition Height="130*"/>
+            <RowDefinition Height="121*"/>
+            <RowDefinition Height="123*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="909*"/>
@@ -18,7 +20,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <ComboBox x:Name="player" Grid.Column="2" Grid.Row="0" ScrollViewer.CanContentScroll="False" SelectionChanged="player_SelectionChanged" Margin="0,0,0,322" Grid.RowSpan="2">
+        <ComboBox x:Name="player" Grid.Column="2" Grid.Row="0" ScrollViewer.CanContentScroll="False" SelectionChanged="player_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -38,10 +40,12 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <DataGrid x:Name="CardGrid" Grid.Column="1" Grid.Row="2" Background="BlanchedAlmond" ItemsSource="{Binding}"/>
+        <DataGrid x:Name="CharacterGrid" Grid.Column="1" Grid.Row="2" Background="BlanchedAlmond" ItemsSource="{Binding}"/>
+        <DataGrid x:Name="WeaponGrid" ItemsSource="{Binding}" Background="CadetBlue" Grid.Row="3" Grid.Column="1"/>
+        <DataGrid x:Name="RoomGrid" ItemsSource="{Binding}" Background="Aquamarine" Grid.Row="4" Grid.Column="1" Margin="0,0,0,2"/>
 
-       
-        <!-- <DataGrid x:Name="detectiveGrid" Grid.Column="1" Grid.RowSpan="3" Height="446" VerticalAlignment="Top" Background="Aqua"/> -->
+
+        <!-- <DataGrid x:Name="detectiveGrid" Grid.Column="1" Grid.RowSpan="3" Height="446" VerticalAlignment="Top" Background="Aqua"/>-->
         <ListBox ItemsSource="{Binding Players}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -50,7 +54,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Canvas x:Name="gameboard" Grid.Column="0" Grid.Row="1" Background="LightGray" Grid.RowSpan="2" MouseLeftButtonDown="gameboard_MouseLeftButtonDown">
+        <Canvas x:Name="gameboard" Grid.Column="0" Grid.Row="1" Background="LightGray" Grid.RowSpan="4" MouseLeftButtonDown="gameboard_MouseLeftButtonDown">
             <Grid x:Name="gameGrid" Height="761" Width="908" Canvas.Top="-43">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30*"/>
@@ -136,12 +140,12 @@
             </Label>
         </Canvas>
 
-        <Button x:Name="suggest" Content="SUGGEST" Margin="77,44,65,271" Grid.Row="1" Grid.Column="2" />
-        <Button x:Name="accuse" Content="ACCUSE" Margin="77,125,65,190" Grid.Row="1" Grid.Column="2"/>
-        <Button x:Name="play" Content="Start Game" Click="play_Click" Margin="40,287,43,24" Grid.Row="2" Grid.Column="1"/>
-        <Button x:Name="roll" Content="ROLL" Click="roll_Click" Margin="48,237,65,87" Grid.Row="2" Grid.Column="2" />
-        <Label Background="Brown" Margin="54,287,65,37" Grid.Row="2" Grid.Column="2" />
-        <Button x:Name="show" Content="DISPROVE" Margin="42,81,49,229" Grid.Row="2" Grid.Column="2" />
+        <Button x:Name="suggest" Content="SUGGEST" Margin="77,44,65,270" Grid.Row="1" Grid.Column="2" />
+        <Button x:Name="accuse" Content="ACCUSE" Margin="77,125,65,189" Grid.Row="1" Grid.Column="2"/>
+        <Button x:Name="play" Content="Start Game" Click="play_Click" Margin="68,32,65,36" Grid.Row="3" Grid.Column="2"/>
+        <Button x:Name="roll" Content="ROLL" Click="roll_Click" Margin="58,16,55,71" Grid.Row="4" Grid.Column="2" />
+        <Label Background="Brown" Margin="58,64,61,9" Grid.Row="4" Grid.Column="2" />
+        <Button x:Name="show" Content="DISPROVE" Margin="48,10,43,73" Grid.Row="2" Grid.Column="2" />
 
     </Grid>
 </Window>

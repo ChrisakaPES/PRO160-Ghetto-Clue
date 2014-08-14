@@ -29,35 +29,29 @@ namespace GhettoClue
             InitializeComponent();
             players = new List<Player>
             {
-                new Player{ Name = Characters.Lafawnduh, background = "not yet defined", 
-                    Cards = new ObservableCollection<Cards>
-                    {
-                        new Cards { character = CharacterCards.Ladasha},
-                        new Cards { leathals = Weapons.PoisonedLean}
-                    }
-                    //new Player{ Name = Characters.JuanCarlos, background = "not yet defined", 
-                    //Cards = new ObservableCollection<Cards>
-                    //{
-                    //    new Cards { leathals = Weapons.Shank}
-                    //}},
-                    //new Player{ Name = Characters.Ladasha, background = "not yet defined", 
-                    //Cards = new ObservableCollection<Cards>
-                    //{
-                    //    new Cards { location = Rooms.LightRoom}
-                    //}},
-                    //new Player{ Name = Characters.Watermelondria, background = "not yet defined", 
-                    //Cards = new ObservableCollection<Cards>
-                    //{
-                    //    new Cards { leathals = Weapons.DaHeata}
-                    //}}
-                }};
+                new Player{ Name = characters.Lafawnduh, background = "not yet defined", characterCards = new ObservableCollection<Characters>
+                {
+                    new Characters { character = Characters.CharacterCards.JuanCarlos},
+                    new Characters { character = Characters.CharacterCards.Ladasha}
+                },
+                 roomCards = new ObservableCollection<Rooms>
+                 {
+                     new Rooms { location = Rooms.room.GrowHouse},
+                     new Rooms { location = Rooms.room.LightRoom}
+                 }, 
+                  weaponCards = new ObservableCollection<Weapons>
+                  {
+                      new Weapons { leathals = Weapons.weapon.DaHeata},
+                      new Weapons { leathals = Weapons.weapon.Shank}
+                  }}};
             player.ItemsSource = players;
         }
         private void player_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int i = player.SelectedIndex;
-            CardGrid.ItemsSource = players[i].Cards;
-
+            CharacterGrid.ItemsSource = players[i].characterCards;
+            WeaponGrid.ItemsSource = players[i].weaponCards;
+            RoomGrid.ItemsSource = players[i].roomCards;
         }
 
         private void play_Click(object sender, RoutedEventArgs e)
