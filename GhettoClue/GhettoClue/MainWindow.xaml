@@ -1,7 +1,6 @@
 ﻿<Window x:Class="GhettoClue.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-
         Title="MainWindow"  WindowState="Normal" Height="792.607" Width="1331.033">
 
 
@@ -153,7 +152,7 @@
                 <BitmapImage UriSource="Images/1.png" />
             </Image.Source>
         </Image>
-        <Button x:Name="show" Content="DISPROVE" Margin="48,10,43,73" Grid.Row="2" Grid.Column="2" />
+        <Button x:Name="disprove" Click="disprove_Click" Content="DISPROVE" Margin="48,10,43,73" Grid.Row="2" Grid.Column="2" />
         <Label Margin="10,112,89,93" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" FontSize="14">Your Hand:</Label>
 
     </Grid>

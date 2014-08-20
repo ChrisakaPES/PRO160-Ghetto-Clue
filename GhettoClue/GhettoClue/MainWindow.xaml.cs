@@ -124,6 +124,11 @@ namespace GhettoClue
 		}
 		#endregion
 
+		private void disprove_Click(object sender, RoutedEventArgs e)
+		{
+			//
+		}
+
 		private void gameboard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
 			System.Windows.Point position = e.GetPosition(this);
@@ -134,6 +139,7 @@ namespace GhettoClue
 			Canvas.SetTop(Token1, pY - 30);
 
 		}
+
 	}
 }
 
