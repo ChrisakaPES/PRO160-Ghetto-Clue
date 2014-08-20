@@ -157,15 +157,22 @@ namespace GhettoClue
 			WeaponGrid.ItemsSource = currentPlayer.weaponCards;
 			RoomGrid.ItemsSource = currentPlayer.roomCards;
 
+			//Removes the extra column that wasn't necessary for the cards area
+			CharacterGrid.Columns.Remove(CharacterGrid.Columns[0]);
+			WeaponGrid.Columns.Remove(WeaponGrid.Columns[0]);
+			RoomGrid.Columns.Remove(RoomGrid.Columns[0]);
+			
 			DetectiveNotes.DataContext = currentPlayer.MyDetectiveList;
 
 			DNotes_Characters.ItemsSource = currentPlayer.MyDetectiveList.CharactersList;
 			DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
 			DNotes_Rooms.ItemsSource = currentPlayer.MyDetectiveList.RoomsList;
 
-			CharacterGrid.Columns.Remove(CharacterGrid.Columns[0]);
-			WeaponGrid.Columns.Remove(WeaponGrid.Columns[0]);
-			RoomGrid.Columns.Remove(RoomGrid.Columns[0]);
+			//Removes the extra column that wasn't necessary for the detective list
+			DNotes_Characters.Columns.Remove(DNotes_Characters.Columns[1]);
+			DNotes_Weapons.Columns.Remove(DNotes_Weapons.Columns[1]);
+			DNotes_Rooms.Columns.Remove(DNotes_Rooms.Columns[1]);
+
 		}
 
 

@@ -43,7 +43,7 @@
 		<DataGrid CanUserAddRows="False" x:Name="RoomGrid" ItemsSource="{Binding}" Background="Aquamarine" Grid.Row="3" Margin="187,39,540,10"/>
 
 		<StackPanel x:Name="DetectiveNotes" Grid.Column="1" Grid.RowSpan="4">
-			<Label Content="Detective Notes" Background="BlanchedAlmond" FontSize="20" HorizontalAlignment="Center" />
+			<Label Content="Detective Notes" FontSize="20" HorizontalAlignment="Center" />
 			<DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" ItemsSource="{Binding}"/>
 			<DataGrid CanUserAddRows="False" x:Name="DNotes_Weapons" ItemsSource="{Binding}" />
 			<DataGrid CanUserAddRows="False" x:Name="DNotes_Rooms" ItemsSource="{Binding}" />
