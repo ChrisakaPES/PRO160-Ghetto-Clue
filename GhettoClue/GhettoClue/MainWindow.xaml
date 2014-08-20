@@ -155,7 +155,7 @@
 		</Image>
 		<Button x:Name="nextTurn" Content="NEXT TURN" Margin="687,39,108,174" Grid.Row="3" Click="nextTurn_Click" />
 		<Button x:Name="disprove" Click="disprove_Click" Content="DISPROVE" Margin="55,76,65,93" Grid.Row="2" Grid.Column="2" />
-		<Label Margin="0,10,826,189" Grid.Row="3" FontSize="14">Your Hand:</Label>
+		<Label Margin="0,10,806,189" Grid.Row="3" FontSize="14">Your Hand:</Label>
 		<Label FontSize="14" Margin="10,3,179,30" Grid.Column="2">Characters:</Label>
 		<Label FontSize="14" Margin="24,163,16,6" Grid.Column="2" Grid.Row="2" >Make a suggestion as to who done it:</Label>
 		<Label FontSize="14" Margin="17,40,10,129" Grid.Column="2" Grid.Row="2" >Disprove a suggestion made by a player</Label>

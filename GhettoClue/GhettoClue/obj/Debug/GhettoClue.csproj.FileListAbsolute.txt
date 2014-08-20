@@ -68,3 +68,6 @@ G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\Gh
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.g.resources
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.Properties.Resources.resources
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.csproj.GenerateResource.Cache
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\SuggestionPopUpWindow.g.cs
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue_MarkupCompile.lref
+C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\SuggestionPopUpWindow.baml
