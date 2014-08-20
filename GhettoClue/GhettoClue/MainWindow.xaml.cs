@@ -23,14 +23,19 @@ namespace GhettoClue
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		#region Variables
 		List<Player> players = new List<Player>();
-        Random rand = new Random();
+		Random rand = new Random();
+		public int rolled;
+		#endregion
+
+
 		public MainWindow()
 		{
 			InitializeComponent();
-            var randC = RandomEnumValue<Characters.CharacterCards>();
-            var randR = RandomEnumValue<Rooms.room>();
-            var randW = RandomEnumValue<Weapons.weapon>();
+			var randC = RandomEnumValue<Characters.CharacterCards>();
+			var randR = RandomEnumValue<Rooms.room>();
+			var randW = RandomEnumValue<Weapons.weapon>();
 			players = new List<Player>
 			{
 				new Player{ Name = characters.Lafawnduh, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
@@ -44,17 +49,18 @@ namespace GhettoClue
 				 }, 
 				  weaponCards = new ObservableCollection<Weapons>
 				  {
-                      new Weapons { leathals = randW.ToString()}
+					  new Weapons { leathals = randW.ToString()}
 				  }
-                }};
+				}};
 
 			player.ItemsSource = players;
-        }
+		}
 
-        private T RandomEnumValue<T>()
-        {
-            return Enum.GetValues(typeof(T)).Cast<T>().OrderBy(x => rand.Next()).FirstOrDefault(); 
-        }
+		private T RandomEnumValue<T>()
+		{
+			return Enum.GetValues(typeof(T)).Cast<T>().OrderBy(x => rand.Next()).FirstOrDefault(); 
+		}
+
 		private void player_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			int i = player.SelectedIndex;
@@ -62,9 +68,9 @@ namespace GhettoClue
 			WeaponGrid.ItemsSource = players[i].weaponCards;
 			RoomGrid.ItemsSource = players[i].roomCards;
 
-            CharacterDGrid.ItemsSource = players[i].characterCards;
-            WeaponDGrid.ItemsSource = players[i].weaponCards;
-            RoomDGrid.ItemsSource = players[i].roomCards;
+			DNotes_Characters.ItemsSource = players[i].characterCards;
+			DNotes_Weapons.ItemsSource = players[i].weaponCards;
+			DNotes_Rooms.ItemsSource = players[i].roomCards;
 		}
 
 		private void play_Click(object sender, RoutedEventArgs e)
@@ -74,15 +80,14 @@ namespace GhettoClue
 
 
 		}
-
+		#region Die Click / Rolling methods
 		private void roll_Click(object sender, RoutedEventArgs e)
 		{
 			//rolls the dice and calls the method to change the background
 			Random gen = new Random();
-			int temp = 0;
-			temp = gen.Next(1, 7);
+			rolled = gen.Next(1, 7);
 
-			roll_Die(temp);
+			roll_Die(rolled);
 		}
 
 		public void roll_Die(int num)
@@ -117,6 +122,7 @@ namespace GhettoClue
 
 			}
 		}
+		#endregion
 
 		private void gameboard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{

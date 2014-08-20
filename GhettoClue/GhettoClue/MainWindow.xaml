@@ -44,9 +44,11 @@
         <DataGrid x:Name="WeaponGrid" ItemsSource="{Binding}" Background="CadetBlue" Grid.Row="3" Grid.Column="2" Margin="7,8,10,10"/>
         <DataGrid x:Name="RoomGrid" ItemsSource="{Binding}" Background="Aquamarine" Grid.Row="4" Grid.Column="1" Margin="2,16,230,2" Grid.ColumnSpan="2"/>
 
-        <DataGrid x:Name="CharacterDGrid" Grid.Column="1" Background="DarkGray" ItemsSource="{Binding}" Margin="0,10,0,232" Grid.RowSpan="2"/>
-        <DataGrid x:Name="WeaponDGrid" ItemsSource="{Binding}" Background="DarkGray" Grid.Row="1" Grid.Column="1" Margin="0,111,0,85"/>
-        <DataGrid x:Name="RoomDGrid" ItemsSource="{Binding}" Background="DarkGray" Grid.Row="1" Grid.Column="1" Margin="0,258,0,10" Grid.RowSpan="2"/>
+        <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Grid.RowSpan="2" Background="Aqua">            
+        <DataGrid x:Name="DNotes_Characters" ItemsSource="{Binding}"/>
+        <DataGrid x:Name="DNotes_Weapons" ItemsSource="{Binding}" />
+        <DataGrid x:Name="DNotes_Rooms" ItemsSource="{Binding}" />
+        </StackPanel>
 
         <ListBox ItemsSource="{Binding Players}">
             <ListBox.ItemTemplate>
