@@ -24,29 +24,37 @@ namespace GhettoClue
 	public partial class MainWindow : Window
 	{
 		List<Player> players = new List<Player>();
+        Random rand = new Random();
 		public MainWindow()
 		{
 			InitializeComponent();
+            var randC = RandomEnumValue<Characters.CharacterCards>();
+            var randR = RandomEnumValue<Rooms.room>();
+            var randW = RandomEnumValue<Weapons.weapon>();
 			players = new List<Player>
 			{
-				new Player{ Name = characters.Lafawnduh, background = "not yet defined", characterCards = new ObservableCollection<Characters>
+				new Player{ Name = characters.Lafawnduh, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
 				{
-					new Characters { character = Characters.CharacterCards.JuanCarlos},
-					new Characters { character = Characters.CharacterCards.Ladasha}
+					new Characters { character = randC.ToString()},
+					new Characters { character = randC.ToString()}
 				},
 				 roomCards = new ObservableCollection<Rooms>
 				 {
-					 new Rooms { location = Rooms.room.GrowHouse},
-					 new Rooms { location = Rooms.room.LightRoom}
+					new Rooms { location = randR.ToString()}
 				 }, 
 				  weaponCards = new ObservableCollection<Weapons>
 				  {
-					  new Weapons { leathals = Weapons.weapon.DaHeata},
-					  new Weapons { leathals = Weapons.weapon.Shank}
-				  }}};
-			player.ItemsSource = players;
+                      new Weapons { leathals = randW.ToString()}
+				  }
+                }};
 
-		}
+			player.ItemsSource = players;
+        }
+
+        private T RandomEnumValue<T>()
+        {
+            return Enum.GetValues(typeof(T)).Cast<T>().OrderBy(x => rand.Next()).FirstOrDefault(); 
+        }
 		private void player_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			int i = player.SelectedIndex;

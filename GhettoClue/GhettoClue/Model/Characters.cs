@@ -8,12 +8,17 @@ namespace GhettoClue.Model
 {
    public class Characters
     {
-        public CharacterCards character { get; set; }
+        public string character { get; set; }
         public bool show { get; set; }
 
         public enum CharacterCards
         {
-            Lafawnduh, DaMarcus, Watermelondria, Jake, Ladasha, JuanCarlos
+            Lafawnduh = 1, 
+            DaMarcus, 
+            Watermelondria, 
+            Jake, 
+            Ladasha, 
+            JuanCarlos
         }
     }
 }

@@ -8,7 +8,7 @@ namespace GhettoClue.Model
 {
    public class Rooms
     {
-        public room location { get; set; }
+        public string location { get; set; }
         public bool show { get; set; }
 
         public enum room

@@ -8,7 +8,7 @@ namespace GhettoClue.Model
 {
    public class Weapons
     {
-        public weapon leathals { get; set; }
+        public string leathals { get; set; }
         public bool show { get; set; }
 
         public enum weapon
