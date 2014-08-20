@@ -1,6 +1,6 @@
 ﻿<Window x:Class="GhettoClue.SuggestionPopUpWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:converters="clr-namespace:GhettoClue.Converters"
         Title="SuggestionPopUpWindow" Height="300" Width="300">
     <Window.Resources>
