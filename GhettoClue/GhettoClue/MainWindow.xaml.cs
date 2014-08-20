@@ -250,8 +250,9 @@ namespace GhettoClue
 		{
 			//suggest a card
             SuggestionPopUpWindow suggestPopUp = new SuggestionPopUpWindow();
-            suggestPopUp.Activate();
             suggestPopUp.Show();
+            suggestPopUp.Activate();
+            
 		}
 
 		private void disprove_Click(object sender, RoutedEventArgs e)
