@@ -180,7 +180,7 @@ namespace GhettoClue
 		private void play_Click(object sender, RoutedEventArgs e)
 		{
 
-			//takes away display screen
+			//takes away splash screen
 
 
 		}
@@ -199,39 +199,35 @@ namespace GhettoClue
 			//Clear current background
 			die_placement.Source = null;
 
-			//Determine which new die face will be displayed then change image source
-			switch (num)
-			{
-				case 1:
-					die_placement.Source = new BitmapImage(new Uri(@"/Images/1.png", UriKind.Relative));
-					break;
-				case 2:
-					die_placement.Source = new BitmapImage(new Uri(@"/Images/2.png", UriKind.Relative));
-					break;
-				case 3:
-					die_placement.Source = new BitmapImage(new Uri(@"/Images/3.png", UriKind.Relative));
-					break;
-				case 4:
-					die_placement.Source = new BitmapImage(new Uri(@"/Images/4.png", UriKind.Relative));
-					break;
-				case 5:
-					die_placement.Source = new BitmapImage(new Uri(@"/Images/5.png", UriKind.Relative));
-					break;
-				case 6:
-					die_placement.Source = new BitmapImage(new Uri(@"/Images/6.png", UriKind.Relative));
-					break;
-				default:
-					break;
+				//Determine which new die face will be displayed then change image source
+				switch (num)
+				{
+					case 1:
+						die_placement.Source = new BitmapImage(new Uri(@"/Images/1.png", UriKind.Relative));
+						break;
+					case 2:
+						die_placement.Source = new BitmapImage(new Uri(@"/Images/2.png", UriKind.Relative));
+						break;
+					case 3:
+						die_placement.Source = new BitmapImage(new Uri(@"/Images/3.png", UriKind.Relative));
+						break;
+					case 4:
+						die_placement.Source = new BitmapImage(new Uri(@"/Images/4.png", UriKind.Relative));
+						break;
+					case 5:
+						die_placement.Source = new BitmapImage(new Uri(@"/Images/5.png", UriKind.Relative));
+						break;
+					case 6:
+						die_placement.Source = new BitmapImage(new Uri(@"/Images/6.png", UriKind.Relative));
+						break;
+					default:
+						break;
 
 
-			}
+				}
 		}
 		#endregion
 
-		private void disprove_Click(object sender, RoutedEventArgs e)
-		{
-			//disprove the cards
-		}
 
 		private void gameboard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
@@ -255,6 +251,11 @@ namespace GhettoClue
 			//suggest a card
 		}
 
+		private void disprove_Click(object sender, RoutedEventArgs e)
+		{
+			//disprove the cards
+		}
+		
 		private void accuse_Click(object sender, RoutedEventArgs e)
 		{
 			//accuse the murder
