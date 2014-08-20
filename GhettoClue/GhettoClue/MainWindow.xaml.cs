@@ -33,33 +33,33 @@ namespace GhettoClue
 		public MainWindow()
 		{
 			InitializeComponent();
-            #region PlayerVariables
-            var LafC = RandomEnumValue<Characters.CharacterCards>();
-			var LafR = RandomEnumValue<Rooms.room>();
-			var LafW = RandomEnumValue<Weapons.weapon>();
+			#region PlayerVariables
+			var LafC = RandomEnumValue<CharacterCards>();
+			var LafR = RandomEnumValue<room>();
+			var LafW = RandomEnumValue<weapon>();
 
-            var DaC = RandomEnumValue<Characters.CharacterCards>();
-            var DaR = RandomEnumValue<Rooms.room>();
-            var DaW = RandomEnumValue<Weapons.weapon>();
+			var DaC = RandomEnumValue<CharacterCards>();
+			var DaR = RandomEnumValue<room>();
+			var DaW = RandomEnumValue<weapon>();
 
-            var WatC = RandomEnumValue<Characters.CharacterCards>();
-            var WatR = RandomEnumValue<Rooms.room>();
-            var WatW = RandomEnumValue<Weapons.weapon>();
+			var WatC = RandomEnumValue<CharacterCards>();
+			var WatR = RandomEnumValue<room>();
+			var WatW = RandomEnumValue<weapon>();
 
-            var JC = RandomEnumValue<Characters.CharacterCards>();
-            var JR = RandomEnumValue<Rooms.room>();
-            var JW = RandomEnumValue<Weapons.weapon>();
+			var JC = RandomEnumValue<CharacterCards>();
+			var JR = RandomEnumValue<room>();
+			var JW = RandomEnumValue<weapon>();
 
-            var LaC = RandomEnumValue<Characters.CharacterCards>();
-            var LaR = RandomEnumValue<Rooms.room>();
-            var LaW = RandomEnumValue<Weapons.weapon>();
+			var LaC = RandomEnumValue<CharacterCards>();
+			var LaR = RandomEnumValue<room>();
+			var LaW = RandomEnumValue<weapon>();
 
-            var JuanC = RandomEnumValue<Characters.CharacterCards>();
-            var JuanR = RandomEnumValue<Rooms.room>();
-            var JuanW = RandomEnumValue<Weapons.weapon>();
-            #endregion
-            #region Players
-            players = new List<Player>
+			var JuanC = RandomEnumValue<CharacterCards>();
+			var JuanR = RandomEnumValue<room>();
+			var JuanW = RandomEnumValue<weapon>();
+			#endregion
+			#region Players
+			players = new List<Player>
 			{
 				new Player{ Name = characters.Lafawnduh, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
 				{
@@ -73,7 +73,7 @@ namespace GhettoClue
 				  {
 					  new Weapons { leathals = LafW.ToString()}
 				  }},
-                  		new Player{ Name = characters.DaMarcus, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
+						new Player{ Name = characters.DaMarcus, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
 				{
 					new Characters { character = DaC.ToString()},
 				},
@@ -85,7 +85,7 @@ namespace GhettoClue
 				  {
 					  new Weapons { leathals = DaW.ToString()}
 				  }},
-                  		new Player{ Name = characters.Jake, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
+						new Player{ Name = characters.Jake, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
 				{
 					new Characters { character = JC.ToString()},
 				},
@@ -97,7 +97,7 @@ namespace GhettoClue
 				  {
 					  new Weapons { leathals = JW.ToString()}
 				  }},
-                  		new Player{ Name = characters.JuanCarlos, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
+						new Player{ Name = characters.JuanCarlos, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
 				{
 					new Characters { character = JuanC.ToString()},
 				},
@@ -109,7 +109,7 @@ namespace GhettoClue
 				  {
 					  new Weapons { leathals = JuanW.ToString()}
 				  }},
-                  		new Player{ Name = characters.Ladasha, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
+						new Player{ Name = characters.Ladasha, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
 				{
 					new Characters { character = LaC.ToString()},
 				},
@@ -121,7 +121,7 @@ namespace GhettoClue
 				  {
 					  new Weapons { leathals = LaW.ToString()}
 				  }},
-                  		new Player{ Name = characters.Watermelondria, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
+						new Player{ Name = characters.Watermelondria, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
 				{
 					new Characters { character = WatC.ToString()},
 				},
@@ -133,15 +133,15 @@ namespace GhettoClue
 				  {
 					  new Weapons { leathals = WatW.ToString()}
 				  }}
-            };
-            player.ItemsSource = players;
+			};
+			player.ItemsSource = players;
 #endregion
-            #region Detective Notes
+			#region Detective Notes
 
-            //James your stuff to fix goes here
+			#endregion
 
-            #endregion
-        }
+			
+		}
 
 		private T RandomEnumValue<T>()
 		{
@@ -151,17 +151,22 @@ namespace GhettoClue
 		private void player_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			int i = player.SelectedIndex;
-			CharacterGrid.ItemsSource = players[i].characterCards;
-			WeaponGrid.ItemsSource = players[i].weaponCards;
-			RoomGrid.ItemsSource = players[i].roomCards;
 
-            //DNotes_Characters.ItemsSource = players[i].characterCards;
-            //DNotes_Weapons.ItemsSource = players[i].weaponCards;
-            //DNotes_Rooms.ItemsSource = players[i].roomCards;
+			Player currentPlayer = players[i];
+			CharacterGrid.ItemsSource = currentPlayer.characterCards;
+			WeaponGrid.ItemsSource = currentPlayer.weaponCards;
+			RoomGrid.ItemsSource = currentPlayer.roomCards;
+
+			DetectiveNotes.DataContext = currentPlayer.MyDetectiveList;
+
+			DNotes_Characters.ItemsSource = currentPlayer.MyDetectiveList.CharactersList;
+			DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
+			DNotes_Rooms.ItemsSource = currentPlayer.MyDetectiveList.RoomsList;
 		}
 
-        #region Button methods
-        private void play_Click(object sender, RoutedEventArgs e)
+
+		#region Button methods
+		private void play_Click(object sender, RoutedEventArgs e)
 		{
 
 			//takes away display screen
@@ -214,7 +219,7 @@ namespace GhettoClue
 
 		private void disprove_Click(object sender, RoutedEventArgs e)
 		{
-			//
+			//disprove the cards
 		}
 
 		private void gameboard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -226,24 +231,24 @@ namespace GhettoClue
 			Canvas.SetLeft(Token1, pX - 20);
 			Canvas.SetTop(Token1, pY - 30);
 
-        }
-        
+		}
+		
 
-        private void nextTurn_Click(object sender, RoutedEventArgs e)
-        {
-            //turn taking
-        }
+		private void nextTurn_Click(object sender, RoutedEventArgs e)
+		{
+			//turn taking
+		}
 
-        private void suggest_Click(object sender, RoutedEventArgs e)
-        {
-            //suggest a card
-        }
+		private void suggest_Click(object sender, RoutedEventArgs e)
+		{
+			//suggest a card
+		}
 
-        private void accuse_Click(object sender, RoutedEventArgs e)
-        {
-            //accuse the murder
-        }
-        #endregion
-    }
+		private void accuse_Click(object sender, RoutedEventArgs e)
+		{
+			//accuse the murder
+		}
+		#endregion
+	}
 }
 

@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 
 namespace GhettoClue.Model
 {
-   public class Characters
-    {
-        public string character { get; set; }
-        public bool show { get; set; }
+	public enum CharacterCards
+	{
+		Lafawnduh = 1,
+		DaMarcus,
+		Watermelondria,
+		Jake,
+		Ladasha,
+		JuanCarlos
+	}
+	public class Characters
+	{
+		public CharacterCards Character { get; set; }
 
-        public enum CharacterCards
-        {
-            Lafawnduh = 1, 
-            DaMarcus, 
-            Watermelondria, 
-            Jake, 
-            Ladasha, 
-            JuanCarlos
-        }
-    }
+		public string character { get; set; }
+		public bool show { get; set; }
+
+
+	}
 }
