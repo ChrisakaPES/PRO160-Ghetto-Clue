@@ -13,8 +13,7 @@
         <ComboBox x:Name="CharacterComboBox">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Background ="AliceBlue" 
-                           Content="{Binding}"/>
+                    <Label Content="{Binding}"/>
                 </DataTemplate> 
             </ComboBox.ItemTemplate>
 
