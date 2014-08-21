@@ -265,6 +265,14 @@ namespace GhettoClue
 			//accuse the murder
 		}
 		#endregion
+
+        private void DNotes_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.Column.Header.ToString() == "show")
+            {
+                e.Column.Header = "Known";
+            }
+        }
 	}
 }
 

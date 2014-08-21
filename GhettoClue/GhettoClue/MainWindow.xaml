@@ -44,9 +44,9 @@
 
 		<StackPanel x:Name="DetectiveNotes" Grid.Column="1" Grid.RowSpan="4">
 			<Label Content="Detective Notes" FontSize="20" HorizontalAlignment="Center" />
-			<DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" ItemsSource="{Binding}"/>
-			<DataGrid CanUserAddRows="False" x:Name="DNotes_Weapons" ItemsSource="{Binding}" />
-			<DataGrid CanUserAddRows="False" x:Name="DNotes_Rooms" ItemsSource="{Binding}" />
+			<DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" ItemsSource="{Binding}" AutoGeneratingColumn="DNotes_AutoGeneratingColumn"/>
+            <DataGrid CanUserAddRows="False" x:Name="DNotes_Weapons" ItemsSource="{Binding}"  AutoGeneratingColumn="DNotes_AutoGeneratingColumn"/>
+            <DataGrid CanUserAddRows="False" x:Name="DNotes_Rooms" ItemsSource="{Binding}"  AutoGeneratingColumn="DNotes_AutoGeneratingColumn"/>
 		</StackPanel>
 
 		<ListBox ItemsSource="{Binding Players}">
