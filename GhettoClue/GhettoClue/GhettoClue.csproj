@@ -59,6 +59,9 @@
     <Compile Include="SuggestionPopUpWindow.xaml.cs">
       <DependentUpon>SuggestionPopUpWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\GameBoard.xaml.cs">
+      <DependentUpon>GameBoard.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -72,6 +75,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SuggestionPopUpWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\GameBoard.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -108,9 +115,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserControls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

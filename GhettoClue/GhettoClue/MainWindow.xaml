@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
 
 <!--Region PlayerBox-->
-        <ComboBox x:Name="player" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,306">
+        <ComboBox x:Name="player" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,306" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -61,7 +61,7 @@
         <gb:GameBoard x:Name="gameControl"/>
 
 <!--Region Buttons-->
-        <Button x:Name="turn" Height="50" Width="150" Content="END TURN" FontSize="20" Grid.Column="2" Margin="54,339,47,117"/>
+        <Button x:Name="turn" Height="50" Width="150" Content="END TURN" FontSize="20" Grid.Column="2" Margin="54,339,47,117" Click="nextTurn_Click"/>
         <Ellipse x:Name="help" Height="25" Width="25" Grid.Column="2" Margin="216,316,10,10" Grid.Row="1" Fill="Blue" Stroke="Black" StrokeThickness="2"/>
         <Button x:Name="roll" Height="50" Width="100" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="76,101,75,200" Grid.Row="1"/>
         <Image x:Name="die_placement" Margin="62,184,61,67" Grid.Row="1" Grid.Column="2">

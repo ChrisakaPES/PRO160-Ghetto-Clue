@@ -135,6 +135,7 @@ namespace GhettoClue
 				  }}
 			};
 			player.ItemsSource = players;
+            player.SelectedIndex = 0;
 #endregion
 			#region Detective Notes
 
@@ -244,6 +245,23 @@ namespace GhettoClue
 		private void nextTurn_Click(object sender, RoutedEventArgs e)
 		{
 			//turn taking
+            MessageBoxResult res= MessageBox.Show("Are you sure You would like to End your turn?", "50%Fact, 50% Magic, 100% Results", MessageBoxButton.YesNo);
+            if (res == MessageBoxResult.Yes)
+            {
+                int currentPlayerIndex = player.SelectedIndex;
+                currentPlayerIndex++;
+                if (currentPlayerIndex == players.Count())
+                {
+                    currentPlayerIndex = 0;
+                }
+                player.SelectedIndex = currentPlayerIndex;
+                rolled = 0;
+                roll.IsEnabled = true;
+            }
+            else if (res == MessageBoxResult.No)
+            {
+
+            }
 		}
 
 		private void suggest_Click(object sender, RoutedEventArgs e)
