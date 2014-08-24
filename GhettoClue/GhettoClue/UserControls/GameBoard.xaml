@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="GhettoClue.GameBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="857" d:DesignWidth="947">
+
+<!--Region Style-->
+    <UserControl.Resources>
+        <Style x:Key="rectStyle" TargetType="Rectangle">
+            <Setter Property="Fill" Value="Black"/>
+            <Setter Property="Stroke" Value="Gray"/>
+            <Setter Property="StrokeThickness" Value="3"/>
+        </Style>
+    </UserControl.Resources>
+<!--End Region-->
+    
+    <Canvas x:Name="gameboard" Grid.Column="0" Background="LightGray" Grid.RowSpan="3"  Margin="0,0,0,3">
+        <Grid x:Name="gameGrid" Height="854" Width="947">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="84*"/>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="84*"/>
+                <RowDefinition Height="85"/>
+                <RowDefinition Height="84*"/>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="84*"/>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="84*"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+            </Grid.ColumnDefinitions>
+<!--Region WalkWays and Spawns-->
+            <Rectangle Grid.Column="2" Grid.Row="0" Fill="Chocolate"/>
+            <Rectangle Grid.Column="6" Grid.Row="0" Fill="DarkGray" />
+            <Rectangle Grid.Column="0" Grid.Row="2" Fill="Yellow"/>
+            <Rectangle Grid.Column="0" Grid.Row="6" Fill="Green" />
+            <Rectangle Grid.Column="2" Grid.Row="1" Style="{StaticResource rectStyle}" />
+            <Rectangle Grid.Column="6" Grid.Row="1" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="1" Grid.Row="2" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="2" Grid.Row="2" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="3" Grid.Row="2" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="4" Grid.Row="2" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="5" Grid.Row="2" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="6" Grid.Row="2" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="6" Grid.Row="2" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="7" Grid.Row="2" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="8" Grid.Row="2" Fill="Red"/>
+            <Rectangle Grid.Column="2" Grid.Row="3" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="3" Grid.Row="3" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="5" Grid.Row="3" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="6" Grid.Row="3" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="7" Grid.Row="3" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="8" Grid.Row="3" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="2" Grid.Row="4" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="3" Grid.Row="4" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="5" Grid.Row="4" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="6" Grid.Row="4" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="7" Grid.Row="4" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="8" Grid.Row="4" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="2" Grid.Row="5" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="3" Grid.Row="5" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="4" Grid.Row="5" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="5" Grid.Row="5" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="6" Grid.Row="5" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="7" Grid.Row="5" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="8" Grid.Row="5" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="1" Grid.Row="6" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="2" Grid.Row="6" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="3" Grid.Row="7"  Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="4" Grid.Row="7"  Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="5" Grid.Row="7"  Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="6" Grid.Row="6" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="7" Grid.Row="6" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="8" Grid.Row="6" Fill="Cyan"/>
+            <Rectangle Grid.Column="2" Grid.Row="7" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="6" Grid.Row="7" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="2" Grid.Row="8" Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="6" Grid.Row="8"  Style="{StaticResource rectStyle}"/>
+            <Rectangle Grid.Column="6" Grid.Row="8"  Style="{StaticResource rectStyle}" Margin="0,85,0,0" Grid.RowSpan="2"/>
+            <Rectangle Grid.Column="2" Grid.Row="8"  Style="{StaticResource rectStyle}" Margin="0,85,0,0" Grid.RowSpan="2"/>
+            <Rectangle Grid.Column="3" Grid.Row="8"  Style="{StaticResource rectStyle}" Margin="0,1,0,0"/>
+            <Rectangle Grid.Column="4" Grid.Row="8"  Style="{StaticResource rectStyle}" Margin="0,1,0,0"/>
+            <Rectangle Grid.Column="5" Grid.Row="8"  Style="{StaticResource rectStyle}" Margin="1,0,0,1"/>
+<!--End Region-->
+
+<!--Region Rooms-->
+            <Label Background="AliceBlue" Margin="5,0,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2" Content="The Corner"/>
+            <Label Background="AliceBlue" Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Column="7" Content="KFC"/>
+            <Label Background="AliceBlue" Margin="-5,0,5,0" Grid.RowSpan="3" Grid.ColumnSpan="2" Grid.Row="7" Content="Baby Mamma's Pad"/>
+            <Label Background="AliceBlue" Grid.RowSpan="3" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="7" Content="Laundrymat"/>
+            <Label Background="AliceBlue" Grid.RowSpan="2" Grid.Column="4" Grid.Row="3" Content="Light Room&#xD;&#xA;Crime Scene" Margin="0,1,0,0"/>
+            <Label Background="AliceBlue" Margin="0,1,5,0" Grid.RowSpan="3" Grid.ColumnSpan="2" Grid.Row="3" Content="Local Prison"/>
+            <Label Background="AliceBlue" Grid.RowSpan="3" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="3" Content="Grow House"/>
+            <Label Background="AliceBlue" Margin="0,84,0,0" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="8" Content="Back Alley" Grid.RowSpan="2"/>
+            <Label Background="AliceBlue" Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="3" Content="Liquor Store"/>
+            <Label Background="AliceBlue" Grid.ColumnSpan="3" Grid.Column="3" Content="The Spot" Grid.Row="6"/>
+<!--End Region-->
+        </Grid>
+        <Label x:Name="Token1" Canvas.Left="848" Canvas.Top="529" RenderTransformOrigin="0.197,1.932">
+            <!--<Image Source="Tokens/Token(1).png"/>-->
+        </Label>
+    </Canvas>
+</UserControl>
+

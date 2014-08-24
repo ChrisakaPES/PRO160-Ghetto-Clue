@@ -150,28 +150,28 @@ namespace GhettoClue
 
 		private void player_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			int i = player.SelectedIndex;
+            int i = player.SelectedIndex;
 
-			Player currentPlayer = players[i];
-			CharacterGrid.ItemsSource = currentPlayer.characterCards;
-			WeaponGrid.ItemsSource = currentPlayer.weaponCards;
-			RoomGrid.ItemsSource = currentPlayer.roomCards;
+            Player currentPlayer = players[i];
+            CharacterGrid.ItemsSource = currentPlayer.characterCards;
+            WeaponGrid.ItemsSource = currentPlayer.weaponCards;
+            RoomGrid.ItemsSource = currentPlayer.roomCards;
 
-			//Removes the extra column that wasn't necessary for the cards area
-			CharacterGrid.Columns.Remove(CharacterGrid.Columns[0]);
-			WeaponGrid.Columns.Remove(WeaponGrid.Columns[0]);
-			RoomGrid.Columns.Remove(RoomGrid.Columns[0]);
-			
-			DetectiveNotes.DataContext = currentPlayer.MyDetectiveList;
+            //Removes the extra column that wasn't necessary for the cards area
+            CharacterGrid.Columns.Remove(CharacterGrid.Columns[0]);
+            WeaponGrid.Columns.Remove(WeaponGrid.Columns[0]);
+            RoomGrid.Columns.Remove(RoomGrid.Columns[0]);
 
-			DNotes_Characters.ItemsSource = currentPlayer.MyDetectiveList.CharactersList;
-			DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
-			DNotes_Rooms.ItemsSource = currentPlayer.MyDetectiveList.RoomsList;
+            DetectiveNotes.DataContext = currentPlayer.MyDetectiveList;
 
-			//Removes the extra column that wasn't necessary for the detective list
-			DNotes_Characters.Columns.Remove(DNotes_Characters.Columns[1]);
-			DNotes_Weapons.Columns.Remove(DNotes_Weapons.Columns[1]);
-			DNotes_Rooms.Columns.Remove(DNotes_Rooms.Columns[1]);
+            DNotes_Characters.ItemsSource = currentPlayer.MyDetectiveList.CharactersList;
+            DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
+            DNotes_Rooms.ItemsSource = currentPlayer.MyDetectiveList.RoomsList;
+
+            //Removes the extra column that wasn't necessary for the detective list
+            DNotes_Characters.Columns.Remove(DNotes_Characters.Columns[1]);
+            DNotes_Weapons.Columns.Remove(DNotes_Weapons.Columns[1]);
+            DNotes_Rooms.Columns.Remove(DNotes_Rooms.Columns[1]);
 
 		}
 
@@ -231,12 +231,12 @@ namespace GhettoClue
 
 		private void gameboard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
-			System.Windows.Point position = e.GetPosition(this);
-			double pX = position.X;
-			double pY = position.Y;
+            //System.Windows.Point position = e.GetPosition(this);
+            //double pX = position.X;
+            //double pY = position.Y;
 
-			Canvas.SetLeft(Token1, pX - 20);
-			Canvas.SetTop(Token1, pY - 30);
+            //Canvas.SetLeft(Token1, pX - 20);
+            //Canvas.SetTop(Token1, pY - 30);
 
 		}
 		
