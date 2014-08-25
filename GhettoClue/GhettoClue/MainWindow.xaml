@@ -58,7 +58,7 @@
         </StackPanel>
         <!--End Region-->
 
-        <gb:GameBoard x:Name="gameControl"/>
+        <gb:GameBoard x:Name="gameControl" Loaded="gameControl_Loaded"/>
 
         <!--Region Buttons-->
         <Button x:Name="turn" Height="50" Width="150" Content="END TURN" FontSize="20" Grid.Column="2" Margin="54,339,47,117" Click="nextTurn_Click"/>

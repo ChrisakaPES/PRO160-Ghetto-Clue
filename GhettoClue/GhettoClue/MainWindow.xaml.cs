@@ -293,6 +293,7 @@ namespace GhettoClue
             }
         }
 
+<<<<<<< HEAD
         private void help_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
@@ -308,6 +309,12 @@ namespace GhettoClue
             rules2.Visibility = System.Windows.Visibility.Hidden;
             rules3.Visibility = System.Windows.Visibility.Hidden;
         }
+=======
+        private void gameControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+>>>>>>> origin/master
 	}
 }
 
