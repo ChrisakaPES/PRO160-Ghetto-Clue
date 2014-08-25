@@ -2,8 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:gb="clr-namespace:GhettoClue"
-        Title="MainWindow" Height="890.135" Width="1430.906">
-    <Grid>
+        Title="MainWindow" Height="890.135" Width="1461.636">
+    <Grid Height="860" VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="506"/>
             <RowDefinition Height="351"/>
@@ -15,7 +15,7 @@
             <ColumnDefinition Width="251*"/>
         </Grid.ColumnDefinitions>
 
-<!--Region PlayerBox-->
+        <!--Region PlayerBox-->
         <ComboBox x:Name="player" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,306" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -38,37 +38,63 @@
         </ComboBox>
 
         <Label Content="Characters:" FontSize="20" HorizontalAlignment="Center" Grid.Column="2" Margin="76,10,72,446"/>
-<!--End Region-->
-        
-<!--Region Player Hand-->
+        <!--End Region-->
+
+        <!--Region Player Hand-->
         <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="DarkOrchid" Grid.Row="1" Grid.Column="1">
             <Label Content="Yo Hand:" FontSize="20" HorizontalAlignment="Center"/>
             <DataGrid CanUserAddRows="False" x:Name="CharacterGrid" Background="BlanchedAlmond" ItemsSource="{Binding}" />
             <DataGrid CanUserAddRows="False" x:Name="WeaponGrid" ItemsSource="{Binding}" Background="CadetBlue"/>
             <DataGrid CanUserAddRows="False" x:Name="RoomGrid" ItemsSource="{Binding}" Background="Aquamarine" />
         </StackPanel>
-<!--End Region-->
-        
-<!--Region Detective Notes-->
+        <!--End Region-->
+
+        <!--Region Detective Notes-->
         <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="DeepPink">
             <Label Content="Detective Notes:" FontSize="20" HorizontalAlignment="Center" />
             <DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" ItemsSource="{Binding}"/>
             <DataGrid CanUserAddRows="False" x:Name="DNotes_Weapons" ItemsSource="{Binding}" />
             <DataGrid CanUserAddRows="False" x:Name="DNotes_Rooms" ItemsSource="{Binding}" />
         </StackPanel>
-<!--End Region-->
+        <!--End Region-->
 
         <gb:GameBoard x:Name="gameControl"/>
 
-<!--Region Buttons-->
+        <!--Region Buttons-->
         <Button x:Name="turn" Height="50" Width="150" Content="END TURN" FontSize="20" Grid.Column="2" Margin="54,339,47,117" Click="nextTurn_Click"/>
-        <Ellipse x:Name="help" Height="25" Width="25" Grid.Column="2" Margin="216,316,10,10" Grid.Row="1" Fill="Blue" Stroke="Black" StrokeThickness="2"/>
+        <Ellipse x:Name="help" Height="25" Width="25" Grid.Column="2" Margin="216,316,10,10" Grid.Row="1" Fill="Blue" Stroke="Black" StrokeThickness="2" MouseLeftButtonDown="help_MouseDown"/>
         <Button x:Name="roll" Height="50" Width="100" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="76,101,75,200" Grid.Row="1"/>
         <Image x:Name="die_placement" Margin="62,184,61,67" Grid.Row="1" Grid.Column="2">
             <Image.Source>
                 <BitmapImage UriSource="Images/1.png" />
             </Image.Source>
         </Image>
-<!--End Region-->
+
+        <!--End Region-->
+
+        <!--Region Spash Screen-->
+        <Label Background="Black" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}"/>
+        <Label x:Name="welcome" Content="WELCOME TO GHETTO CLUE!" FontSize="30" Foreground="White" Margin="507,10,10,436" Visibility="{Binding ElementName=start, Path=start_Click}"/>
+        <Button x:Name="start" Click="start_Click" Height="100" Width="200" Content="Start Game" FontSize="25" Margin="615,241,132,10" Grid.Row="1"/>
+        <Label x:Name="ruleHeader" Content="Rules:" FontSize="25" Foreground="White" Margin="652,63,209,402" Visibility="{Binding ElementName=start, Path=start_Click}"/>
+        <TextBlock x:Name="rules1" TextWrapping="WrapWithOverflow" FontSize="18" Foreground="White" Grid.ColumnSpan="2" Margin="225,131,0,220" Visibility="{Binding ElementName=start, Path=start_Click}">
+            When the game is started,  three cards — one suspect, one weapon, and one area — are chosen at random and put into a special envelope, representing the facts to the murder case. The remaining cards are distributed amongst the players, shown in the area under “Yo Hand:”.
+   
+            The starting player is Lafawnda, moving clockwise around the game board. Players roll the dice and move along the board’s walkways (the black squares) or into the locations accordingly.
+          
+            The goal is to deduce the details of the murder by making suggestions to other players, selecting a character, a weapon, and a location.
+        </TextBlock>
+        <TextBlock x:Name="rules2" TextWrapping="WrapWithOverflow" FontSize="18" Foreground="White" Grid.ColumnSpan="2" Margin="225,305,0,19" Visibility="{Binding ElementName=start, Path=start_Click}">
+           The player to the left of the suggesting player must then disprove the suggestion, if the can, by showing the suggesting player ONLY ONE of the cards in the suggestion. If the player to the left does not have any of the suggested cards, 
+                    it moves to the next person clockwise until a card is shown or comes back to the suggesting player. That player does not advise the other players whether the hold any of the three cards. 
+
+            Once a player has sufficiently narrowed down the solution(by using the checkboxes in the area called “Detective Notes”), that player can make an Accusation and name any three elements they want.
+        </TextBlock>
+        <TextBlock x:Name="rules3" TextWrapping="WrapWithOverflow" FontSize="18" Foreground="White" Grid.ColumnSpan="2" Margin="225,473,0,258" Grid.RowSpan="2" Visibility="{Binding ElementName=start, Path=start_Click}">
+            The accusing player will then check the accusation based on the cards in the envelope, no other players will see these cards.
+            If incorrect, they are no longer part of the game except to disprove suggestions from other players. If correct, the solution cards are shown to the other players and the game ends.
+        </TextBlock>
+        <!--End Region-->
+
     </Grid>
 </Window>

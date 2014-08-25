@@ -33,6 +33,7 @@ namespace GhettoClue
 		public MainWindow()
 		{
 			InitializeComponent();
+
 			#region PlayerVariables
 			var LafC = RandomEnumValue<CharacterCards>();
 			var LafR = RandomEnumValue<room>();
@@ -290,6 +291,22 @@ namespace GhettoClue
             {
                 e.Column.Header = "Known";
             }
+        }
+
+        private void help_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void start_Click(object sender, RoutedEventArgs e)
+        {
+            SpashScreen.Visibility = System.Windows.Visibility.Hidden;
+            welcome.Visibility = System.Windows.Visibility.Hidden;
+            start.Visibility = System.Windows.Visibility.Hidden;
+            ruleHeader.Visibility = System.Windows.Visibility.Hidden;
+            rules1.Visibility = System.Windows.Visibility.Hidden;
+            rules2.Visibility = System.Windows.Visibility.Hidden;
+            rules3.Visibility = System.Windows.Visibility.Hidden;
         }
 	}
 }
