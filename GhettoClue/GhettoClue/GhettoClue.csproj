@@ -56,6 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\EnumToString.cs" />
+    <Compile Include="Movement\Cell.cs" />
+    <Compile Include="Movement\MoveConverter.cs" />
     <Compile Include="SuggestionPopUpWindow.xaml.cs">
       <DependentUpon>SuggestionPopUpWindow.xaml</DependentUpon>
     </Compile>
@@ -115,7 +117,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Tokens\GHETTOGIRL.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -137,9 +141,6 @@
     <Resource Include="Images\6.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Tokens\Token%281%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Tokens\gun.png" />

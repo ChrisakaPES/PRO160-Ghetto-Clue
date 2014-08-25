@@ -291,6 +291,11 @@ namespace GhettoClue
                 e.Column.Header = "Known";
             }
         }
+
+        private void gameControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
 	}
 }
 
