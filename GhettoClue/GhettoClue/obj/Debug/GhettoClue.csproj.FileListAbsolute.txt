@@ -100,3 +100,7 @@ F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\Gh
 F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\Help.baml
 F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\Help.g.cs
 F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\SuggestionPopUpWindow.baml
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\Help.baml
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\App.baml
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\Help.g.cs
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue_Content.g.cs

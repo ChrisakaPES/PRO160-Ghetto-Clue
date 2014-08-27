@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GhettoClue.Model;
+using GhettoClue.Models;
 using System.Collections.ObjectModel;
 using System.Windows.Media;
 
-namespace GhettoClue.Model
+namespace GhettoClue.Models
 {
     //public enum characters
     //{

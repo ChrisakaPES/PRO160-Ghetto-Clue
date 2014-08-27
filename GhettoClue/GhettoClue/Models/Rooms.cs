@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GhettoClue.Model
+namespace GhettoClue.Models
 {
 	public enum Rooms
 	{

@@ -1,4 +1,4 @@
-﻿using GhettoClue.Model;
+﻿using GhettoClue.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
