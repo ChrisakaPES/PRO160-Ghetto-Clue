@@ -19,5 +19,7 @@ namespace GhettoClue.Movement
         {
             throw new NotImplementedException();
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

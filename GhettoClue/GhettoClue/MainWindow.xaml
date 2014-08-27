@@ -58,11 +58,11 @@
         </StackPanel>
         <!--End Region-->
 
-        <gb:GameBoard x:Name="gameControl" Loaded="gameControl_Loaded"/>
+        <gb:GameBoard x:Name="gameControl"/>
 
         <!--Region Buttons-->
         <Button x:Name="turn" Height="50" Width="150" Content="END TURN" FontSize="20" Grid.Column="2" Margin="54,339,47,117" Click="nextTurn_Click"/>
-        <Ellipse x:Name="help" Height="25" Width="25" Grid.Column="2" Margin="216,316,10,10" Grid.Row="1" Fill="Blue" Stroke="Black" StrokeThickness="2" MouseLeftButtonDown="help_MouseDown"/>
+        <Button x:Name="help" Content="?" FontSize="18" Grid.Column="2" Margin="209,306,18,10" Grid.Row="1" Click="help_MouseDown"/>
         <Button x:Name="roll" Height="50" Width="100" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="76,101,75,200" Grid.Row="1"/>
         <Image x:Name="die_placement" Margin="62,184,61,67" Grid.Row="1" Grid.Column="2">
             <Image.Source>
@@ -71,6 +71,8 @@
         </Image>
 
         <!--End Region-->
+
+        <!--Region Help Button-->
 
         <!--Region Spash Screen-->
         <Label Background="Black" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}"/>
@@ -84,7 +86,7 @@
           
             The goal is to deduce the details of the murder by making suggestions to other players, selecting a character, a weapon, and a location.
         </TextBlock>
-        <TextBlock x:Name="rules2" TextWrapping="WrapWithOverflow" FontSize="18" Foreground="White" Grid.ColumnSpan="2" Margin="225,305,0,19" Visibility="{Binding ElementName=start, Path=start_Click}">
+        <TextBlock x:Name="rules2" TextWrapping="WrapWithOverflow" FontSize="18" Foreground="White" Grid.ColumnSpan="2" Margin="225,299,0,25" Visibility="{Binding ElementName=start, Path=start_Click}">
            The player to the left of the suggesting player must then disprove the suggestion, if the can, by showing the suggesting player ONLY ONE of the cards in the suggestion. If the player to the left does not have any of the suggested cards, 
                     it moves to the next person clockwise until a card is shown or comes back to the suggesting player. That player does not advise the other players whether the hold any of the three cards. 
 

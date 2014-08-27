@@ -1,0 +1,36 @@
+﻿<Window x:Class="GhettoClue.Help"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Help" Height="430" Width="317">
+    <StackPanel Background="Black">
+        <Label Foreground="White" Content="Help" FontFamily="Stencil"  HorizontalContentAlignment="Center" FontSize="23"/>
+        <Label Height="19"/>
+        <TextBlock x:Name="help1" TextWrapping="WrapWithOverflow" FontSize="12"  FontFamily="Century Gothic" Foreground="White">
+         ~ Use the roll button to roll the dice to move, then move amount of spaces
+        </TextBlock>
+        <Label/>
+        <TextBlock x:Name="rules2" TextWrapping="WrapWithOverflow" FontSize="12" FontFamily="Century Gothic" Foreground="White">
+         ~ Use the "Suggestion" button to ask players if they have certain cards that you don't
+        </TextBlock>
+        <Label/>
+        <TextBlock x:Name="help3" TextWrapping="WrapWithOverflow" FontSize="12" FontFamily="Century Gothic" Foreground="White">
+         ~ Use the "Disprove" button to show a card upon a Suggestion from another player
+        </TextBlock>
+        <Label/>
+        <TextBlock x:Name="rules4" TextWrapping="WrapWithOverflow" FontSize="12" FontFamily="Century Gothic" Foreground="White">
+         ~ Use the "Accuse" button to make a final guess to the murder case
+        </TextBlock>
+        <Label/>
+        <TextBlock x:Name="help5" TextWrapping="WrapWithOverflow" FontSize="12" FontFamily="Century Gothic" Foreground="White">
+         ~ Use the "End Turn" button to move onto the next player when your turn is done
+        </TextBlock>
+        <Label/>
+        <TextBlock x:Name="help6" TextWrapping="WrapWithOverflow" FontSize="12" FontFamily="Century Gothic" Foreground="White">
+         ~ "Detective Notes" is to help narrow down what is in the murder case
+        </TextBlock>
+        <Label/>
+        <TextBlock x:Name="help7" TextWrapping="WrapWithOverflow" FontSize="12" FontFamily="Century Gothic" Foreground="White">
+         ~ "Yo Hand" is where your cards are displayed
+        </TextBlock>
+    </StackPanel>
+</Window>
