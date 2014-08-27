@@ -2,11 +2,12 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:gb="clr-namespace:GhettoClue"
+        xmlns:dl="clr-namespace:GhettoClue.UserControls"
         Title="MainWindow" Height="890.135" Width="1461.636">
     <Grid Height="860" VerticalAlignment="Top">
         <Grid.RowDefinitions>
-            <RowDefinition Height="506"/>
-            <RowDefinition Height="351"/>
+            <RowDefinition Height="669"/>
+            <RowDefinition Height="188"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -16,7 +17,7 @@
         </Grid.ColumnDefinitions>
 
         <!--Region PlayerBox-->
-        <ComboBox x:Name="playerComboBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,306" SelectionChanged="player_SelectionChanged">
+        <ComboBox x:Name="playerComboBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,463" SelectionChanged="player_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -37,36 +38,40 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <Label Content="Characters:" FontSize="20" HorizontalAlignment="Center" Grid.Column="2" Margin="76,10,72,446"/>
+        <Label Content="Characters:" FontSize="20" HorizontalAlignment="Center" Grid.Column="2" Margin="82,10,78,446" Width="107"/>
         <!--End Region-->
 
         <!--Region Player Hand-->
         <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="DarkOrchid" Grid.Row="1" Grid.Column="1">
             <Label Content="Yo Hand:" FontSize="20" HorizontalAlignment="Center"/>
-            <DataGrid CanUserAddRows="False" x:Name="CharacterGrid" Background="BlanchedAlmond" >
-                
-            </DataGrid>
-            <DataGrid CanUserAddRows="False" x:Name="WeaponGrid" ItemsSource="{Binding}" Background="CadetBlue"/>
-            <DataGrid CanUserAddRows="False" x:Name="RoomGrid" ItemsSource="{Binding}" Background="Aquamarine" />
+            <DataGrid CanUserAddRows="False" x:Name="CharacterGrid" Background="BlanchedAlmond" />
+            <DataGrid CanUserAddRows="False" x:Name="WeaponGrid" Background="CadetBlue"/>
+            <DataGrid CanUserAddRows="False" x:Name="RoomGrid" Background="Aquamarine" />
         </StackPanel>
         <!--End Region-->
 
         <!--Region Detective Notes-->
         <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="DeepPink">
             <Label Content="Detective Notes:" FontSize="20" HorizontalAlignment="Center" />
-            <DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" />
-            <DataGrid CanUserAddRows="False" x:Name="DNotes_Weapons" ItemsSource="{Binding}" />
-            <DataGrid CanUserAddRows="False" x:Name="DNotes_Rooms" ItemsSource="{Binding}" />
+            <dl:DetectiveControl x:Name="DNotes" />
         </StackPanel>
         <!--End Region-->
 
         <gb:GameBoard x:Name="gameControl"/>
 
         <!--Region Buttons-->
-        <Button x:Name="turn" Height="50" Width="150" Content="END TURN" FontSize="20" Grid.Column="2" Margin="54,339,47,117" Click="nextTurn_Click"/>
-        <Button x:Name="help" Content="?" FontSize="18" Grid.Column="2" Margin="209,306,18,10" Grid.Row="1" Click="help_MouseDown"/>
-        <Button x:Name="roll" Height="50" Width="100" Click="roll_Click" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="76,101,75,200" Grid.Row="1"/>
-        <Image x:Name="die_placement" Margin="62,184,61,67" Grid.Row="1" Grid.Column="2">
+        <Button x:Name="turn" Content="END TURN" FontSize="20" Grid.Column="2" Margin="62,339,55,244" Click="nextTurn_Click"/>
+        <Button x:Name="help" Content="?" FontSize="18" Grid.Column="2" Margin="217,143,10,10" Grid.Row="1" Click="help_MouseDown" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="roll" Click="roll_Click" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="82,463,85,154"/>
+        <Image x:Name="die_placement" Margin="79,534,73,44" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
             <Image.Source>
                 <BitmapImage UriSource="Images/1.png" />
             </Image.Source>
@@ -74,10 +79,9 @@
 
         <!--End Region-->
 
-        <!--Region Help Button-->
         <!--Region Spash Screen-->
 
-        <Label Background="Black" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}"/>
+        <!--<Label Background="Black" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}"/>
         <Label x:Name="welcome" Content="WELCOME TO GHETTO CLUE!" FontSize="30" Foreground="White" Margin="507,10,10,436" Visibility="{Binding ElementName=start, Path=start_Click}"/>
         <Button x:Name="start" Click="start_Click" Height="100" Width="200" Content="Start Game" FontSize="25" Margin="615,241,132,10" Grid.Row="1"/>
         <Label x:Name="ruleHeader" Content="Rules:" FontSize="25" Foreground="White" Margin="652,63,209,402" Visibility="{Binding ElementName=start, Path=start_Click}"/>
@@ -97,7 +101,7 @@
         <TextBlock x:Name="rules3" TextWrapping="WrapWithOverflow" FontSize="18" Foreground="White" Grid.ColumnSpan="2" Margin="225,473,0,258" Grid.RowSpan="2" Visibility="{Binding ElementName=start, Path=start_Click}">
             The accusing player will then check the accusation based on the cards in the envelope, no other players will see these cards.
             If incorrect, they are no longer part of the game except to disprove suggestions from other players. If correct, the solution cards are shown to the other players and the game ends.
-        </TextBlock>
+        </TextBlock>-->
         <!--End Region-->
 
     </Grid>

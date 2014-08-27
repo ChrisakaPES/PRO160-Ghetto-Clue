@@ -215,10 +215,6 @@ namespace GhettoClue
             theAnswer = new MurderScenario(murderer, murderHouse, murderWeapon);
         }
 
-		private T RandomEnumValue<T>()
-		{
-			return Enum.GetValues(typeof(T)).Cast<T>().OrderBy(x => rand.Next()).FirstOrDefault(); 
-		}
 
 		private void player_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
@@ -233,21 +229,11 @@ namespace GhettoClue
             WeaponGrid.ItemsSource = currentPlayer.weaponCards;
             RoomGrid.ItemsSource = currentPlayer.roomCards;
 
-            //Removes the extra column that wasn't necessary for the cards area
-            //CharacterGrid.Columns.Remove(CharacterGrid.Columns[0]);
-            //WeaponGrid.Columns.Remove(WeaponGrid.Columns[0]);
-            //RoomGrid.Columns.Remove(RoomGrid.Columns[0]);
+            //DetectiveNotes.DataContext = currentPlayer;
 
-            DetectiveNotes.DataContext = currentPlayer;
-
-            DNotes_Characters.ItemsSource = currentPlayer.characterCards;
-            DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
-            DNotes_Rooms.ItemsSource = currentPlayer.MyDetectiveList.RoomsList;
-
-            //Removes the extra column that wasn't necessary for the detective list
-            //DNotes_Characters.Columns.Remove(DNotes_Characters.Columns[1]);
-            //DNotes_Weapons.Columns.Remove(DNotes_Weapons.Columns[1]);
-            //DNotes_Rooms.Columns.Remove(DNotes_Rooms.Columns[1]);
+            //DNotes_Characters.ItemsSource = currentPlayer.characterCards;
+            //DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
+            //DNotes_Rooms.ItemsSource = currentPlayer.MyDetectiveList.RoomsList;
 
 		}
 
@@ -359,30 +345,18 @@ namespace GhettoClue
 		}
 		#endregion
 
-        private void DNotes_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
-        {
-            if (e.Column.Header.ToString() == "show")
-            {
-                e.Column.Header = "Known";
-            }
-        }
 
 
-        private void help_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-       private void start_Click(object sender, RoutedEventArgs e)
-       {
-           SpashScreen.Visibility = System.Windows.Visibility.Hidden;
-           welcome.Visibility = System.Windows.Visibility.Hidden;
-           start.Visibility = System.Windows.Visibility.Hidden;
-           ruleHeader.Visibility = System.Windows.Visibility.Hidden;
-           rules1.Visibility = System.Windows.Visibility.Hidden;
-           rules2.Visibility = System.Windows.Visibility.Hidden;
-           rules3.Visibility = System.Windows.Visibility.Hidden;
-       }
+       //private void start_Click(object sender, RoutedEventArgs e)
+       //{
+       //    SpashScreen.Visibility = System.Windows.Visibility.Hidden;
+       //    welcome.Visibility = System.Windows.Visibility.Hidden;
+       //    start.Visibility = System.Windows.Visibility.Hidden;
+       //    ruleHeader.Visibility = System.Windows.Visibility.Hidden;
+       //    rules1.Visibility = System.Windows.Visibility.Hidden;
+       //    rules2.Visibility = System.Windows.Visibility.Hidden;
+       //    rules3.Visibility = System.Windows.Visibility.Hidden;
+       //}
 
         private void help_MouseDown(object sender, RoutedEventArgs e)
         {
