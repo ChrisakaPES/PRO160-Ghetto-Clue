@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +22,29 @@ namespace GhettoClue
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class MainWindow : Window, INotifyPropertyChanged
 	{
 		#region Variables
 		List<Player> players = new List<Player>();
 		Random rand = new Random();
+        Random gen = new Random();
 		public int rolled;
+        private int _roll;
+        public int NumRoll
+        {
+            get
+            {
+                return _roll;
+            }
+            set
+            {
+                _roll = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("NumRoll"));
+                }
+            }
+        }
         List<CharacterEnum> startupCharacters = new List<CharacterEnum>
             {
                 CharacterEnum.Lafawnduh, CharacterEnum.DaMarcus,CharacterEnum.Watermelondrea,CharacterEnum.Jake,CharacterEnum.Ladasha,CharacterEnum.JuanCarlos
@@ -50,33 +68,6 @@ namespace GhettoClue
 		public MainWindow()
 		{
 			InitializeComponent();
-
-			#region PlayerVariables
-
-            //var LafC = RandomEnumValue<Characters>();
-            //var LafR = RandomEnumValue<Rooms>();
-            //var LafW = RandomEnumValue<Weapons>();
-
-            //var DaC = RandomEnumValue<Characters>();
-            //var DaR = RandomEnumValue<Rooms>();
-            //var DaW = RandomEnumValue<Weapons>();
-
-            //var WatC = RandomEnumValue<Characters>();
-            //var WatR = RandomEnumValue<Rooms>();
-            //var WatW = RandomEnumValue<Weapons>();
-
-            //var JC = RandomEnumValue<Characters>();
-            //var JR = RandomEnumValue<Rooms>();
-            //var JW = RandomEnumValue<Weapons>();
-
-            //var LaC = RandomEnumValue<Characters>();
-            //var LaR = RandomEnumValue<Rooms>();
-            //var LaW = RandomEnumValue<Weapons>();
-
-            //var JuanC = RandomEnumValue<Characters>();
-            //var JuanR = RandomEnumValue<Rooms>();
-            //var JuanW = RandomEnumValue<Weapons>();
-			#endregion
 			#region Players
             ObservableCollection<ObservableCollection<CharacterEnum>> allCharacterLists = new ObservableCollection<ObservableCollection<CharacterEnum>>()
             {
@@ -186,7 +177,8 @@ namespace GhettoClue
 
 #endregion
 
-			
+            gameControl.UpdatePlayers(players);
+            gameControl.CreateBoard();
 		}
 
         /** 
@@ -237,10 +229,10 @@ namespace GhettoClue
 		private void roll_Click(object sender, RoutedEventArgs e)
 		{
 			//rolls the dice and calls the method to change the background
-			Random gen = new Random();
-			rolled = gen.Next(1, 7);
-
-			roll_Die(rolled);
+			
+			NumRoll = gen.Next(1, 7);
+            gameControl.HighlightSpots(NumRoll);
+            roll_Die(NumRoll);
 		}
 
 		public void roll_Die(int num)
@@ -304,6 +296,8 @@ namespace GhettoClue
                 }
                 playerComboBox.SelectedIndex = currentPlayerIndex;
                 rolled = 0;
+                gameControl.UpdateNextTurn((Player)playerComboBox.SelectedItem);
+                gameControl.clearHighlights();
                 roll.IsEnabled = true;
             }
             else if (res == MessageBoxResult.No)
@@ -351,6 +345,8 @@ namespace GhettoClue
             help.ShowDialog();
         }
 
-	}
+
+        public event PropertyChangedEventHandler PropertyChanged;
+    }
 }
 

@@ -1,11 +1,11 @@
 ﻿<Application x:Class="GhettoClue.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mod="clr-namespace:GhettoClue.Movement"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <ImageBrush x:Key="Closed" ImageSource="Tokens/GHETTOGIRL.jpg"/>
-            <SolidColorBrush x:Key="Open" Color="Black"/>
+            <mod:StatusConverter x:Key="StatusToColor"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

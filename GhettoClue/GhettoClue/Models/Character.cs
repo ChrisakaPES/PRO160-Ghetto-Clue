@@ -8,7 +8,7 @@ namespace GhettoClue.Models
 {
 	public enum CharacterEnum
 	{
-		Lafawnduh, DaMarcus,Watermelondrea, Jake, Ladasha, JuanCarlos
+		Lafawnduh, DaMarcus,Watermelondrea, Jake, Ladasha, JuanCarlos, Empty
 	}
     public class Character
     {
