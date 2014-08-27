@@ -5,15 +5,15 @@
         xmlns:dl="clr-namespace:GhettoClue.UserControls"
         xmlns:con="clr-namespace:GhettoClue.Converters"
         Title="MainWindow" Height="890.135" Width="1461.636">
-    
+
     <Window.Resources>
         <con:EnumToString x:Key="EnumToString"/>
         <ObjectDataProvider x:Key="possibleActionsEnum" MethodName="GetValues"/>
     </Window.Resources>
     <Grid Height="860" VerticalAlignment="Top">
         <Grid.RowDefinitions>
-            <RowDefinition Height="669"/>
-            <RowDefinition Height="188"/>
+            <RowDefinition Height="508"/>
+            <RowDefinition Height="349"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <!--Region PlayerBox-->
-        <ComboBox x:Name="playerComboBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,463" SelectionChanged="player_SelectionChanged" IsReadOnly="True" IsEnabled="False">
+        <ComboBox x:Name="playerComboBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,342" SelectionChanged="player_SelectionChanged" IsReadOnly="True" IsEnabled="False">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -47,67 +47,61 @@
         <Label Content="Characters:" FontSize="20" HorizontalAlignment="Center" Grid.Column="2" Margin="82,10,78,446" Width="107"/>
         <!--End Region-->
 
-        
+
         <!--Region Detective Notes-->
         <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="DeepPink">
             <Label Content="Detective Notes:" FontSize="20" HorizontalAlignment="Center" />
             <DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" AutoGenerateColumns="False" ItemsSource="{Binding}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Character"  Binding="{Binding Path=CharacterValue}"/>
-                    <DataGridCheckBoxColumn Header="Show" Binding="{Binding Path=Show}"/>
+                    <DataGridCheckBoxColumn Header="Known" Binding="{Binding Path=Show}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <DataGrid CanUserAddRows="False" AutoGenerateColumns="False" x:Name="DNotes_Weapons" ItemsSource="{Binding}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Weapon" Binding="{Binding Path=WeaponValue}"/>
-                    <DataGridCheckBoxColumn Header="Show" Binding="{Binding Path=Show}"/>
+                    <DataGridCheckBoxColumn Header="Known" Binding="{Binding Path=Show}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <DataGrid CanUserAddRows="False" x:Name="DNotes_Rooms" ItemsSource="{Binding}" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Room" Binding="{Binding Path=RoomValue}"/>
-                    <DataGridCheckBoxColumn Header="Show" Binding="{Binding Path=Show}"/>
+                    <DataGridCheckBoxColumn Header="Known" Binding="{Binding Path=Show}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
         <!--End Region-->
-        <!--Region Player Hand 
+
+        <!--Region Player Hand-->
         <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="DarkOrchid" Grid.Row="1" Grid.Column="1">
             <Label>YO HAND</Label>
-            <ListBox ItemsSource="{Binding ElementName=playerComboBox, Path=SelectedItem.characterCards}" Height="44" >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Label Content="{Binding Path=characterCards, Converter={StaticResource ResourceKey=EnumToString} }"/>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <Label>Rooms</Label>
-            <ListBox ItemsSource="{Binding ElementName=playerComboBox, Path=SelectedItem.roomCards}" Height="44" >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Label Content="{Binding Path=roomCards, Converter={StaticResource ResourceKey=EnumToString} }"/>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+            <DataGrid CanUserAddRows="False" x:Name="CharacterHand" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Character"  Binding="{Binding}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid CanUserAddRows="False" AutoGenerateColumns="False" x:Name="WeaponHand">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Weapon" Binding="{Binding}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid CanUserAddRows="False" x:Name="RoomHand" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Room" Binding="{Binding}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
 
         </StackPanel>
-        <End Region-->
-
-        <!--Region Detective Notes-->
-        <!--
-        <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="DeepPink">
-            <Label Content="Detective Notes:" FontSize="20" HorizontalAlignment="Center" />
-            <dl:DetectiveControl x:Name="DNotes" />
-        </StackPanel>
-        End Region-->
+        <!--End Region-->
 
         <gb:GameBoard x:Name="gameControl"/>
 
         <!--Region Buttons-->
-        <Button x:Name="turn" Content="END TURN" FontSize="20" Grid.Column="2" Margin="62,339,55,244" Click="nextTurn_Click"/>
-        <Button x:Name="help" Content="?" FontSize="18" Grid.Column="2" Margin="217,143,10,10" Grid.Row="1" Click="help_MouseDown" RenderTransformOrigin="0.5,0.5"/>
-        <Button x:Name="roll" Click="roll_Click" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="82,463,85,154"/>
-        <Image x:Name="die_placement" Margin="79,534,73,44" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="turn" Content="END TURN" FontSize="20" Grid.Column="2" Margin="62,339,55,104" Click="nextTurn_Click"/>
+        <Button x:Name="help" Content="?" FontSize="18" Grid.Column="2" Margin="217,304,10,10" Grid.Row="1" Click="help_MouseDown" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="roll" Click="roll_Click" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="67,145,100,156" Grid.Row="1"/>
+        <Image x:Name="die_placement" Margin="60,203,92,65" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="-1"/>

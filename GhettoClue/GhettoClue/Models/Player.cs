@@ -9,10 +9,6 @@ using System.Windows.Media;
 
 namespace GhettoClue.Models
 {
-    //public enum characters
-    //{
-    //    Lafawnduh, DaMarcus, Watermelondria, Jake, Ladasha, JuanCarlos
-    //}
 	public class Player
 	{
 		public Player()

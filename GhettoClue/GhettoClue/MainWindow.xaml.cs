@@ -185,9 +185,6 @@ namespace GhettoClue
             playerComboBox.SelectedIndex = 0;
 
 #endregion
-			#region Detective Notes
-
-			#endregion
 
 			
 		}
@@ -226,6 +223,10 @@ namespace GhettoClue
             DNotes_Characters.ItemsSource = currentPlayer.MyDetectiveList.CharactersList;
             DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
             DNotes_Rooms.ItemsSource = currentPlayer.MyDetectiveList.RoomsList;
+
+            CharacterHand.ItemsSource = currentPlayer.characterCards;
+            RoomHand.ItemsSource = currentPlayer.roomCards;
+            WeaponHand.ItemsSource = currentPlayer.weaponCards;
 
 		}
 
