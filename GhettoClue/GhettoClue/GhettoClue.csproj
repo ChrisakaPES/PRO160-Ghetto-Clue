@@ -62,6 +62,7 @@
     <Compile Include="Models\ComputerPlayer.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\HumanPlayer.cs" />
+    <Compile Include="Models\MurderScenario.cs" />
     <Compile Include="Models\Suggestion.cs" />
     <Compile Include="Movement\Cell.cs" />
     <Compile Include="Movement\MoveConverter.cs" />

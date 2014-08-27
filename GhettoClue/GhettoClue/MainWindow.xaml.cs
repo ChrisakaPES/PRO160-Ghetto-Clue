@@ -27,6 +27,22 @@ namespace GhettoClue
 		List<Player> players = new List<Player>();
 		Random rand = new Random();
 		public int rolled;
+        List<Characters> startupCharacters = new List<Characters>
+            {
+                Characters.Lafawnduh, Characters.DaMarcus,Characters.Watermelondria,Characters.Jake,Characters.Ladasha,Characters.JuanCarlos
+            };
+        List<Rooms> startupRooms = new List<Rooms>
+            {
+                Rooms.TheCorner, Rooms.GrowHouse, Rooms.BackAlley, Rooms.BMommasPad, Rooms.Laundrymat, 
+                Rooms.Prison, Rooms.LightRoom, Rooms.KFC, Rooms.LiquorStore, Rooms.TheSpot
+            };
+        List<Weapons> startupWeapons = new List<Weapons>
+            {
+                Weapons.Shank, Weapons.DaHeata, Weapons.Smack, Weapons.Weave, Weapons.PoisonedLean
+            };
+
+        MurderScenario theAnswer;
+        
 		#endregion
 
 
@@ -35,29 +51,30 @@ namespace GhettoClue
 			InitializeComponent();
 
 			#region PlayerVariables
-			var LafC = RandomEnumValue<Characters>();
-			var LafR = RandomEnumValue<Rooms>();
-			var LafW = RandomEnumValue<Weapons>();
 
-			var DaC = RandomEnumValue<Characters>();
-			var DaR = RandomEnumValue<Rooms>();
-			var DaW = RandomEnumValue<Weapons>();
+            //var LafC = RandomEnumValue<Characters>();
+            //var LafR = RandomEnumValue<Rooms>();
+            //var LafW = RandomEnumValue<Weapons>();
 
-			var WatC = RandomEnumValue<Characters>();
-			var WatR = RandomEnumValue<Rooms>();
-			var WatW = RandomEnumValue<Weapons>();
+            //var DaC = RandomEnumValue<Characters>();
+            //var DaR = RandomEnumValue<Rooms>();
+            //var DaW = RandomEnumValue<Weapons>();
 
-			var JC = RandomEnumValue<Characters>();
-			var JR = RandomEnumValue<Rooms>();
-			var JW = RandomEnumValue<Weapons>();
+            //var WatC = RandomEnumValue<Characters>();
+            //var WatR = RandomEnumValue<Rooms>();
+            //var WatW = RandomEnumValue<Weapons>();
 
-			var LaC = RandomEnumValue<Characters>();
-			var LaR = RandomEnumValue<Rooms>();
-			var LaW = RandomEnumValue<Weapons>();
+            //var JC = RandomEnumValue<Characters>();
+            //var JR = RandomEnumValue<Rooms>();
+            //var JW = RandomEnumValue<Weapons>();
 
-			var JuanC = RandomEnumValue<Characters>();
-			var JuanR = RandomEnumValue<Rooms>();
-			var JuanW = RandomEnumValue<Weapons>();
+            //var LaC = RandomEnumValue<Characters>();
+            //var LaR = RandomEnumValue<Rooms>();
+            //var LaW = RandomEnumValue<Weapons>();
+
+            //var JuanC = RandomEnumValue<Characters>();
+            //var JuanR = RandomEnumValue<Rooms>();
+            //var JuanW = RandomEnumValue<Weapons>();
 			#endregion
 			#region Players
 			players = new List<Player>
@@ -162,6 +179,30 @@ namespace GhettoClue
 
 			
 		}
+
+        /** 
+         * Hey this is the how things should work 
+         */
+        private void CreateMurderScenario()
+        {
+            int totalNumberOfCharacters = startupCharacters.Count();
+            int totalNumberOfRooms = startupRooms.Count();
+            int totalNumberOfWeapons = startupWeapons.Count(); 
+
+            int index = rand.Next(totalNumberOfCharacters);
+            Characters murderer = startupCharacters[index];
+            startupCharacters.RemoveAt(index);
+
+            index = rand.Next(totalNumberOfRooms);
+            Rooms murderHouse = startupRooms[index];
+            startupRooms.RemoveAt(index);
+
+            index = rand.Next(totalNumberOfWeapons);
+            Weapons murderWeapon = startupWeapons[index];
+            startupWeapons.RemoveAt(index);
+
+            theAnswer = new MurderScenario(murderer, murderHouse, murderWeapon);
+        }
 
 		private T RandomEnumValue<T>()
 		{
