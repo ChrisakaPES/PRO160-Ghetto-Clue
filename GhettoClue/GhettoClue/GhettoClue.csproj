@@ -66,11 +66,16 @@
     <Compile Include="Models\Suggestion.cs" />
     <Compile Include="Movement\Cell.cs" />
     <Compile Include="Movement\MoveConverter.cs" />
+    <Compile Include="Movement\Point.cs" />
+    <Compile Include="Movement\StatusConverter.cs" />
     <Compile Include="SuggestionPopUpWindow.xaml.cs">
       <DependentUpon>SuggestionPopUpWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\DetectiveControl.xaml.cs">
       <DependentUpon>DetectiveControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DisprovalPopUpWindow.xaml.cs">
+      <DependentUpon>DisprovalPopUpWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\GameBoard.xaml.cs">
       <DependentUpon>GameBoard.xaml</DependentUpon>
@@ -98,6 +103,10 @@
     <Page Include="UserControls\DetectiveControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\DisprovalPopUpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\GameBoard.xaml">
       <Generator>MSBuild:Compile</Generator>

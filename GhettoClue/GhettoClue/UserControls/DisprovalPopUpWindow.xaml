@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="GhettoClue.UserControls.DisprovalPopUpWindow"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 Height="200" Width="250">
+	<StackPanel Background="White">
+		<Label HorizontalAlignment="Center">Please select one to disprove: (If any)</Label>
+		
+		<Label Content="Characters:" />
+		<ComboBox x:Name="CharacterSelection">
+			<ComboBox.ItemTemplate>
+				<DataTemplate>
+					<Label Content="{Binding}"/>
+				</DataTemplate>
+			</ComboBox.ItemTemplate>
+		</ComboBox>
+
+		<Label Content="Rooms:" />
+		<ComboBox x:Name="RoomSelection">
+			<ComboBox.ItemTemplate>
+				<DataTemplate>
+					<Label Content="{Binding}"/>
+				</DataTemplate>
+			</ComboBox.ItemTemplate>
+		</ComboBox>
+
+		<Label Content="Weapons:" />
+		<ComboBox x:Name="WeaponSelection">
+			<ComboBox.ItemTemplate>
+				<DataTemplate>
+					<Label Content="{Binding}"/>
+				</DataTemplate>
+			</ComboBox.ItemTemplate>
+		</ComboBox>
+		
+		<Button x:Name="DisproveButton"
+				Width="100px"
+				Height="25px"
+				Content="Ok"
+				Click="DisproveButton_Click"
+			></Button>
+	</StackPanel>
+</UserControl>
