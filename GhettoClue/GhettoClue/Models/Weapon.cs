@@ -14,7 +14,7 @@ namespace GhettoClue.Models
     {
         public WeaponEnum WeaponValue { get; set; }
         public string WeaponString { get; set; }
-        public bool show { get; set; }
+        public bool Show { get; set; }
 
 
     }

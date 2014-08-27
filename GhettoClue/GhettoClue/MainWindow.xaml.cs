@@ -232,13 +232,7 @@ namespace GhettoClue
 
 
 		#region Button methods
-		private void play_Click(object sender, RoutedEventArgs e)
-		{
 
-			//takes away splash screen
-
-
-		}
 		#region Die Click / Rolling methods
 		private void roll_Click(object sender, RoutedEventArgs e)
 		{
