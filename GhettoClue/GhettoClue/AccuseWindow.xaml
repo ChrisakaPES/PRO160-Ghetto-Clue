@@ -1,7 +1,7 @@
 ﻿<Window x:Class="GhettoClue.AccuseWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AccuseWindow" Height="300" Width="300">
+        Title="AccuseWindow" Height="300" Width="300" WindowStyle="None">
     <StackPanel>
         <Label HorizontalAlignment="Center">Make your accusation,</Label>
         <Label HorizontalAlignment="Center" x:Name="PlayerNameLabel" />

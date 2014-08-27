@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\
 GhettoClue
 none
 false
 DEBUG;TRACE
-G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\App.xaml
-6-930633180
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\App.xaml
+7228963806
 1448773157
-29-1184986916
+311065647159
 141755987458
-Help.xaml;MainWindow.xaml;SuggestionPopUpWindow.xaml;UserControls\DetectiveControl.xaml;UserControls\DisprovalPopUpWindow.xaml;UserControls\GameBoard.xaml;
+AccuseWindow.xaml;DisprovePopUp.xaml;Help.xaml;MainWindow.xaml;SuggestionPopUpWindow.xaml;UserControls\DetectiveControl.xaml;UserControls\GameBoard.xaml;
 
 False
 

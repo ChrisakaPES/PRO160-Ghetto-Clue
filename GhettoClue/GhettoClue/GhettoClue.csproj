@@ -55,10 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AccuseWindow.xaml.cs">
+      <DependentUpon>AccuseWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\EnumToString.cs" />
+    <Compile Include="DisprovePopUp.xaml.cs">
+      <DependentUpon>DisprovePopUp.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Help.xaml.cs">
       <DependentUpon>Help.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Accusation.cs" />
     <Compile Include="Models\ComputerPlayer.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\HumanPlayer.cs" />
@@ -74,12 +82,17 @@
     <Compile Include="UserControls\DetectiveControl.xaml.cs">
       <DependentUpon>DetectiveControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\DisprovalPopUpWindow.xaml.cs">
-      <DependentUpon>DisprovalPopUpWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\GameBoard.xaml.cs">
       <DependentUpon>GameBoard.xaml</DependentUpon>
     </Compile>
+    <Page Include="AccuseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisprovePopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Help.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,10 +116,6 @@
     <Page Include="UserControls\DetectiveControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\DisprovalPopUpWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\GameBoard.xaml">
       <Generator>MSBuild:Compile</Generator>

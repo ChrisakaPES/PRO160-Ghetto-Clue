@@ -120,3 +120,7 @@ G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\Gh
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\SuggestionPopUpWindow.baml
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\DisprovalPopUpWindow.baml
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\DisprovalPopUpWindow.g.cs
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\AccuseWindow.baml
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\DisprovePopUp.baml
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\AccuseWindow.g.cs
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\DisprovePopUp.g.cs

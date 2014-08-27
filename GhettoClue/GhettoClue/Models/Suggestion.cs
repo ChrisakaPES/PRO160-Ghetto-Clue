@@ -45,17 +45,17 @@ namespace GhettoClue.Models
         }
 
         //Send the suggestion off to the Disprove box
-        public Suggestion SendSuggestion()
-        {
-            if (CheckForDisproveEligibility())
-            {
+        //public Suggestion SendSuggestion()
+        //{
+        //    if (CheckForDisproveEligibility())
+        //    {
 
-            }
-            else
-            {
+        //    }
+        //    else
+        //    {
 
-            }
-        }
+        //    }
+        //}
     }
 }
 
