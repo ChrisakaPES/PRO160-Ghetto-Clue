@@ -29,7 +29,7 @@ namespace GhettoClue
 		public int rolled;
         List<Characters> startupCharacters = new List<Characters>
             {
-                Characters.Lafawnduh, Characters.DaMarcus,Characters.Watermelondria,Characters.Jake,Characters.Ladasha,Characters.JuanCarlos
+                Characters.Lafawnduh, Characters.DaMarcus,Characters.Watermelondrea,Characters.Jake,Characters.Ladasha,Characters.JuanCarlos
             };
         List<Rooms> startupRooms = new List<Rooms>
             {
@@ -77,97 +77,107 @@ namespace GhettoClue
             //var JuanW = RandomEnumValue<Weapons>();
 			#endregion
 			#region Players
+            ObservableCollection<ObservableCollection<Characters>> allCharacterLists = new ObservableCollection<ObservableCollection<Characters>>()
+            {
+                new ObservableCollection<Characters>(),
+                new ObservableCollection<Characters>(),
+                new ObservableCollection<Characters>(),
+                new ObservableCollection<Characters>(),
+                new ObservableCollection<Characters>(),
+                new ObservableCollection<Characters>()
+            };
+            int playerListIndex = 0;
+            while(startupCharacters.Count()>0)
+            {
+                int characterSelectionIndex = rand.Next(startupCharacters.Count());
+                allCharacterLists[playerListIndex%6].Add(startupCharacters[characterSelectionIndex]);
+                startupCharacters.RemoveAt(characterSelectionIndex);
+                playerListIndex++;
+            }
+            ObservableCollection<ObservableCollection<Rooms>> allCharacterRoomsLists = new ObservableCollection<ObservableCollection<Rooms>>()
+            {
+                new ObservableCollection<Rooms>(),
+                new ObservableCollection<Rooms>(),
+                new ObservableCollection<Rooms>(),
+                new ObservableCollection<Rooms>(),
+                new ObservableCollection<Rooms>(),
+                new ObservableCollection<Rooms>()
+            };
+            while (startupRooms.Count() > 0)
+            {
+                int roomSelectionIndex = rand.Next(startupRooms.Count());
+                allCharacterRoomsLists[playerListIndex % 6].Add(startupRooms[roomSelectionIndex]);
+                startupRooms.RemoveAt(roomSelectionIndex);
+                playerListIndex++;
+            }
+            ObservableCollection<ObservableCollection<Weapons>> allCharacterWeaponsLists = new ObservableCollection<ObservableCollection<Weapons>>()
+            {
+                new ObservableCollection<Weapons>(),
+                new ObservableCollection<Weapons>(),
+                new ObservableCollection<Weapons>(),
+                new ObservableCollection<Weapons>(),
+                new ObservableCollection<Weapons>(),
+                new ObservableCollection<Weapons>()
+            };
+            while (startupWeapons.Count() > 0)
+            {
+                int weaponSelectionIndex = rand.Next(startupWeapons.Count());
+                allCharacterWeaponsLists[playerListIndex % 6].Add(startupWeapons[weaponSelectionIndex]);
+                startupWeapons.RemoveAt(weaponSelectionIndex);
+                playerListIndex++;
+            }
+
+
+
 			players = new List<Player>
 			{
 				new Player
                 { 
-                    Name = Characters.Lafawnduh, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				    {
-					    LafC
-				    },
-				 roomCards = new ObservableCollection<Rooms>
-				    {
-					    LafR
-				    }, 
-				  weaponCards = new ObservableCollection<Weapons>
-				    {
-					      LafW
-				    }
+                    Name = Characters.Lafawnduh, 
+                    background = "not yet defined", 
+                    characterCards = allCharacterLists[0],
+				    roomCards = allCharacterRoomsLists[0], 
+				    weaponCards = allCharacterWeaponsLists[0]
                 },
 			    new Player
                 { 
-                    Name = Characters.DaMarcus, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				    {
-					    DaC
-				    },
-				 roomCards = new ObservableCollection<Rooms>
-				    {
-					    DaR
-				    }, 
-				  weaponCards = new ObservableCollection<Weapons>
-				    {
-					      DaW
-				    }
+                    Name = Characters.DaMarcus, 
+                    background = "not yet defined", 
+                    characterCards = allCharacterLists[1],
+				    roomCards = allCharacterRoomsLists[1], 
+				    weaponCards = allCharacterWeaponsLists[1] 
                 },
 			    new Player
                 { 
-                    Name = Characters.Jake, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				    {
-					    JC
-				    },
-				 roomCards = new ObservableCollection<Rooms>
-				    {
-					    JR
-				    }, 
-				  weaponCards = new ObservableCollection<Weapons>
-				    {
-					    JW
-				    }
+                    Name = Characters.Jake, 
+				    background = "not yet defined", 
+                    characterCards = allCharacterLists[2],
+				    roomCards = allCharacterRoomsLists[2], 
+				    weaponCards = allCharacterWeaponsLists[2]
                 },
 			    new Player
                 { 
-                    Name = Characters.JuanCarlos, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				    {
-					    JuanC
-				    },
-				 roomCards = new ObservableCollection<Rooms>
-				    {
-					    JuanR
-				    }, 
-				  weaponCards = new ObservableCollection<Weapons>
-				    {
-					      JuanW
-				    }
+                    Name = Characters.JuanCarlos, 
+                    background = "not yet defined", 
+                    characterCards = allCharacterLists[3],
+				    roomCards = allCharacterRoomsLists[3], 
+				    weaponCards = allCharacterWeaponsLists[3]
                 },
 				new Player
                 { 
-                    Name = Characters.Ladasha, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				    {
-					    LaC
-				    },
-				 roomCards = new ObservableCollection<Rooms>
-				     {
-					    LaR
-				     }, 
-				  weaponCards = new ObservableCollection<Weapons>
-				      {
-					      LaW
-				      }
+                    Name = Characters.Ladasha, 
+                    background = "not yet defined", 
+                    characterCards = allCharacterLists[4],
+				    roomCards = allCharacterRoomsLists[4], 
+				    weaponCards = allCharacterWeaponsLists[4]
                 },
 			    new Player
                 { 
-                    Name = Characters.Watermelondria, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				    {
-					    WatC
-				    },
-				 roomCards = new ObservableCollection<Rooms>
-				    {
-					    WatR
-				    }, 
-				  weaponCards = new ObservableCollection<Weapons>
-				    {
-					    WatW
-				    }
+                    Name = Characters.Watermelondrea,
+                    background = "not yet defined", 
+                    characterCards = allCharacterLists[5],
+				    roomCards = allCharacterRoomsLists[5], 
+				    weaponCards = allCharacterWeaponsLists[5]
                 }
 			};
 			player.ItemsSource = players;

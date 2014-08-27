@@ -40,7 +40,7 @@ namespace GhettoClue.Models
 				Characters.Jake,
 				Characters.JuanCarlos,
 				Characters.Lafawnduh,
-				Characters.Watermelondria
+				Characters.Watermelondrea
             };
 		}
 
