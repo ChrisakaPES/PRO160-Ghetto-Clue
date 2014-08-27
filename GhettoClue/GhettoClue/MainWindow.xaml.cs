@@ -180,8 +180,9 @@ namespace GhettoClue
 				    weaponCards = allCharacterWeaponsLists[5]
                 }
 			};
-			player.ItemsSource = players;
-            player.SelectedIndex = 0;
+			playerComboBox.ItemsSource = players;
+            playerComboBox.SelectedIndex = 0;
+
 #endregion
 			#region Detective Notes
 
@@ -221,28 +222,32 @@ namespace GhettoClue
 
 		private void player_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-            int i = player.SelectedIndex;
+            int i = playerComboBox.SelectedIndex;
 
             Player currentPlayer = players[i];
             CharacterGrid.ItemsSource = currentPlayer.characterCards;
+            CharacterGrid.Columns.Add(new DataGridTextColumn());
+            CharacterGrid.Columns[0].Width = new DataGridLength(100);
+            CharacterGrid.Columns[0].Header = "Characters";
+            CharacterGrid.Columns.Add(new DataGridCheckBoxColumn());
             WeaponGrid.ItemsSource = currentPlayer.weaponCards;
             RoomGrid.ItemsSource = currentPlayer.roomCards;
 
             //Removes the extra column that wasn't necessary for the cards area
-            CharacterGrid.Columns.Remove(CharacterGrid.Columns[0]);
-            WeaponGrid.Columns.Remove(WeaponGrid.Columns[0]);
-            RoomGrid.Columns.Remove(RoomGrid.Columns[0]);
+            //CharacterGrid.Columns.Remove(CharacterGrid.Columns[0]);
+            //WeaponGrid.Columns.Remove(WeaponGrid.Columns[0]);
+            //RoomGrid.Columns.Remove(RoomGrid.Columns[0]);
 
-            DetectiveNotes.DataContext = currentPlayer.MyDetectiveList;
+            DetectiveNotes.DataContext = currentPlayer;
 
-            DNotes_Characters.ItemsSource = currentPlayer.MyDetectiveList.CharactersList;
+            DNotes_Characters.ItemsSource = currentPlayer.characterCards;
             DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
             DNotes_Rooms.ItemsSource = currentPlayer.MyDetectiveList.RoomsList;
 
             //Removes the extra column that wasn't necessary for the detective list
-            DNotes_Characters.Columns.Remove(DNotes_Characters.Columns[1]);
-            DNotes_Weapons.Columns.Remove(DNotes_Weapons.Columns[1]);
-            DNotes_Rooms.Columns.Remove(DNotes_Rooms.Columns[1]);
+            //DNotes_Characters.Columns.Remove(DNotes_Characters.Columns[1]);
+            //DNotes_Weapons.Columns.Remove(DNotes_Weapons.Columns[1]);
+            //DNotes_Rooms.Columns.Remove(DNotes_Rooms.Columns[1]);
 
 		}
 
@@ -318,13 +323,13 @@ namespace GhettoClue
             MessageBoxResult res= MessageBox.Show("Are you sure You would like to End your turn?", "50%Fact, 50% Magic, 100% Results", MessageBoxButton.YesNo);
             if (res == MessageBoxResult.Yes)
             {
-                int currentPlayerIndex = player.SelectedIndex;
+                int currentPlayerIndex = playerComboBox.SelectedIndex;
                 currentPlayerIndex++;
                 if (currentPlayerIndex == players.Count())
                 {
                     currentPlayerIndex = 0;
                 }
-                player.SelectedIndex = currentPlayerIndex;
+                playerComboBox.SelectedIndex = currentPlayerIndex;
                 rolled = 0;
                 roll.IsEnabled = true;
             }
@@ -368,16 +373,16 @@ namespace GhettoClue
 
         }
 
-        private void start_Click(object sender, RoutedEventArgs e)
-        {
-            SpashScreen.Visibility = System.Windows.Visibility.Hidden;
-            welcome.Visibility = System.Windows.Visibility.Hidden;
-            start.Visibility = System.Windows.Visibility.Hidden;
-            ruleHeader.Visibility = System.Windows.Visibility.Hidden;
-            rules1.Visibility = System.Windows.Visibility.Hidden;
-            rules2.Visibility = System.Windows.Visibility.Hidden;
-            rules3.Visibility = System.Windows.Visibility.Hidden;
-        }
+       private void start_Click(object sender, RoutedEventArgs e)
+       {
+           SpashScreen.Visibility = System.Windows.Visibility.Hidden;
+           welcome.Visibility = System.Windows.Visibility.Hidden;
+           start.Visibility = System.Windows.Visibility.Hidden;
+           ruleHeader.Visibility = System.Windows.Visibility.Hidden;
+           rules1.Visibility = System.Windows.Visibility.Hidden;
+           rules2.Visibility = System.Windows.Visibility.Hidden;
+           rules3.Visibility = System.Windows.Visibility.Hidden;
+       }
 
         private void help_MouseDown(object sender, RoutedEventArgs e)
         {

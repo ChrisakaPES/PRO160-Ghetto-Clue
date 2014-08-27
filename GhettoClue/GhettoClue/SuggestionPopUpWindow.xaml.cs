@@ -38,6 +38,8 @@ namespace GhettoClue
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             Button confirm = (Button)sender;
+            Characters suspect = (Characters)CharacterComboBox.SelectedItem;
+            Rooms rooms = (Rooms)RoomComboBox.SelectedItem;
             ((Window)((StackPanel)confirm.Parent).Parent).Close();
         }
     }

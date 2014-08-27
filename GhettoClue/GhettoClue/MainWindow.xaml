@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
 
         <!--Region PlayerBox-->
-        <ComboBox x:Name="player" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,306" >
+        <ComboBox x:Name="playerComboBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,306" SelectionChanged="player_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -43,7 +43,9 @@
         <!--Region Player Hand-->
         <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="DarkOrchid" Grid.Row="1" Grid.Column="1">
             <Label Content="Yo Hand:" FontSize="20" HorizontalAlignment="Center"/>
-            <DataGrid CanUserAddRows="False" x:Name="CharacterGrid" Background="BlanchedAlmond" ItemsSource="{Binding}" />
+            <DataGrid CanUserAddRows="False" x:Name="CharacterGrid" Background="BlanchedAlmond" >
+                
+            </DataGrid>
             <DataGrid CanUserAddRows="False" x:Name="WeaponGrid" ItemsSource="{Binding}" Background="CadetBlue"/>
             <DataGrid CanUserAddRows="False" x:Name="RoomGrid" ItemsSource="{Binding}" Background="Aquamarine" />
         </StackPanel>
@@ -52,7 +54,7 @@
         <!--Region Detective Notes-->
         <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="DeepPink">
             <Label Content="Detective Notes:" FontSize="20" HorizontalAlignment="Center" />
-            <DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" ItemsSource="{Binding}"/>
+            <DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" />
             <DataGrid CanUserAddRows="False" x:Name="DNotes_Weapons" ItemsSource="{Binding}" />
             <DataGrid CanUserAddRows="False" x:Name="DNotes_Rooms" ItemsSource="{Binding}" />
         </StackPanel>
