@@ -56,6 +56,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\EnumToString.cs" />
+    <Compile Include="Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComputerPlayer.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\HumanPlayer.cs" />
     <Compile Include="Movement\Cell.cs" />
     <Compile Include="Movement\MoveConverter.cs" />
     <Compile Include="SuggestionPopUpWindow.xaml.cs">
@@ -64,6 +70,10 @@
     <Compile Include="UserControls\GameBoard.xaml.cs">
       <DependentUpon>GameBoard.xaml</DependentUpon>
     </Compile>
+    <Page Include="Help.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,11 +96,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Characters.cs" />
-    <Compile Include="Model\DetectiveList.cs" />
-    <Compile Include="Model\Player.cs" />
-    <Compile Include="Model\Rooms.cs" />
-    <Compile Include="Model\Weapons.cs" />
+    <Compile Include="Models\Characters.cs" />
+    <Compile Include="Models\DetectiveList.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Rooms.cs" />
+    <Compile Include="Models\Weapons.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

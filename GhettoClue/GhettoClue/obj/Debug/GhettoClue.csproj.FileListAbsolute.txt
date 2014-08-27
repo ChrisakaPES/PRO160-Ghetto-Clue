@@ -90,3 +90,13 @@ C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development
 C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\GameBoard.baml
 C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\GameBoard.g.cs
 C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\GameBoard.baml
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\App.baml
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\SuggestionPopUpWindow.g.cs
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\GameBoard.g.cs
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue_Content.g.cs
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue_MarkupCompile.lref
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\Help.baml
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\Help.g.cs
+F:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\SuggestionPopUpWindow.baml

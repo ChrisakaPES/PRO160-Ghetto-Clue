@@ -63,7 +63,7 @@
         <!--Region Buttons-->
         <Button x:Name="turn" Height="50" Width="150" Content="END TURN" FontSize="20" Grid.Column="2" Margin="54,339,47,117" Click="nextTurn_Click"/>
         <Button x:Name="help" Content="?" FontSize="18" Grid.Column="2" Margin="209,306,18,10" Grid.Row="1" Click="help_MouseDown"/>
-        <Button x:Name="roll" Height="50" Width="100" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="76,101,75,200" Grid.Row="1"/>
+        <Button x:Name="roll" Height="50" Width="100" Click="roll_Click" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="76,101,75,200" Grid.Row="1"/>
         <Image x:Name="die_placement" Margin="62,184,61,67" Grid.Row="1" Grid.Column="2">
             <Image.Source>
                 <BitmapImage UriSource="Images/1.png" />
@@ -73,8 +73,8 @@
         <!--End Region-->
 
         <!--Region Help Button-->
-
         <!--Region Spash Screen-->
+
         <Label Background="Black" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}"/>
         <Label x:Name="welcome" Content="WELCOME TO GHETTO CLUE!" FontSize="30" Foreground="White" Margin="507,10,10,436" Visibility="{Binding ElementName=start, Path=start_Click}"/>
         <Button x:Name="start" Click="start_Click" Height="100" Width="200" Content="Start Game" FontSize="25" Margin="615,241,132,10" Grid.Row="1"/>
