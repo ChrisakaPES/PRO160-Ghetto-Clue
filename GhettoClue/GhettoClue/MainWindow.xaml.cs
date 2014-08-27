@@ -61,14 +61,21 @@ namespace GhettoClue
 
         public Suggestion CurrentSuggestion { get; set; }
         MurderScenario theAnswer;
-        
+        public Accusation CurrentAccusation { get; set; }
+
+        bool suggestTrue = false;
+
+
+
+
 		#endregion
 
 
 		public MainWindow()
 		{
 			InitializeComponent();
-			#region Players
+			CreateMurderScenario();
+            #region Players
             ObservableCollection<ObservableCollection<CharacterEnum>> allCharacterLists = new ObservableCollection<ObservableCollection<CharacterEnum>>()
             {
                 new ObservableCollection<CharacterEnum>(),
@@ -176,7 +183,7 @@ namespace GhettoClue
             playerComboBox.SelectedIndex = 0;
 
 #endregion
-
+            
             gameControl.UpdatePlayers(players);
             gameControl.CreateBoard();
 		}
@@ -226,14 +233,21 @@ namespace GhettoClue
 		#region Button methods
 
 		#region Die Click / Rolling methods
-		private void roll_Click(object sender, RoutedEventArgs e)
-		{
-			//rolls the dice and calls the method to change the background
-			
-			NumRoll = gen.Next(1, 7);
+        private void roll_Click(object sender, RoutedEventArgs e)
+        {
+            //rolls the dice and calls the method to change the background
+
+            NumRoll = gen.Next(1, 7);
             gameControl.HighlightSpots(NumRoll);
             roll_Die(NumRoll);
-		}
+            roll.IsEnabled = false;
+
+            //This bool will be set by movement actions but is always set to true for testing
+           
+
+
+                
+        }
 
 		public void roll_Die(int num)
 		{			
@@ -280,14 +294,77 @@ namespace GhettoClue
             //Canvas.SetTop(Token1, pY - 30);
 
 		}
-		
 
-		private void nextTurn_Click(object sender, RoutedEventArgs e)
-		{
-			//turn taking
-            MessageBoxResult res= MessageBox.Show("Are you sure You would like to End your turn?", "50%Fact, 50% Magic, 100% Results", MessageBoxButton.YesNo);
-            if (res == MessageBoxResult.Yes)
+
+        private void nextTurn_Click(object sender, RoutedEventArgs e)
+        {
+            //turn taking
+            bool isPlayerInRoom = true;
+            if (isPlayerInRoom)
             {
+                MessageBoxResult res = MessageBox.Show("Would You like to Accuse Someone?", "Accuse?", MessageBoxButton.YesNo);
+                if (res == MessageBoxResult.Yes)
+                {
+                    //Do Accuse shenanigans 
+                    AccuseWindow accuseWindow = new AccuseWindow();
+                    accuseWindow.ParentWin = this;
+                    accuseWindow.CurrentPlayer = players[playerComboBox.SelectedIndex];
+                    accuseWindow.ShowDialog();
+
+                    if (CurrentAccusation.CheckForPlayerWin(theAnswer))
+                    {
+                        MessageBox.Show("Ayo YOU WON DA GAME!");
+                        System.Windows.Application.Current.Shutdown();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Oh SugarSnaps you done messed up yous outta da game.");
+                        players.RemoveAt(playerComboBox.SelectedIndex);
+                    }
+
+                    
+                }
+                else
+                {
+                    res = MessageBox.Show("Would You like to Suggest a scenario?", "Suggest?", MessageBoxButton.YesNo);
+                    if (res == MessageBoxResult.Yes)
+                    {
+                        SuggestionPopUpWindow suggestPop = new SuggestionPopUpWindow();
+                        suggestPop.ParentWin = this;
+                        suggestPop.ShowDialog();
+
+                        int i = playerComboBox.SelectedIndex + 1;
+                        if (i == players.Count())
+                        {
+                            i = 0;
+                        }
+                        int timesLoopedThrough = 0;
+                        while (!CurrentSuggestion.CheckForDisproveEligibility(players[i]))
+                        {
+                            if (timesLoopedThrough >= 5)
+                            {
+                                break;
+                            }
+                            i++;
+                            if (i == players.Count())
+                            {
+                                i = 0;
+                            }
+                            timesLoopedThrough++;
+                            if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
+                            {
+                                DisprovePopUp disprovePop = new DisprovePopUp(players[i], CurrentSuggestion);
+                                disprovePop.ParentWin = this;
+                                disprovePop.ShowDialog();
+                            }
+                        }
+                    }
+                    roll.IsEnabled = true;
+                }
+
+                //res = MessageBox.Show("Are you sure You would like to End your turn?", "End Turn?", MessageBoxButton.YesNo);
+                //if (res == MessageBoxResult.Yes)
+                //{
                 int currentPlayerIndex = playerComboBox.SelectedIndex;
                 currentPlayerIndex++;
                 if (currentPlayerIndex == players.Count())
@@ -298,13 +375,12 @@ namespace GhettoClue
                 rolled = 0;
                 gameControl.UpdateNextTurn((Player)playerComboBox.SelectedItem);
                 gameControl.clearHighlights();
-                roll.IsEnabled = true;
-            }
-            else if (res == MessageBoxResult.No)
-            {
 
+                MessageBox.Show("It is now "+ playerComboBox.SelectedItem.ToString()+"\'s roll!"); 
+
+                //}
             }
-		}
+        }
 
 		private void suggest_Click(object sender, RoutedEventArgs e)
 		{
@@ -328,16 +404,16 @@ namespace GhettoClue
 
 
 
-       //private void start_Click(object sender, RoutedEventArgs e)
-       //{
-       //    SpashScreen.Visibility = System.Windows.Visibility.Hidden;
-       //    welcome.Visibility = System.Windows.Visibility.Hidden;
-       //    start.Visibility = System.Windows.Visibility.Hidden;
-       //    ruleHeader.Visibility = System.Windows.Visibility.Hidden;
-       //    rules1.Visibility = System.Windows.Visibility.Hidden;
-       //    rules2.Visibility = System.Windows.Visibility.Hidden;
-       //    rules3.Visibility = System.Windows.Visibility.Hidden;
-       //}
+       private void start_Click(object sender, RoutedEventArgs e)
+       {
+           SpashScreen.Visibility = System.Windows.Visibility.Hidden;
+           welcome.Visibility = System.Windows.Visibility.Hidden;
+           start.Visibility = System.Windows.Visibility.Hidden;
+           ruleHeader.Visibility = System.Windows.Visibility.Hidden;
+           rules1.Visibility = System.Windows.Visibility.Hidden;
+           rules2.Visibility = System.Windows.Visibility.Hidden;
+           rules3.Visibility = System.Windows.Visibility.Hidden;
+       }
 
         private void help_MouseDown(object sender, RoutedEventArgs e)
         {

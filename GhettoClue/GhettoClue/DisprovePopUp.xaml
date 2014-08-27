@@ -1,0 +1,10 @@
+﻿<Window x:Class="GhettoClue.DisprovePopUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DisprovePopUp" Height="300" Width="300" WindowStyle="None">
+    <StackPanel>
+        <Label HorizontalAlignment="Center" >Select A Matching Card</Label>
+        <ComboBox x:Name="matchingCardsComboBox"></ComboBox>
+        <Button x:Name="ConfirmButton" Width="100px" Height="25px" Click="ConfirmButton_Click" Margin="50px" Content="Confirm"/>
+    </StackPanel>
+</Window>

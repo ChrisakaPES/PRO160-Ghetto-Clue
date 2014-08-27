@@ -47,7 +47,10 @@ namespace GhettoClue.Models
 
 
 
-
+        public override string ToString()
+        {
+            return Name.ToString();
+        }
         public event PropertyChangedEventHandler PropertyChanged;
     }
 

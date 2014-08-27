@@ -119,7 +119,7 @@
 
         <!--Region Spash Screen-->
 
-        <!--<Label Background="Black" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}"/>
+        <Label Background="Black" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}"/>
         <Label x:Name="welcome" Content="WELCOME TO GHETTO CLUE!" FontSize="30" Foreground="White" Margin="507,10,10,436" Visibility="{Binding ElementName=start, Path=start_Click}"/>
         <Button x:Name="start" Click="start_Click" Height="100" Width="200" Content="Start Game" FontSize="25" Margin="615,241,132,10" Grid.Row="1"/>
         <Label x:Name="ruleHeader" Content="Rules:" FontSize="25" Foreground="White" Margin="652,63,209,402" Visibility="{Binding ElementName=start, Path=start_Click}"/>
@@ -139,7 +139,7 @@
         <TextBlock x:Name="rules3" TextWrapping="WrapWithOverflow" FontSize="18" Foreground="White" Grid.ColumnSpan="2" Margin="225,473,0,258" Grid.RowSpan="2" Visibility="{Binding ElementName=start, Path=start_Click}">
             The accusing player will then check the accusation based on the cards in the envelope, no other players will see these cards.
             If incorrect, they are no longer part of the game except to disprove suggestions from other players. If correct, the solution cards are shown to the other players and the game ends.
-        </TextBlock>-->
+        </TextBlock>
         <!--End Region-->
 
     </Grid>
