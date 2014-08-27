@@ -35,105 +35,123 @@ namespace GhettoClue
 			InitializeComponent();
 
 			#region PlayerVariables
-			var LafC = RandomEnumValue<CharacterCards>();
-			var LafR = RandomEnumValue<room>();
-			var LafW = RandomEnumValue<weapon>();
+			var LafC = RandomEnumValue<Characters>();
+			var LafR = RandomEnumValue<Rooms>();
+			var LafW = RandomEnumValue<Weapons>();
 
-			var DaC = RandomEnumValue<CharacterCards>();
-			var DaR = RandomEnumValue<room>();
-			var DaW = RandomEnumValue<weapon>();
+			var DaC = RandomEnumValue<Characters>();
+			var DaR = RandomEnumValue<Rooms>();
+			var DaW = RandomEnumValue<Weapons>();
 
-			var WatC = RandomEnumValue<CharacterCards>();
-			var WatR = RandomEnumValue<room>();
-			var WatW = RandomEnumValue<weapon>();
+			var WatC = RandomEnumValue<Characters>();
+			var WatR = RandomEnumValue<Rooms>();
+			var WatW = RandomEnumValue<Weapons>();
 
-			var JC = RandomEnumValue<CharacterCards>();
-			var JR = RandomEnumValue<room>();
-			var JW = RandomEnumValue<weapon>();
+			var JC = RandomEnumValue<Characters>();
+			var JR = RandomEnumValue<Rooms>();
+			var JW = RandomEnumValue<Weapons>();
 
-			var LaC = RandomEnumValue<CharacterCards>();
-			var LaR = RandomEnumValue<room>();
-			var LaW = RandomEnumValue<weapon>();
+			var LaC = RandomEnumValue<Characters>();
+			var LaR = RandomEnumValue<Rooms>();
+			var LaW = RandomEnumValue<Weapons>();
 
-			var JuanC = RandomEnumValue<CharacterCards>();
-			var JuanR = RandomEnumValue<room>();
-			var JuanW = RandomEnumValue<weapon>();
+			var JuanC = RandomEnumValue<Characters>();
+			var JuanR = RandomEnumValue<Rooms>();
+			var JuanW = RandomEnumValue<Weapons>();
 			#endregion
 			#region Players
 			players = new List<Player>
 			{
-				new Player{ Name = characters.Lafawnduh, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				{
-					new Characters { character = LafC.ToString()},
-				},
+				new Player
+                { 
+                    Name = Characters.Lafawnduh, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
+				    {
+					    LafC
+				    },
 				 roomCards = new ObservableCollection<Rooms>
-				 {
-					new Rooms { location = LafR.ToString()}
-				 }, 
+				    {
+					    LafR
+				    }, 
 				  weaponCards = new ObservableCollection<Weapons>
-				  {
-					  new Weapons { leathals = LafW.ToString()}
-				  }},
-						new Player{ Name = characters.DaMarcus, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				{
-					new Characters { character = DaC.ToString()},
-				},
+				    {
+					      LafW
+				    }
+                },
+			    new Player
+                { 
+                    Name = Characters.DaMarcus, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
+				    {
+					    DaC
+				    },
 				 roomCards = new ObservableCollection<Rooms>
-				 {
-					new Rooms { location = DaR.ToString()}
-				 }, 
+				    {
+					    DaR
+				    }, 
 				  weaponCards = new ObservableCollection<Weapons>
-				  {
-					  new Weapons { leathals = DaW.ToString()}
-				  }},
-						new Player{ Name = characters.Jake, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				{
-					new Characters { character = JC.ToString()},
-				},
+				    {
+					      DaW
+				    }
+                },
+			    new Player
+                { 
+                    Name = Characters.Jake, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
+				    {
+					    JC
+				    },
 				 roomCards = new ObservableCollection<Rooms>
-				 {
-					new Rooms { location = JR.ToString()}
-				 }, 
+				    {
+					    JR
+				    }, 
 				  weaponCards = new ObservableCollection<Weapons>
-				  {
-					  new Weapons { leathals = JW.ToString()}
-				  }},
-						new Player{ Name = characters.JuanCarlos, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				{
-					new Characters { character = JuanC.ToString()},
-				},
+				    {
+					    JW
+				    }
+                },
+			    new Player
+                { 
+                    Name = Characters.JuanCarlos, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
+				    {
+					    JuanC
+				    },
 				 roomCards = new ObservableCollection<Rooms>
-				 {
-					new Rooms { location = JuanR.ToString()}
-				 }, 
+				    {
+					    JuanR
+				    }, 
 				  weaponCards = new ObservableCollection<Weapons>
-				  {
-					  new Weapons { leathals = JuanW.ToString()}
-				  }},
-						new Player{ Name = characters.Ladasha, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				{
-					new Characters { character = LaC.ToString()},
-				},
+				    {
+					      JuanW
+				    }
+                },
+				new Player
+                { 
+                    Name = Characters.Ladasha, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
+				    {
+					    LaC
+				    },
 				 roomCards = new ObservableCollection<Rooms>
-				 {
-					new Rooms { location = LaR.ToString()}
-				 }, 
+				     {
+					    LaR
+				     }, 
 				  weaponCards = new ObservableCollection<Weapons>
-				  {
-					  new Weapons { leathals = LaW.ToString()}
-				  }},
-						new Player{ Name = characters.Watermelondria, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
-				{
-					new Characters { character = WatC.ToString()},
-				},
+				      {
+					      LaW
+				      }
+                },
+			    new Player
+                { 
+                    Name = Characters.Watermelondria, background = "not yet defined", characterCards = new ObservableCollection<Characters> 
+				    {
+					    WatC
+				    },
 				 roomCards = new ObservableCollection<Rooms>
-				 {
-					new Rooms { location = WatR.ToString()}
-				 }, 
+				    {
+					    WatR
+				    }, 
 				  weaponCards = new ObservableCollection<Weapons>
-				  {
-					  new Weapons { leathals = WatW.ToString()}
-				  }}
+				    {
+					    WatW
+				    }
+                }
 			};
 			player.ItemsSource = players;
             player.SelectedIndex = 0;

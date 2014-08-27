@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GhettoClue.Model;
 using System.Collections.ObjectModel;
+using System.Windows.Media;
 
 namespace GhettoClue.Model
 {
-	public enum characters
-	{
-		Lafawnduh, DaMarcus, Watermelondria, Jake, Ladasha, JuanCarlos
-	}
+    //public enum characters
+    //{
+    //    Lafawnduh, DaMarcus, Watermelondria, Jake, Ladasha, JuanCarlos
+    //}
 	public class Player
 	{
 		public Player()
@@ -19,9 +20,9 @@ namespace GhettoClue.Model
 			MyDetectiveList = new DetectiveList();
 		}
 
-		public characters Name { get; set; }
+		public Characters Name { get; set; }
 		public string background { get; set; }
-
+        public ImageBrush imgBrush { get; set; }
 		public DetectiveList MyDetectiveList { get; set; }
 
 		public ObservableCollection<Characters> characterCards { get; set; }

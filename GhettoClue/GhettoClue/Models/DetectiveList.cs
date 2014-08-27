@@ -13,16 +13,16 @@ namespace GhettoClue.Model
 		
 		public DetectiveList()
 		{
-			RoomsList = new ObservableCollection<Rooms> { new Rooms { Room = room.BackAlley },
-														new Rooms { Room = room.BMommasPad },
-														new Rooms { Room = room.GrowHouse },
-														new Rooms { Room = room.KFC },
-														new Rooms { Room = room.Laundrymat },
-														new Rooms { Room = room.LightRoom },
-														new Rooms { Room = room.LiquorStore },
-														new Rooms { Room = room.Prison },
-														new Rooms { Room = room.TheCorner },
-														new Rooms { Room = room.TheSpot }};
+			RoomsList = new ObservableCollection<Rooms> { new Rooms { Room = Rooms.BackAlley },
+														new Rooms { Room = Rooms.BMommasPad },
+														new Rooms { Room = Rooms.GrowHouse },
+														new Rooms { Room = Rooms.KFC },
+														new Rooms { Room = Rooms.Laundrymat },
+														new Rooms { Room = Rooms.LightRoom },
+														new Rooms { Room = Rooms.LiquorStore },
+														new Rooms { Room = Rooms.Prison },
+														new Rooms { Room = Rooms.TheCorner },
+														new Rooms { Room = Rooms.TheSpot }};
 			WeaponsList = new ObservableCollection<Weapons> { new Weapons{Weapon = weapon.Shank},
 														new Weapons{Weapon = weapon.DaHeata},
 														new Weapons{Weapon = weapon.PoisonedLean},

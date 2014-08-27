@@ -24,13 +24,13 @@ namespace GhettoClue
         {
             InitializeComponent();
 
-            CharacterComboBox.ItemsSource = Enum.GetValues(typeof(CharacterCards));
+            CharacterComboBox.ItemsSource = Enum.GetValues(typeof(Characters));
             foreach (object o in CharacterComboBox.ItemsSource)
             {
                 Console.WriteLine(o.ToString());
             }
-            RoomComboBox.ItemsSource = Enum.GetValues(typeof (room));
-            WeaponComboBox.ItemsSource = Enum.GetValues(typeof(weapon));
+            RoomComboBox.ItemsSource = Enum.GetValues(typeof (Rooms));
+            WeaponComboBox.ItemsSource = Enum.GetValues(typeof(Weapons));
 
 
         }
