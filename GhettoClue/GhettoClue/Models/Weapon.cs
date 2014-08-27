@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace GhettoClue.Models
 {
-	public enum Weapons
+	public enum WeaponEnum
 	{
 		Shank, DaHeata, Smack, Weave, PoisonedLean
 	}
-    //public class Weapons
-    //{
-    //    public weapon Weapon { get; set; }
-    //    public string leathals { get; set; }
-    //    public bool show { get; set; }
+    public class Weapon
+    {
+        public WeaponEnum WeaponValue { get; set; }
+        public string WeaponString { get; set; }
+        public bool show { get; set; }
 
 
-    //}
+    }
 }

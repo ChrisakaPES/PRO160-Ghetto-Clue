@@ -27,20 +27,21 @@ namespace GhettoClue
 		List<Player> players = new List<Player>();
 		Random rand = new Random();
 		public int rolled;
-        List<Characters> startupCharacters = new List<Characters>
+        List<CharacterEnum> startupCharacters = new List<CharacterEnum>
             {
-                Characters.Lafawnduh, Characters.DaMarcus,Characters.Watermelondrea,Characters.Jake,Characters.Ladasha,Characters.JuanCarlos
+                CharacterEnum.Lafawnduh, CharacterEnum.DaMarcus,CharacterEnum.Watermelondrea,CharacterEnum.Jake,CharacterEnum.Ladasha,CharacterEnum.JuanCarlos
             };
-        List<Rooms> startupRooms = new List<Rooms>
+        List<RoomEnum> startupRooms = new List<RoomEnum>
             {
-                Rooms.TheCorner, Rooms.GrowHouse, Rooms.BackAlley, Rooms.BMommasPad, Rooms.Laundrymat, 
-                Rooms.Prison, Rooms.LightRoom, Rooms.KFC, Rooms.LiquorStore, Rooms.TheSpot
+                RoomEnum.TheCorner, RoomEnum.GrowHouse, RoomEnum.BackAlley, RoomEnum.BMommasPad, RoomEnum.Laundrymat, 
+                RoomEnum.Prison, RoomEnum.LightRoom, RoomEnum.KFC, RoomEnum.LiquorStore, RoomEnum.TheSpot
             };
-        List<Weapons> startupWeapons = new List<Weapons>
+        List<WeaponEnum> startupWeapons = new List<WeaponEnum>
             {
-                Weapons.Shank, Weapons.DaHeata, Weapons.Smack, Weapons.Weave, Weapons.PoisonedLean
+                WeaponEnum.Shank, WeaponEnum.DaHeata, WeaponEnum.Smack, WeaponEnum.Weave, WeaponEnum.PoisonedLean
             };
 
+        public Suggestion CurrentSuggestion { get; set; }
         MurderScenario theAnswer;
         
 		#endregion
@@ -77,14 +78,14 @@ namespace GhettoClue
             //var JuanW = RandomEnumValue<Weapons>();
 			#endregion
 			#region Players
-            ObservableCollection<ObservableCollection<Characters>> allCharacterLists = new ObservableCollection<ObservableCollection<Characters>>()
+            ObservableCollection<ObservableCollection<CharacterEnum>> allCharacterLists = new ObservableCollection<ObservableCollection<CharacterEnum>>()
             {
-                new ObservableCollection<Characters>(),
-                new ObservableCollection<Characters>(),
-                new ObservableCollection<Characters>(),
-                new ObservableCollection<Characters>(),
-                new ObservableCollection<Characters>(),
-                new ObservableCollection<Characters>()
+                new ObservableCollection<CharacterEnum>(),
+                new ObservableCollection<CharacterEnum>(),
+                new ObservableCollection<CharacterEnum>(),
+                new ObservableCollection<CharacterEnum>(),
+                new ObservableCollection<CharacterEnum>(),
+                new ObservableCollection<CharacterEnum>()
             };
             int playerListIndex = 0;
             while(startupCharacters.Count()>0)
@@ -94,14 +95,14 @@ namespace GhettoClue
                 startupCharacters.RemoveAt(characterSelectionIndex);
                 playerListIndex++;
             }
-            ObservableCollection<ObservableCollection<Rooms>> allCharacterRoomsLists = new ObservableCollection<ObservableCollection<Rooms>>()
+            ObservableCollection<ObservableCollection<RoomEnum>> allCharacterRoomsLists = new ObservableCollection<ObservableCollection<RoomEnum>>()
             {
-                new ObservableCollection<Rooms>(),
-                new ObservableCollection<Rooms>(),
-                new ObservableCollection<Rooms>(),
-                new ObservableCollection<Rooms>(),
-                new ObservableCollection<Rooms>(),
-                new ObservableCollection<Rooms>()
+                new ObservableCollection<RoomEnum>(),
+                new ObservableCollection<RoomEnum>(),
+                new ObservableCollection<RoomEnum>(),
+                new ObservableCollection<RoomEnum>(),
+                new ObservableCollection<RoomEnum>(),
+                new ObservableCollection<RoomEnum>()
             };
             while (startupRooms.Count() > 0)
             {
@@ -110,14 +111,14 @@ namespace GhettoClue
                 startupRooms.RemoveAt(roomSelectionIndex);
                 playerListIndex++;
             }
-            ObservableCollection<ObservableCollection<Weapons>> allCharacterWeaponsLists = new ObservableCollection<ObservableCollection<Weapons>>()
+            ObservableCollection<ObservableCollection<WeaponEnum>> allCharacterWeaponsLists = new ObservableCollection<ObservableCollection<WeaponEnum>>()
             {
-                new ObservableCollection<Weapons>(),
-                new ObservableCollection<Weapons>(),
-                new ObservableCollection<Weapons>(),
-                new ObservableCollection<Weapons>(),
-                new ObservableCollection<Weapons>(),
-                new ObservableCollection<Weapons>()
+                new ObservableCollection<WeaponEnum>(),
+                new ObservableCollection<WeaponEnum>(),
+                new ObservableCollection<WeaponEnum>(),
+                new ObservableCollection<WeaponEnum>(),
+                new ObservableCollection<WeaponEnum>(),
+                new ObservableCollection<WeaponEnum>()
             };
             while (startupWeapons.Count() > 0)
             {
@@ -133,7 +134,7 @@ namespace GhettoClue
 			{
 				new Player
                 { 
-                    Name = Characters.Lafawnduh, 
+                    Name = CharacterEnum.Lafawnduh, 
                     background = "not yet defined", 
                     characterCards = allCharacterLists[0],
 				    roomCards = allCharacterRoomsLists[0], 
@@ -141,7 +142,7 @@ namespace GhettoClue
                 },
 			    new Player
                 { 
-                    Name = Characters.DaMarcus, 
+                    Name = CharacterEnum.DaMarcus, 
                     background = "not yet defined", 
                     characterCards = allCharacterLists[1],
 				    roomCards = allCharacterRoomsLists[1], 
@@ -149,7 +150,7 @@ namespace GhettoClue
                 },
 			    new Player
                 { 
-                    Name = Characters.Jake, 
+                    Name = CharacterEnum.Jake, 
 				    background = "not yet defined", 
                     characterCards = allCharacterLists[2],
 				    roomCards = allCharacterRoomsLists[2], 
@@ -157,7 +158,7 @@ namespace GhettoClue
                 },
 			    new Player
                 { 
-                    Name = Characters.JuanCarlos, 
+                    Name = CharacterEnum.JuanCarlos, 
                     background = "not yet defined", 
                     characterCards = allCharacterLists[3],
 				    roomCards = allCharacterRoomsLists[3], 
@@ -165,7 +166,7 @@ namespace GhettoClue
                 },
 				new Player
                 { 
-                    Name = Characters.Ladasha, 
+                    Name = CharacterEnum.Ladasha, 
                     background = "not yet defined", 
                     characterCards = allCharacterLists[4],
 				    roomCards = allCharacterRoomsLists[4], 
@@ -173,7 +174,7 @@ namespace GhettoClue
                 },
 			    new Player
                 { 
-                    Name = Characters.Watermelondrea,
+                    Name = CharacterEnum.Watermelondrea,
                     background = "not yet defined", 
                     characterCards = allCharacterLists[5],
 				    roomCards = allCharacterRoomsLists[5], 
@@ -201,15 +202,15 @@ namespace GhettoClue
             int totalNumberOfWeapons = startupWeapons.Count(); 
 
             int index = rand.Next(totalNumberOfCharacters);
-            Characters murderer = startupCharacters[index];
+            CharacterEnum murderer = startupCharacters[index];
             startupCharacters.RemoveAt(index);
 
             index = rand.Next(totalNumberOfRooms);
-            Rooms murderHouse = startupRooms[index];
+            RoomEnum murderHouse = startupRooms[index];
             startupRooms.RemoveAt(index);
 
             index = rand.Next(totalNumberOfWeapons);
-            Weapons murderWeapon = startupWeapons[index];
+            WeaponEnum murderWeapon = startupWeapons[index];
             startupWeapons.RemoveAt(index);
 
             theAnswer = new MurderScenario(murderer, murderHouse, murderWeapon);
@@ -220,20 +221,11 @@ namespace GhettoClue
 		{
             int i = playerComboBox.SelectedIndex;
 
-            Player currentPlayer = players[i];
-            CharacterGrid.ItemsSource = currentPlayer.characterCards;
-            CharacterGrid.Columns.Add(new DataGridTextColumn());
-            CharacterGrid.Columns[0].Width = new DataGridLength(100);
-            CharacterGrid.Columns[0].Header = "Characters";
-            CharacterGrid.Columns.Add(new DataGridCheckBoxColumn());
-            WeaponGrid.ItemsSource = currentPlayer.weaponCards;
-            RoomGrid.ItemsSource = currentPlayer.roomCards;
-
-            //DetectiveNotes.DataContext = currentPlayer;
-
-            //DNotes_Characters.ItemsSource = currentPlayer.characterCards;
-            //DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
-            //DNotes_Rooms.ItemsSource = currentPlayer.MyDetectiveList.RoomsList;
+            Player currentPlayer = players[i]; 
+            DetectiveNotes.DataContext = currentPlayer.MyDetectiveList;
+            DNotes_Characters.ItemsSource = currentPlayer.MyDetectiveList.CharactersList;
+            DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
+            DNotes_Rooms.ItemsSource = currentPlayer.MyDetectiveList.RoomsList;
 
 		}
 

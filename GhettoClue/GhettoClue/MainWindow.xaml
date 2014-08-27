@@ -3,7 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:gb="clr-namespace:GhettoClue"
         xmlns:dl="clr-namespace:GhettoClue.UserControls"
+        xmlns:con="clr-namespace:GhettoClue.Converters"
         Title="MainWindow" Height="890.135" Width="1461.636">
+    
+    <Window.Resources>
+        <con:EnumToString x:Key="EnumToString"/>
+        <ObjectDataProvider x:Key="possibleActionsEnum" MethodName="GetValues"/>
+    </Window.Resources>
     <Grid Height="860" VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="669"/>
@@ -17,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <!--Region PlayerBox-->
-        <ComboBox x:Name="playerComboBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,463" SelectionChanged="player_SelectionChanged">
+        <ComboBox x:Name="playerComboBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,463" SelectionChanged="player_SelectionChanged" IsReadOnly="True" IsEnabled="False">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -41,21 +47,59 @@
         <Label Content="Characters:" FontSize="20" HorizontalAlignment="Center" Grid.Column="2" Margin="82,10,78,446" Width="107"/>
         <!--End Region-->
 
-        <!--Region Player Hand-->
-        <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="DarkOrchid" Grid.Row="1" Grid.Column="1">
-            <Label Content="Yo Hand:" FontSize="20" HorizontalAlignment="Center"/>
-            <DataGrid CanUserAddRows="False" x:Name="CharacterGrid" Background="BlanchedAlmond" />
-            <DataGrid CanUserAddRows="False" x:Name="WeaponGrid" Background="CadetBlue"/>
-            <DataGrid CanUserAddRows="False" x:Name="RoomGrid" Background="Aquamarine" />
+        
+        <!--Region Detective Notes-->
+        <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="DeepPink">
+            <Label Content="Detective Notes:" FontSize="20" HorizontalAlignment="Center" />
+            <DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" AutoGenerateColumns="False" ItemsSource="{Binding}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Character"  Binding="{Binding Path=CharacterValue}"/>
+                    <DataGridCheckBoxColumn Header="Show" Binding="{Binding Path=Show}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid CanUserAddRows="False" AutoGenerateColumns="False" x:Name="DNotes_Weapons" ItemsSource="{Binding}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Weapon" Binding="{Binding Path=WeaponValue}"/>
+                    <DataGridCheckBoxColumn Header="Show" Binding="{Binding Path=Show}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid CanUserAddRows="False" x:Name="DNotes_Rooms" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Room" Binding="{Binding Path=RoomValue}"/>
+                    <DataGridCheckBoxColumn Header="Show" Binding="{Binding Path=Show}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
         <!--End Region-->
+        <!--Region Player Hand 
+        <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="DarkOrchid" Grid.Row="1" Grid.Column="1">
+            <Label>YO HAND</Label>
+            <ListBox ItemsSource="{Binding ElementName=playerComboBox, Path=SelectedItem.characterCards}" Height="44" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Path=characterCards, Converter={StaticResource ResourceKey=EnumToString} }"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Label>Rooms</Label>
+            <ListBox ItemsSource="{Binding ElementName=playerComboBox, Path=SelectedItem.roomCards}" Height="44" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Path=roomCards, Converter={StaticResource ResourceKey=EnumToString} }"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+        <End Region-->
 
         <!--Region Detective Notes-->
+        <!--
         <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="DeepPink">
             <Label Content="Detective Notes:" FontSize="20" HorizontalAlignment="Center" />
             <dl:DetectiveControl x:Name="DNotes" />
         </StackPanel>
-        <!--End Region-->
+        End Region-->
 
         <gb:GameBoard x:Name="gameControl"/>
 

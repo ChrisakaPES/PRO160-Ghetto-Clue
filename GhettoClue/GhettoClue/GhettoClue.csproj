@@ -69,6 +69,9 @@
     <Compile Include="SuggestionPopUpWindow.xaml.cs">
       <DependentUpon>SuggestionPopUpWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\DetectiveControl.xaml.cs">
+      <DependentUpon>DetectiveControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\GameBoard.xaml.cs">
       <DependentUpon>GameBoard.xaml</DependentUpon>
     </Compile>
@@ -92,17 +95,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserControls\DetectiveControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControls\GameBoard.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Characters.cs" />
+    <Compile Include="Models\Character.cs" />
     <Compile Include="Models\DetectiveList.cs" />
     <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\Rooms.cs" />
-    <Compile Include="Models\Weapons.cs" />
+    <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Weapon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -8,11 +8,11 @@ namespace GhettoClue.Models
 {
     public class MurderScenario
     {
-        public Characters Perpetrator { get; private set; }
-        public Weapons MurderWeapon { get; private set; }
-        public Rooms MurderScene{get; private set;}
+        public CharacterEnum Perpetrator { get; private set; }
+        public WeaponEnum MurderWeapon { get; private set; }
+        public RoomEnum MurderScene{get; private set;}
 
-        public MurderScenario(Characters c, Rooms r,Weapons w)
+        public MurderScenario(CharacterEnum c, RoomEnum r,WeaponEnum w)
         {
             Perpetrator = c;
             MurderWeapon = w;

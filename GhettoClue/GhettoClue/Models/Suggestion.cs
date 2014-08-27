@@ -8,10 +8,10 @@ namespace GhettoClue.Models
 {
     public class Suggestion
     {
-        public Characters Character { get; set; }
-        public Rooms Room { get; set; }
-        public Weapons Weapon { get; set; }
-        public Suggestion(Characters c, Rooms r, Weapons w)
+        public CharacterEnum Character { get; set; }
+        public RoomEnum Room { get; set; }
+        public WeaponEnum Weapon { get; set; }
+        public Suggestion(CharacterEnum c, RoomEnum r, WeaponEnum w)
         {
             Character = c;
             Room = r;
@@ -20,21 +20,21 @@ namespace GhettoClue.Models
 
         public bool CheckForDisproveEligibility(Player p)
         {
-            foreach(Characters c in p.characterCards)
+            foreach(CharacterEnum c in p.characterCards)
             {
                 if (c == Character)
                 {
                     return true;
                 }
             }
-            foreach (Rooms r in p.roomCards)
+            foreach (RoomEnum r in p.roomCards)
             {
                 if (r == Room)
                 {
                     return true;
                 }
             }
-            foreach (Weapons w in p.weaponCards)
+            foreach (WeaponEnum w in p.weaponCards)
             {
                 if (w == Weapon)
                 {

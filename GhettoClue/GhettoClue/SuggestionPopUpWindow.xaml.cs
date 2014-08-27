@@ -24,13 +24,13 @@ namespace GhettoClue
         {
             InitializeComponent();
 
-            CharacterComboBox.ItemsSource = Enum.GetValues(typeof(Characters));
+            CharacterComboBox.ItemsSource = Enum.GetValues(typeof(CharacterEnum));
             foreach (object o in CharacterComboBox.ItemsSource)
             {
                 Console.WriteLine(o.ToString());
             }
-            RoomComboBox.ItemsSource = Enum.GetValues(typeof (Rooms));
-            WeaponComboBox.ItemsSource = Enum.GetValues(typeof(Weapons));
+            RoomComboBox.ItemsSource = Enum.GetValues(typeof (RoomEnum));
+            WeaponComboBox.ItemsSource = Enum.GetValues(typeof(WeaponEnum));
 
 
         }
@@ -38,8 +38,14 @@ namespace GhettoClue
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             Button confirm = (Button)sender;
-            Characters suspect = (Characters)CharacterComboBox.SelectedItem;
-            Rooms rooms = (Rooms)RoomComboBox.SelectedItem;
+            CharacterEnum suspect = (CharacterEnum)CharacterComboBox.SelectedItem;
+            RoomEnum suspectedMurderScene = (RoomEnum)RoomComboBox.SelectedItem;
+            WeaponEnum suspectedMurderWeapon = (WeaponEnum)WeaponComboBox.SelectedItem;
+
+            Suggestion suggest = new Suggestion(suspect, suspectedMurderScene, suspectedMurderWeapon);
+
+            
+
             ((Window)((StackPanel)confirm.Parent).Parent).Close();
         }
     }

@@ -20,14 +20,14 @@ namespace GhettoClue.Models
 			MyDetectiveList = new DetectiveList();
 		}
 
-		public Characters Name { get; set; }
+		public CharacterEnum Name { get; set; }
 		public string background { get; set; }
         public ImageBrush imgBrush { get; set; }
 		public DetectiveList MyDetectiveList { get; set; }
 
-		public ObservableCollection<Characters> characterCards { get; set; }
-		public ObservableCollection<Weapons> weaponCards { get; set; }
-		public ObservableCollection<Rooms> roomCards { get; set; }
+		public ObservableCollection<CharacterEnum> characterCards { get; set; }
+		public ObservableCollection<WeaponEnum> weaponCards { get; set; }
+		public ObservableCollection<RoomEnum> roomCards { get; set; }
 
 
 

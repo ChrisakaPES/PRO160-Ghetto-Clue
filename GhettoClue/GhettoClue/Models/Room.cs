@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace GhettoClue.Models
 {
-	public enum Rooms
+	public enum RoomEnum
 	{
 		TheCorner, GrowHouse, BackAlley, BMommasPad, Laundrymat,
 		Prison, LightRoom, KFC, LiquorStore, TheSpot
 	}
 
-    //public class Rooms
-    //{
-    //    public Rooms Room { get; set; }
-    //    public string location { get; set; }
-    //    public bool show { get; set; }
+   public class Room
+   {
+       public RoomEnum RoomValue { get; set; }
+       public string RoomString { get; set; }
+       public bool Show { get; set; }
 
 
-    //}
+   }
 }

@@ -11,7 +11,7 @@
             <ColumnDefinition Width="94*"/>
         </Grid.ColumnDefinitions>
         <CheckBox Grid.Column="1" Margin="10,36,49,565"/>
-        <CheckBox Grid.Column="1" Margin="10,64,53,536"/>
+        <CheckBox Grid.Column="1" Margin="10,61,53,539"/>
         <CheckBox Grid.Column="1" Margin="10,277,48,323"/>
         <CheckBox Grid.Column="1" Margin="10,254,49,347"/>
         <CheckBox Grid.Column="1" Margin="10,226,53,375"/>
@@ -19,17 +19,17 @@
         <CheckBox Grid.Column="1" Margin="10,143,45,456"/>
         <CheckBox Grid.Column="1" Margin="10,118,53,482"/>
         <CheckBox Grid.Column="1" Margin="10,90,49,509"/>
-        <CheckBox Grid.Column="1" Margin="9,470,57,133"/>
-        <CheckBox Grid.Column="1" Margin="10,446,53,152"/>
-        <CheckBox Grid.Column="1" Margin="11,414,52,188"/>
-        <CheckBox Grid.Column="1" Margin="10,389,55,212"/>
-        <CheckBox Grid.Column="1" Margin="10,365,53,236"/>
-        <CheckBox Grid.Column="1" Margin="10,306,59,297"/>
-        <CheckBox Grid.Column="1" Margin="9,551,59,52"/>
-        <CheckBox Grid.Column="1" Margin="9,522,53,83"/>
-        <CheckBox Grid.Column="1" Margin="10,496,53,101"/>
-        <CheckBox Grid.Column="1" Margin="11,600,52,0"/>
-        <CheckBox Grid.Column="1" Margin="9,577,52,26"/>
+        <CheckBox Grid.Column="1" Margin="9,444,57,159"/>
+        <CheckBox Grid.Column="1" Margin="10,422,53,177"/>
+        <CheckBox Grid.Column="1" Margin="9,400,54,203"/>
+        <CheckBox Grid.Column="1" Margin="10,376,55,225"/>
+        <CheckBox Grid.Column="1" Margin="10,354,53,247"/>
+        <CheckBox Grid.Column="1" Margin="10,328,59,275"/>
+        <CheckBox Grid.Column="1" Margin="9,514,59,89"/>
+        <CheckBox Grid.Column="1" Margin="10,490,52,115"/>
+        <CheckBox Grid.Column="1" Margin="10,470,53,127"/>
+        <CheckBox Grid.Column="1" Margin="10,178,53,422"/>
+        <CheckBox Grid.Column="1" Margin="10,536,51,67"/>
         <StackPanel Background="DeepPink" Margin="-1,-1,3,1">
             <Label FontSize="18">Characters:</Label>
             <Label>Lafawndah</Label>
