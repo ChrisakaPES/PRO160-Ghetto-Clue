@@ -23,7 +23,8 @@ namespace GhettoClue.Models
               new Room { RoomValue = RoomEnum.LiquorStore, RoomString=RoomEnum.LiquorStore.ToString() },
               new Room { RoomValue = RoomEnum.Prison,RoomString=RoomEnum.Prison.ToString() },
               new Room { RoomValue = RoomEnum.TheCorner, RoomString=RoomEnum.TheCorner.ToString() },
-              new Room { RoomValue = RoomEnum.TheSpot, RoomString=RoomEnum.TheSpot.ToString() }
+              new Room { RoomValue = RoomEnum.TheSpot, RoomString=RoomEnum.TheSpot.ToString() },
+              new Room { RoomValue = RoomEnum.BackAlley, RoomString = RoomEnum.BackAlley.ToString() }
             };
             
 
