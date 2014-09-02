@@ -241,6 +241,7 @@ namespace GhettoClue
             gameControl.HighlightSpots(NumRoll);
             roll_Die(NumRoll);
             roll.IsEnabled = false;
+            turn.IsEnabled = true;
 
             //This bool will be set by movement actions but is always set to true for testing
            
@@ -300,6 +301,7 @@ namespace GhettoClue
         {
             //turn taking
             bool isPlayerInRoom = true;
+
             if (isPlayerInRoom)
             {
                 MessageBoxResult res = MessageBox.Show("Would You like to Accuse Someone?", "Accuse?", MessageBoxButton.YesNo);
@@ -320,6 +322,15 @@ namespace GhettoClue
                     {
                         MessageBox.Show("Oh SugarSnaps you done messed up yous outta da game.");
                         players.RemoveAt(playerComboBox.SelectedIndex);
+                        int playerSelect = playerComboBox.SelectedIndex;
+                        playerSelect--;
+                        if (playerSelect == -1)
+                        {
+                            playerSelect = players.Count() - 1;
+                        }
+                        playerComboBox.ItemsSource = players;
+                        playerComboBox.SelectedIndex = playerSelect;
+
                     }
 
                     
@@ -339,10 +350,18 @@ namespace GhettoClue
                             i = 0;
                         }
                         int timesLoopedThrough = 0;
-                        while (!CurrentSuggestion.CheckForDisproveEligibility(players[i]))
+                        do
                         {
+                            if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
+                            {
+                                DisprovePopUp disprovePop = new DisprovePopUp(players[i], CurrentSuggestion);
+                                disprovePop.ParentWin = this;
+                                disprovePop.ShowDialog();
+                                break;
+                            }
                             if (timesLoopedThrough >= 5)
                             {
+                                MessageBox.Show("None of the other players have any matching cards.", "Well what do you know?"); 
                                 break;
                             }
                             i++;
@@ -351,20 +370,13 @@ namespace GhettoClue
                                 i = 0;
                             }
                             timesLoopedThrough++;
-                            if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
-                            {
-                                DisprovePopUp disprovePop = new DisprovePopUp(players[i], CurrentSuggestion);
-                                disprovePop.ParentWin = this;
-                                disprovePop.ShowDialog();
-                            }
-                        }
+                            
+                        } while (true);
                     }
                     roll.IsEnabled = true;
+                    
                 }
-
-                //res = MessageBox.Show("Are you sure You would like to End your turn?", "End Turn?", MessageBoxButton.YesNo);
-                //if (res == MessageBoxResult.Yes)
-                //{
+            }
                 int currentPlayerIndex = playerComboBox.SelectedIndex;
                 currentPlayerIndex++;
                 if (currentPlayerIndex == players.Count())
@@ -377,10 +389,11 @@ namespace GhettoClue
                 gameControl.clearHighlights();
 
                 MessageBox.Show("It is now "+ playerComboBox.SelectedItem.ToString()+"\'s roll!"); 
-
-                //}
-            }
-        }
+                turn.IsEnabled = false;
+                roll.IsEnabled = true;
+       }
+            
+        
 
 		private void suggest_Click(object sender, RoutedEventArgs e)
 		{

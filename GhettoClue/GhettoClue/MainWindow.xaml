@@ -9,6 +9,8 @@
     <Window.Resources>
         <con:EnumToString x:Key="EnumToString"/>
         <ObjectDataProvider x:Key="possibleActionsEnum" MethodName="GetValues"/>
+        <con:CharacterToColor x:Key="CharacterToColor"/>
+        
     </Window.Resources>
     <Grid Height="860" VerticalAlignment="Top">
         <Grid.RowDefinitions>
@@ -28,17 +30,17 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="50"/>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
+                            <RowDefinition Height="25px"/>
+                            <RowDefinition Height="25px"/>
                         </Grid.RowDefinitions>
                         <Label Grid.Column="1" Grid.Row="0"  Content="{Binding Name}" FontSize="15"/>
                         <Label Grid.Column="1" Grid.Row="1"  Content="{Binding background}" FontSize="13"/>
-                        <Label Grid.Column="0" Grid.RowSpan="2" Background="Crimson"/>
+                        <Label Grid.Column="0" Grid.RowSpan="2" Background="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}"/>
                     </Grid>
                 </DataTemplate>
             </ComboBox.ItemTemplate>

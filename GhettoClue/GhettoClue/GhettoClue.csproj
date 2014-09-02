@@ -58,6 +58,7 @@
     <Compile Include="AccuseWindow.xaml.cs">
       <DependentUpon>AccuseWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\CharacterToColor.cs" />
     <Compile Include="Converters\EnumToString.cs" />
     <Compile Include="DisprovePopUp.xaml.cs">
       <DependentUpon>DisprovePopUp.xaml</DependentUpon>
