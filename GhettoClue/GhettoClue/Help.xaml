@@ -32,5 +32,9 @@
         <TextBlock x:Name="help7" TextWrapping="WrapWithOverflow" FontSize="12" FontFamily="Century Gothic" Foreground="White">
          ~ The "Yo Hand" section is where the cards that you have are displayed
         </TextBlock>
+        <Label/>
+        <TextBlock x:Name="help8" TextWrapping="WrapWithOverflow" FontSize="12" FontFamily="Century Gothic" Foreground="White">
+            ~ The brown squares represent doors to the greyed out rooms, you can only get into the room by these doors.
+        </TextBlock>
     </StackPanel>
 </Window>
