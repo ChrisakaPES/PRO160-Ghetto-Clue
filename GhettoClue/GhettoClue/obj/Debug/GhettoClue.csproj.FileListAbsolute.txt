@@ -73,7 +73,6 @@ C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\Ghe
 C:\Users\Fbenitez\Desktop\Papers\DotNet\AppLab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\SuggestionPopUpWindow.baml
 C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.exe
 C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\bin\Debug\GhettoClue.pdb
-C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.csprojResolveAssemblyReference.cache
 C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\GameBoard.baml
 C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\MainWindow.g.cs
 C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\SuggestionPopUpWindow.g.cs

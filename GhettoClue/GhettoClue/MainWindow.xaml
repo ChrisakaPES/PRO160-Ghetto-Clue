@@ -10,6 +10,7 @@
         <con:EnumToString x:Key="EnumToString"/>
         <ObjectDataProvider x:Key="possibleActionsEnum" MethodName="GetValues"/>
         <con:CharacterToColor x:Key="CharacterToColor"/>
+        <con:CharacterToImage x:Key="CharacterToImage"/>
 
     </Window.Resources>
     <Grid Height="860" VerticalAlignment="Top">
@@ -38,9 +39,13 @@
                             <RowDefinition Height="25px"/>
                             <RowDefinition Height="25px"/>
                         </Grid.RowDefinitions>
-                        <Label Grid.Column="1" Grid.Row="0"  Content="{Binding Name}" FontSize="15"/>
+                        <Label Grid.Column="1" Grid.Row="0"  Content="{Binding Name}" Foreground="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}" 
+                               FontSize="15"/>
                         <Label Grid.Column="1" Grid.Row="1"  Content="{Binding background}" FontSize="13"/>
-                        <Label Grid.Column="0" Grid.RowSpan="2" Background="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}"/>
+                        <Rectangle Grid.Column="0" Grid.RowSpan="2" Height="50px" Width="50px" 
+                                   Fill="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}">
+                            
+                        </Rectangle>
                     </Grid>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
@@ -122,7 +127,7 @@
         <!--Region Spash Screen-->
 
         <Label Background="White" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}">
-            <Image Source="Character Pictures/Clue Directions Final.jpg" Height="860" Width="1496"/>
+            <Image Source="CharacterPictures/Clue Directions Final.jpg" Height="860" Width="1496"/>
         </Label>
         <Button x:Name="start" Click="start_Click" Height="100" Width="200" Content="Start Game" FontSize="25" Margin="769,239,218,10" Grid.Row="1" Grid.ColumnSpan="2"/>
         <!--End Region-->

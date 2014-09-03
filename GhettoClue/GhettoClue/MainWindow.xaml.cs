@@ -26,6 +26,7 @@ namespace GhettoClue
 	{
 		#region Variables
 		List<Player> players = new List<Player>();
+        Player currentPlayer = null;
 		Random rand = new Random();
         Random gen = new Random();
 		public int rolled;
@@ -74,6 +75,7 @@ namespace GhettoClue
 		public MainWindow()
 		{
 			InitializeComponent();
+            this.InvalidateVisual();
 			CreateMurderScenario();
             #region Players
             ObservableCollection<ObservableCollection<CharacterEnum>> allCharacterLists = new ObservableCollection<ObservableCollection<CharacterEnum>>()
@@ -187,6 +189,8 @@ namespace GhettoClue
             gameControl.UpdatePlayers(players);
             gameControl.CreateBoard();
             turn.IsEnabled = false;
+            this.InvalidateVisual();
+            //playerComboBox.DataContext = this;
 		}
 
         /** 
@@ -218,7 +222,7 @@ namespace GhettoClue
 		{
             int i = playerComboBox.SelectedIndex;
 
-            Player currentPlayer = players[i]; 
+            currentPlayer = players[i]; 
             DetectiveNotes.DataContext = currentPlayer.MyDetectiveList;
             DNotes_Characters.ItemsSource = currentPlayer.MyDetectiveList.CharactersList;
             DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
@@ -237,7 +241,7 @@ namespace GhettoClue
         private void roll_Click(object sender, RoutedEventArgs e)
         {
             //rolls the dice and calls the method to change the background
-
+            this.InvalidateVisual();
             NumRoll = gen.Next(1, 7);
             gameControl.HighlightSpots(NumRoll);
             roll_Die(NumRoll);
@@ -434,6 +438,7 @@ namespace GhettoClue
            SpashScreen.Visibility = System.Windows.Visibility.Hidden;
           
            start.Visibility = System.Windows.Visibility.Hidden;
+           playerComboBox.InvalidateVisual();
 
        }
 
