@@ -186,6 +186,7 @@ namespace GhettoClue
             
             gameControl.UpdatePlayers(players);
             gameControl.CreateBoard();
+            turn.IsEnabled = false;
 		}
 
         /** 
@@ -308,6 +309,7 @@ namespace GhettoClue
                 if (res == MessageBoxResult.Yes)
                 {
                     //Do Accuse shenanigans 
+                    this.InvalidateVisual();
                     AccuseWindow accuseWindow = new AccuseWindow();
                     accuseWindow.ParentWin = this;
                     accuseWindow.CurrentPlayer = players[playerComboBox.SelectedIndex];
@@ -329,7 +331,9 @@ namespace GhettoClue
                             playerSelect = players.Count() - 1;
                         }
                         playerComboBox.ItemsSource = players;
-                        playerComboBox.SelectedIndex = playerSelect;
+                        playerComboBox.SelectedIndex = playerSelect; 
+                        this.InvalidateVisual();
+
 
                     }
 
@@ -337,12 +341,16 @@ namespace GhettoClue
                 }
                 else
                 {
+                    this.InvalidateVisual();
                     res = MessageBox.Show("Would You like to Suggest a scenario?", "Suggest?", MessageBoxButton.YesNo);
                     if (res == MessageBoxResult.Yes)
                     {
                         SuggestionPopUpWindow suggestPop = new SuggestionPopUpWindow();
                         suggestPop.ParentWin = this;
+                        suggestPop.currentPlayer = (Player)playerComboBox.SelectedItem;
                         suggestPop.ShowDialog();
+                        this.InvalidateVisual();
+
 
                         int i = playerComboBox.SelectedIndex + 1;
                         if (i == players.Count())
@@ -356,7 +364,10 @@ namespace GhettoClue
                             {
                                 DisprovePopUp disprovePop = new DisprovePopUp(players[i], CurrentSuggestion);
                                 disprovePop.ParentWin = this;
+
                                 disprovePop.ShowDialog();
+                                this.InvalidateVisual();
+
                                 break;
                             }
                             if (timesLoopedThrough >= 5)
@@ -388,7 +399,8 @@ namespace GhettoClue
                 gameControl.UpdateNextTurn((Player)playerComboBox.SelectedItem);
                 gameControl.clearHighlights();
 
-                MessageBox.Show("It is now "+ playerComboBox.SelectedItem.ToString()+"\'s roll!"); 
+                MessageBox.Show("It is now "+ playerComboBox.SelectedItem.ToString()+"\'s roll!");
+                this.InvalidateVisual();
                 turn.IsEnabled = false;
                 roll.IsEnabled = true;
        }

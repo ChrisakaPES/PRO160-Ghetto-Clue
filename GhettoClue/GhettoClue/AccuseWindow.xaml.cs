@@ -27,7 +27,7 @@ namespace GhettoClue
         {
 
             InitializeComponent();
-
+            this.DataContext = this;
             CharacterComboBox.ItemsSource = Enum.GetValues(typeof(CharacterEnum));
             //foreach (object o in CharacterComboBox.ItemsSource)
             //{

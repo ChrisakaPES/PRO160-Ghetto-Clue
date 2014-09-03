@@ -1,11 +1,19 @@
 ﻿<Window x:Class="GhettoClue.AccuseWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"        
+        xmlns:con="clr-namespace:GhettoClue.Converters"
         Title="AccuseWindow" Height="300" Width="300" WindowStyle="None">
+    <Window.Resources>
+        <con:CharacterToColor x:Key="CharacterToColor" />
+    </Window.Resources>
+    
     <StackPanel>
-        <Label HorizontalAlignment="Center">Make your accusation,</Label>
-        <Label HorizontalAlignment="Center" x:Name="PlayerNameLabel" />
-        <ComboBox x:Name="CharacterComboBox">
+        <Label HorizontalAlignment="Center" FontSize="24px">Accusation Time</Label>
+        <Label Content="{Binding Path=CurrentPlayer}" Foreground="{Binding Path=CurrentPlayer, Converter={StaticResource ResourceKey=CharacterToColor}}" HorizontalAlignment="Center" 
+               FontSize="18px"/>
+        <Label Content="Who you think done it?" HorizontalAlignment="Center" />
+        <Label Content="Murder Suspect"/>
+        <ComboBox x:Name="CharacterComboBox" Margin="10,0">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding}"/>
@@ -13,7 +21,8 @@
             </ComboBox.ItemTemplate>
 
         </ComboBox>
-        <ComboBox x:Name="RoomComboBox">
+        <Label Content="Murder Site"/>
+        <ComboBox x:Name="RoomComboBox" Margin="10,0">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding}"/>
@@ -21,7 +30,8 @@
             </ComboBox.ItemTemplate>
 
         </ComboBox>
-        <ComboBox x:Name="WeaponComboBox">
+        <Label Content="Murder Weapon"/>
+        <ComboBox x:Name="WeaponComboBox" Margin="10,0">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding}"/>

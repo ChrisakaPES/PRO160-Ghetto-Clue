@@ -1,10 +1,18 @@
 ﻿<Window x:Class="GhettoClue.DisprovePopUp"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:con="clr-namespace:GhettoClue.Converters"
         Title="DisprovePopUp" Height="300" Width="300" WindowStyle="None">
+    <Window.Resources>
+        <con:CharacterToColor x:Key="CharacterToColor" />
+    </Window.Resources>
     <StackPanel>
-        <Label HorizontalAlignment="Center" >Select A Matching Card</Label>
-        <ComboBox x:Name="matchingCardsComboBox"></ComboBox>
+        <Label Content="Disprove" FontSize="24px" HorizontalAlignment="Center"></Label>
+        <Label Content="{Binding Path=disprovingPlayer}" Foreground="{Binding Path=disprovingPlayer, Converter={StaticResource ResourceKey=CharacterToColor}}" HorizontalAlignment="Center" 
+               FontSize="18px"/>
+        <Label Content="Show em they wrong! (Select a matching card)" HorizontalAlignment="Center" />
+        <Label Content="Matching Card"/>
+        <ComboBox x:Name="matchingCardsComboBox" Margin="10,0"></ComboBox>
         <Button x:Name="ConfirmButton" Width="100px" Height="25px" Click="ConfirmButton_Click" Margin="50px" Content="Confirm"/>
     </StackPanel>
 </Window>

@@ -24,15 +24,20 @@ namespace GhettoClue
         public Player disprovingPlayer { get; set; }
         public MainWindow ParentWin { get; set; }
         public ObservableCollection<string> listOfCards { get; set; }
+        
 
         public DisprovePopUp()
         {
             InitializeComponent();
+            this.DataContext = this;
+            
         }
         public DisprovePopUp(Player p, Suggestion sug)
         {
             InitializeComponent();
+            this.DataContext = this;
             listOfCards = new ObservableCollection<string>();
+            disprovingPlayer = p;
 
             foreach (CharacterEnum c in p.characterCards)
             {
