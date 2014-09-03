@@ -60,7 +60,10 @@ namespace GhettoClue
                             i == 3 && j == 7 || i == 4 && j == 7 || i == 5 && j == 7 || i == 3 && j == 8 || i == 4 && j == 8 || i == 5 && j == 8 ||
                             i == 0 && j == 3 || i == 0 && j == 4 || i == 0 && j == 5 || i == 1 && j == 3 || i == 1 && j == 4 || i == 1 && j == 5 ||
                             i == 7 && j == 0 || i == 8 && j == 0 || i == 9 && j == 0 || i == 7 && j == 1 || i == 8 && j == 1 || i == 9 && j == 1 ||
-                            i == 7 && j == 7 || i == 8 && j == 7 || i == 9 && j == 7 || i == 7 && j == 8 || i == 8 && j == 8 || i == 9 && j == 8)
+                            i == 7 && j == 7 || i == 8 && j == 7 || i == 9 && j == 7 || i == 7 && j == 8 || i == 8 && j == 8 || i == 9 && j == 8 ||
+                            i == 8 && j == 3 || i == 8 && j == 4 || i == 8 && j == 5 || i == 9 && j == 3 || i == 9 && j == 4 || i == 9 && j == 5
+                            )
+                            
                         {
                             squares[j, i].IsRoom = true;
                             squares[j, i].IsOpen = false;
@@ -204,6 +207,29 @@ namespace GhettoClue
             {
                 cell.IsAvailable = false;
             }
+        }
+
+        public void PutInRoom(int x, int y)
+        {
+            // Check cell on the right.
+            if (x != myColumn - 1)
+                if (squares[x + 1, y].IsRoom)
+                    squares[x + 1, y].IsAvailable = true;
+
+            // Check cell on the bottom.
+            if (y != myRow - 1)
+                if (squares[x, y + 1].IsRoom)
+                    squares[x, y + 1].IsAvailable = true;
+
+            // Check cell on the left.
+            if (x != 0)
+                if (squares[x - 1, y].IsRoom)
+                    squares[x - 1, y].IsAvailable = true;
+
+            // Check cell on the top.
+            if (y != 0)
+                if (squares[x, y - 1].IsRoom)
+                    squares[x, y - 1].IsAvailable = true;
         }
     }
 }
