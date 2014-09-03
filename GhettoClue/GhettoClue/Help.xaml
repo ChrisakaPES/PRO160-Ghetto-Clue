@@ -6,7 +6,7 @@
         <Label Foreground="White" Content="Help" FontFamily="Stencil"  HorizontalContentAlignment="Center" FontSize="23"/>
         <Label Height="19"/>
         <TextBlock x:Name="help1" TextWrapping="WrapWithOverflow" FontSize="12"  FontFamily="Century Gothic" Foreground="White">
-         ~ Use the roll button to roll the dice to move, then move amount of spaces
+         ~ Use the roll button to roll the dice, then click your color and move that number of spaces
         </TextBlock>
         <Label/>
         <TextBlock x:Name="rules2" TextWrapping="WrapWithOverflow" FontSize="12" FontFamily="Century Gothic" Foreground="White">
@@ -26,11 +26,11 @@
         </TextBlock>
         <Label/>
         <TextBlock x:Name="help6" TextWrapping="WrapWithOverflow" FontSize="12" FontFamily="Century Gothic" Foreground="White">
-         ~ "Detective Notes" is to help narrow down what is in the murder case
+         ~ The "Detective Notes" section is to help keep track of cards that aren't in the murder case
         </TextBlock>
         <Label/>
         <TextBlock x:Name="help7" TextWrapping="WrapWithOverflow" FontSize="12" FontFamily="Century Gothic" Foreground="White">
-         ~ "Yo Hand" is where your cards are displayed
+         ~ The "Yo Hand" section is where the cards that you have are displayed
         </TextBlock>
     </StackPanel>
 </Window>

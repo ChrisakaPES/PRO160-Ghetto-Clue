@@ -51,7 +51,7 @@
 
 
         <!--Region Detective Notes-->
-        <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="DeepPink">
+        <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="Beige">
             <Label Content="Detective Notes:" FontSize="20" HorizontalAlignment="Center" />
             <DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" AutoGenerateColumns="False" ItemsSource="{Binding}">
                 <DataGrid.Columns>
@@ -75,8 +75,8 @@
         <!--End Region-->
 
         <!--Region Player Hand-->
-        <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="DarkOrchid" Grid.Row="1" Grid.Column="1">
-            <Label>YO HAND</Label>
+        <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="LightBlue" Grid.Row="1" Grid.Column="1">
+            <Label FontSize="20" HorizontalAlignment="Center">YO HAND</Label>
             <DataGrid CanUserAddRows="False" x:Name="CharacterHand" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Character"  Binding="{Binding}"/>
@@ -101,7 +101,7 @@
 
         <!--Region Buttons-->
         <Button x:Name="turn" Content="END TURN" FontSize="20" Grid.Column="2" Margin="62,339,55,104" Click="nextTurn_Click"/>
-        <Button x:Name="help" Content="?" FontSize="18" Grid.Column="2" Margin="217,304,10,10" Grid.Row="1" Click="help_MouseDown" RenderTransformOrigin="0.5,0.5"/>
+        <Button Background="Blue" x:Name="help" Foreground="Yellow" Content="Help" FontSize="18" Grid.Column="2" Margin="202,304,10,10" Grid.Row="1" Click="help_MouseDown" RenderTransformOrigin="0.5,0.5"/>
         <Button x:Name="roll" Click="roll_Click" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="67,145,100,156" Grid.Row="1"/>
         <Image x:Name="die_placement" Margin="60,203,92,65" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
             <Image.RenderTransform>
@@ -121,27 +121,8 @@
 
         <!--Region Spash Screen-->
 
-        <Label Background="Black" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}"/>
-        <Label x:Name="welcome" Content="WELCOME TO GHETTO CLUE!" FontSize="30" Foreground="White" Margin="507,10,10,436" Visibility="{Binding ElementName=start, Path=start_Click}"/>
-        <Button x:Name="start" Click="start_Click" Height="100" Width="200" Content="Start Game" FontSize="25" Margin="615,241,132,10" Grid.Row="1"/>
-        <Label x:Name="ruleHeader" Content="Rules:" FontSize="25" Foreground="White" Margin="652,63,209,402" Visibility="{Binding ElementName=start, Path=start_Click}"/>
-        <TextBlock x:Name="rules1" TextWrapping="WrapWithOverflow" FontSize="18" Foreground="White" Grid.ColumnSpan="2" Margin="225,131,0,220" Visibility="{Binding ElementName=start, Path=start_Click}">
-            When the game is started,  three cards — one suspect, one weapon, and one area — are chosen at random and put into a special envelope, representing the facts to the murder case. The remaining cards are distributed amongst the players, shown in the area under “Yo Hand:”.
-   
-            The starting player is Lafawnda, moving clockwise around the game board. Players roll the dice and move along the board’s walkways (the black squares) or into the locations accordingly.
-          
-            The goal is to deduce the details of the murder by making suggestions to other players, selecting a character, a weapon, and a location.
-        </TextBlock>
-        <TextBlock x:Name="rules2" TextWrapping="WrapWithOverflow" FontSize="18" Foreground="White" Grid.ColumnSpan="2" Margin="225,299,0,25" Visibility="{Binding ElementName=start, Path=start_Click}">
-           The player to the left of the suggesting player must then disprove the suggestion, if the can, by showing the suggesting player ONLY ONE of the cards in the suggestion. If the player to the left does not have any of the suggested cards, 
-                    it moves to the next person clockwise until a card is shown or comes back to the suggesting player. That player does not advise the other players whether the hold any of the three cards. 
-
-            Once a player has sufficiently narrowed down the solution(by using the checkboxes in the area called “Detective Notes”), that player can make an Accusation and name any three elements they want.
-        </TextBlock>
-        <TextBlock x:Name="rules3" TextWrapping="WrapWithOverflow" FontSize="18" Foreground="White" Grid.ColumnSpan="2" Margin="225,473,0,258" Grid.RowSpan="2" Visibility="{Binding ElementName=start, Path=start_Click}">
-            The accusing player will then check the accusation based on the cards in the envelope, no other players will see these cards.
-            If incorrect, they are no longer part of the game except to disprove suggestions from other players. If correct, the solution cards are shown to the other players and the game ends.
-        </TextBlock>
+        <!--<Label Background="Black" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}"/>
+        <Button x:Name="start" Click="start_Click" Height="100" Width="200" Content="Start Game" FontSize="25" Margin="615,241,132,10" Grid.Row="1"/>-->
         <!--End Region-->
 
     </Grid>
