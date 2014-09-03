@@ -420,12 +420,9 @@ namespace GhettoClue
        private void start_Click(object sender, RoutedEventArgs e)
        {
            SpashScreen.Visibility = System.Windows.Visibility.Hidden;
-           welcome.Visibility = System.Windows.Visibility.Hidden;
+          
            start.Visibility = System.Windows.Visibility.Hidden;
-           ruleHeader.Visibility = System.Windows.Visibility.Hidden;
-           rules1.Visibility = System.Windows.Visibility.Hidden;
-           rules2.Visibility = System.Windows.Visibility.Hidden;
-           rules3.Visibility = System.Windows.Visibility.Hidden;
+
        }
 
         private void help_MouseDown(object sender, RoutedEventArgs e)
