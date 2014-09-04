@@ -268,7 +268,7 @@ namespace GhettoClue
 				turn.IsEnabled = true;
 				gameControl.HighlightSpots(num);
 				timerLoop = 0;
-				userGuide.helptext.Content = "Movement: \n Click your game piece on the gameboard. \n(Your color is shown at the top right) \nNow click on one of the now highlighted squares to move your piece.\nClick End Turn when you're done.";
+				userGuide.helptext.Text = "Movement: \n\n Click your game piece on the gameboard. \n\n(Your color is shown at the top right) \n\nNow click on one of the now highlighted squares to move your piece.\n\nClick End Turn when you're done.";
 				userGuide.ShowGuide();
 			}
 			timerLoop++;
@@ -425,6 +425,8 @@ namespace GhettoClue
 				MessageBox.Show("It is now "+ playerComboBox.SelectedItem.ToString()+"\'s roll!");
 				this.InvalidateVisual();
 				turn.IsEnabled = false;
+				userGuide.helptext.Text = "Hey "+ playerComboBox.SelectedItem.ToString()+"! \n\n It is now your turn.";
+				userGuide.ShowGuide();
 				roll.IsEnabled = true;
 	   }
 			

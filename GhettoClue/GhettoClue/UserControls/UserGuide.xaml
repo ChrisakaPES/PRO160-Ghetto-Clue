@@ -4,14 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              Height="350" Width="250">
-    <Grid>
         <!--<Label Background="LightGray"
                 Width="40"
                Height="30"
                Content="Show"
                MouseDown="CanvasClick"/>-->
-        <DockPanel x:Name="userGuideSection" Visibility="Visible" Background="Bisque">
-            <Border DockPanel.Dock="Left" Width="20">
+        <DockPanel x:Name="userGuideSection" Visibility="Visible" Background="Red">
+            <Border DockPanel.Dock="Left" Width="8">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Offset="0" Color="Transparent"/>
@@ -19,32 +18,26 @@
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
-            <Border Padding="5,5,5,5"
+            <Border Padding="2,5,5,5"
           Background="{StaticResource {x:Static SystemColors.ControlLightLightBrushKey}}"
           BorderThickness="1"
           BorderBrush="{StaticResource {x:Static SystemColors.ControlDarkBrushKey}}">
-                <DockPanel Name="userGuidePanel" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <Grid DockPanel.Dock="Top">
+                <DockPanel Name="userGuidePanel">
+                    <Grid DockPanel.Dock="Top" >
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="30" />
                         </Grid.RowDefinitions>
-                        <Label x:Name="helptext"
+						<TextBlock x:Name="helptext"
                                  Grid.Row="0"
-                                 Grid.Column="0">
-                            <Label.Resources>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="TextWrapping" Value="Wrap" />
-                                </Style>
-                            </Label.Resources>
-                        </Label>
-                        <Button Grid.ColumnSpan="2" Grid.Row="1" Content="Hide" HorizontalAlignment="Left" DockPanel.Dock="Bottom" Click="DoHideUserGuide"/>
+                                 Grid.Column="0"
+								 TextWrapping="Wrap"/>
+						<Button Grid.ColumnSpan="2" Grid.Row="1" Margin="2,20,0,-20" Content="Hide" HorizontalAlignment="Left" DockPanel.Dock="Bottom" Click="DoHideUserGuide"/>
                     </Grid>
                 </DockPanel>
             </Border>
         </DockPanel>
-    </Grid>
 </UserControl>
