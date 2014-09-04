@@ -52,17 +52,12 @@ namespace GhettoClue
                         block.DataContext = squares[j, i];
                         block.MouseLeftButtonDown += squares[j, i].parentClicked;
                         block.Margin = new Thickness(1);
-                        if (i == 0 && j == 0 || i == 0 && j == 1 || i == 1 && j == 0 || i == 1 && j == 1 ||
-                            i == 0 && j == 3 || i == 0 && j == 4 || i == 0 && j == 5 || i == 1 && j == 3 || i == 1 && j == 4 || i == 1 && j == 5 ||
-                            i == 0 && j == 7 || i == 0 && j == 8 || i == 1 && j == 7 || i == 1 && j == 8 ||
-                            i == 3 && j == 0 || i == 4 && j == 0 || i == 5 && j == 0 || i == 3 && j == 1 || i == 4 && j == 1 || i == 5 && j == 1 ||
-                            i == 3 && j == 4 || i == 4 && j == 4 ||
-                            i == 3 && j == 7 || i == 4 && j == 7 || i == 5 && j == 7 || i == 3 && j == 8 || i == 4 && j == 8 || i == 5 && j == 8 ||
-                            i == 0 && j == 3 || i == 0 && j == 4 || i == 0 && j == 5 || i == 1 && j == 3 || i == 1 && j == 4 || i == 1 && j == 5 ||
-                            i == 7 && j == 0 || i == 8 && j == 0 || i == 9 && j == 0 || i == 7 && j == 1 || i == 8 && j == 1 || i == 9 && j == 1 ||
-                            i == 7 && j == 7 || i == 8 && j == 7 || i == 9 && j == 7 || i == 7 && j == 8 || i == 8 && j == 8 || i == 9 && j == 8 ||
-                            i == 8 && j == 3 || i == 8 && j == 4 || i == 8 && j == 5 || i == 9 && j == 3 || i == 9 && j == 4 || i == 9 && j == 5
-                            )
+                        if (i == 0 && j == 0 || i == 0 && j == 1 || i == 1 && j == 0 || i == 0 && j == 3 || i == 0 && j == 4 || i == 0 && j == 5 || i == 1 && j == 3 || i == 1 && j == 5 || 
+                            i == 0 && j == 7 || i == 0 && j == 8 || i == 1 && j == 8 || i == 3 && j == 0 || i == 4 && j == 0 || i == 5 && j == 0 || i == 3 && j == 1 || i == 5 && j == 1
+                            || i == 3 && j == 4 || i == 4 && j == 4 || i == 3 && j == 7 || i == 5 && j == 7 || i == 3 && j == 8 || i == 4 && j == 8 || i == 5 && j == 8 || i == 0 && j == 3 
+                            || i == 0 && j == 4 || i == 0 && j == 5 || i == 1 && j == 3 || i == 1 && j == 5 || i == 7 && j == 0 || i == 8 && j == 0 || i == 9 && j == 0 || i == 7 && j == 1 
+                            || i == 9 && j == 1 || i == 7 && j == 7 || i == 9 && j == 7 || i == 7 && j == 8 || i == 8 && j == 8 || i == 9 && j == 8 || i == 7 && j == 3 || i == 7 && j == 5 
+                            || i == 9 && j == 3 || i == 9 && j == 5)
                             
                         {
                             squares[j, i].IsRoom = true;
@@ -97,6 +92,15 @@ namespace GhettoClue
                         }
                     }
                 }
+                squares[1, 1].IsDoor = true;
+                squares[1, 4].IsDoor = true;
+                squares[4, 1].IsDoor = true;
+                squares[1, 8].IsDoor = true; 
+                squares[7, 8].IsDoor = true;
+                squares[7, 4].IsDoor = true; 
+                squares[7, 1].IsDoor = true; 
+                squares[4, 7].IsDoor = true;
+                squares[4, 9].IsDoor = true;
                 playerList = players.ToArray();
                 squares[8, 2].Player = playerList[0];
                 squares[8, 2].IsCurrent = true;

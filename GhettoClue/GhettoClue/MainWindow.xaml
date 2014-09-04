@@ -127,7 +127,7 @@
         <!--Region Spash Screen-->
 
         <Label Background="White" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}">
-            <Image Source="CharacterPictures/Clue Directions Final.jpg" Height="860" Width="1496"/>
+            <Image Source="Character Pictures/Clue Directions.jpg" Height="860" Width="1496"/>
         </Label>
         <Button x:Name="start" Click="start_Click" Height="100" Width="200" Content="Start Game" FontSize="25" Margin="769,239,218,10" Grid.Row="1" Grid.ColumnSpan="2"/>
         <!--End Region-->
