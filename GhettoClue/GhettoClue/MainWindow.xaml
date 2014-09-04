@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:gb="clr-namespace:GhettoClue"
-        xmlns:dl="clr-namespace:GhettoClue.UserControls"
+        xmlns:uc="clr-namespace:GhettoClue.UserControls"
         xmlns:con="clr-namespace:GhettoClue.Converters"
         Title="MainWindow" Height="890.135" Width="1461.636">
 
@@ -44,7 +44,7 @@
                         <Label Grid.Column="1" Grid.Row="1"  Content="{Binding background}" FontSize="13"/>
                         <Rectangle Grid.Column="0" Grid.RowSpan="2" Height="50px" Width="50px" 
                                    Fill="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}">
-                            
+
                         </Rectangle>
                     </Grid>
                 </DataTemplate>
@@ -105,8 +105,10 @@
         <gb:GameBoard x:Name="gameControl"/>
 
         <!--Region Buttons-->
-        <Button x:Name="turn" Content="END TURN" FontSize="20" Grid.Column="2" Margin="62,339,55,104" Click="nextTurn_Click"/>
-        <Button Background="Blue" x:Name="help" Foreground="Yellow" Content="Help" FontSize="18" Grid.Column="2" Margin="202,304,10,10" Grid.Row="1" Click="help_MouseDown" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="turn" Content="END TURN" FontSize="20" Grid.Column="2" Margin="62,194,55,249" Click="nextTurn_Click"/>
+
+        <uc:UserGuide x:Name="userGuide" Grid.Column="2" Margin="11,282,6,225" Grid.RowSpan="2" />
+
         <Button x:Name="roll" Click="roll_Click" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="67,145,100,156" Grid.Row="1"/>
         <Image x:Name="die_placement" Margin="60,203,92,65" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
             <Image.RenderTransform>
@@ -121,6 +123,7 @@
                 <BitmapImage UriSource="Images/1.png" />
             </Image.Source>
         </Image>
+        <Button Background="Blue" x:Name="help" Foreground="Yellow" Content="Help" FontSize="18" Grid.Column="2" Margin="202,304,10,10" Grid.Row="1" Click="help_MouseDown" RenderTransformOrigin="0.5,0.5"/>
 
         <!--End Region-->
 

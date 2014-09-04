@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="GhettoClue.UserControls.UserGuide"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             Height="350" Width="250">
+    <Grid>
+        <Label Background="LightGray"
+                Width="40"
+               Height="30"
+               Content="Show"
+               MouseDown="CanvasClick"/>
+        <DockPanel x:Name="userGuideSection" Visibility="Collapsed" Background="Bisque">
+            <Border DockPanel.Dock="Left" Width="20">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Offset="0" Color="Transparent"/>
+                        <GradientStop Offset="1" Color="#55555555"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <Border Padding="5,5,5,5"
+          Background="{StaticResource {x:Static SystemColors.ControlLightLightBrushKey}}"
+          BorderThickness="1"
+          BorderBrush="{StaticResource {x:Static SystemColors.ControlDarkBrushKey}}">
+                <DockPanel Name="userGuidePanel">
+                    <Grid DockPanel.Dock="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+                        <TextBlock>Help text somewhere in here</TextBlock>
+                        <Button Grid.ColumnSpan="2" Grid.Row="1" Content="Hide" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Click="DoHideUserGuide"/>
+                    </Grid>
+                </DockPanel>
+            </Border>
+        </DockPanel>
+    </Grid>
+</UserControl>
