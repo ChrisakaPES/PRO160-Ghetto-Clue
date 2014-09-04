@@ -39,6 +39,11 @@ namespace GhettoClue
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
+            if (CharacterComboBox.SelectedIndex == -1 || RoomComboBox.SelectedIndex == -1 || WeaponComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please make sure all three combo boxes are selected.");
+                return;
+            }
             CharacterEnum suspect = (CharacterEnum)CharacterComboBox.SelectedItem;
             RoomEnum suspectedMurderScene = (RoomEnum)RoomComboBox.SelectedItem;
             WeaponEnum suspectedMurderWeapon = (WeaponEnum)WeaponComboBox.SelectedItem;
