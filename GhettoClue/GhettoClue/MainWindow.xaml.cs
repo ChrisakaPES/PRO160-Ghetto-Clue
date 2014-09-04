@@ -269,6 +269,7 @@ namespace GhettoClue
 				gameControl.HighlightSpots(num);
 				timerLoop = 0;
 				userGuide.helptext.Text = "Movement: \n\n Click your game piece on the gameboard. \n\n(Your color is shown at the top right) \n\nNow click on one of the now highlighted squares to move your piece.\n\nClick End Turn when you're done.";
+				userGuide.hidebutton.Content = "Hide";
 				userGuide.ShowGuide();
 			}
 			timerLoop++;
