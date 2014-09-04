@@ -103,12 +103,25 @@
         <!--End Region-->
 
 
-        <gb:GameBoard x:Name="gameControl"/>
-
-        <!--Region Buttons-->
+        <gb:GameBoard x:Name="gameControl" />
+		<!--Region Board Guide-->
+		<uc:BoardGuide x:Name="boardGuide"
+					   Grid.Column="0"
+					   Grid.Row="0"
+					   HorizontalAlignment="Right"
+					   VerticalAlignment="Top"/>
+		<!--End Region-->
+		
+		<!--Region User Guide-->
+        <uc:UserGuide x:Name="userGuide"
+					  Grid.Column="2"
+					  Margin="11,282,6,225"
+					  Grid.RowSpan="2" />
+		<!--End Region-->
+        
+		<!--Region Buttons-->
         <Button x:Name="turn" Content="END TURN" FontSize="20" Grid.Column="2" Margin="62,194,55,249" Click="nextTurn_Click"/>
 
-        <uc:UserGuide x:Name="userGuide" Grid.Column="2" Margin="11,282,6,225" Grid.RowSpan="2" />
 
         <Button x:Name="roll" Click="roll_Click" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="67,145,100,156" Grid.Row="1"/>
         <Image x:Name="die_placement" Margin="60,203,92,65" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Grid.Row="1">

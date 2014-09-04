@@ -81,6 +81,9 @@
     <Compile Include="SuggestionPopUpWindow.xaml.cs">
       <DependentUpon>SuggestionPopUpWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\BoardGuide.xaml.cs">
+      <DependentUpon>BoardGuide.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\DetectiveControl.xaml.cs">
       <DependentUpon>DetectiveControl.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
     <Page Include="SuggestionPopUpWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\BoardGuide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\DetectiveControl.xaml">
       <Generator>MSBuild:Compile</Generator>

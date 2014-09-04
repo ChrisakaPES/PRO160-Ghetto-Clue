@@ -127,3 +127,5 @@ G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\Gh
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\DisprovePopUp.baml
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\UserGuide.baml
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\UserGuide.g.cs
+G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\BoardGuide.baml
+G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\BoardGuide.g.cs

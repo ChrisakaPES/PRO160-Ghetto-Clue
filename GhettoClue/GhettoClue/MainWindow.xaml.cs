@@ -194,7 +194,7 @@ namespace GhettoClue
 			turn.IsEnabled = false;
 			this.InvalidateVisual();
 			playerComboBox.InvalidateVisual();
-			//playerComboBox.DataContext = this;
+			userGuide.ShowGuide();
 		}
 
 		/** 
@@ -268,9 +268,10 @@ namespace GhettoClue
 				turn.IsEnabled = true;
 				gameControl.HighlightSpots(num);
 				timerLoop = 0;
-				userGuide.helptext.Text = "Movement: \n\n Click your game piece on the gameboard. \n\n(Your color is shown at the top right) \n\nNow click on one of the now highlighted squares to move your piece.\n\nClick End Turn when you're done.";
-				userGuide.hidebutton.Content = "Hide";
-				userGuide.ShowGuide();
+				boardGuide.board_helptext.Text = "Movement: \n\nClick your game piece on the gameboard.\n\nDon't panic! It wil disappear, waiting for you to click a purple square to move it to.\n\nClick End Turn when you're done.";
+				boardGuide.board_hidebutton.Content = "Hide";
+				boardGuide.ShowGuide();
+				
 			}
 			timerLoop++;
 			

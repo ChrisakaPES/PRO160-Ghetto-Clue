@@ -25,7 +25,7 @@ namespace GhettoClue.UserControls
 		{
 			InitializeComponent();
 			helptext.Text = "Welcome to Ghetto Clue!\n\n This is a mystery game where you're given a hand of cards and a list of notes that you'll use to deduce who is the murderer. \n\n Lets get started! Click the Roll button.";
-			hidebutton.Content = "Okay";
+			hidebutton.Visibility = Visibility.Hidden;
 		}
 
 		public void ShowGuide()
