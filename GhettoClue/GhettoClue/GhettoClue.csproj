@@ -164,6 +164,7 @@
     <Resource Include="Character Pictures\la-a.jpg" />
     <Resource Include="Character Pictures\lafawnda.jpg" />
     <Resource Include="Character Pictures\watermelondrea.jpg" />
+    <Resource Include="Character Pictures\Clue Directions.jpg" />
     <Content Include="Tokens\GHETTOGIRL.jpg" />
   </ItemGroup>
   <ItemGroup>

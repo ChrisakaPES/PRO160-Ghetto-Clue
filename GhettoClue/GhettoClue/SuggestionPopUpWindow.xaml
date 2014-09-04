@@ -3,7 +3,7 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:converters="clr-namespace:GhettoClue.Converters"
         xmlns:play="clr-namespace:XamlGeneratedNamespace"
-        Title="SuggestionPopUpWindow" Height="300" Width="300" WindowStyle="None">
+        Title="SuggestionPopUpWindow" MinHeight="300" MaxHeight="350" Width="300" WindowStyle="None">
     <Window.Resources>
         <converters:CharacterToColor x:Key="CharacterToColor"/>
             <!--<play:Player x:Key="myDataSource" xml=""/>-->

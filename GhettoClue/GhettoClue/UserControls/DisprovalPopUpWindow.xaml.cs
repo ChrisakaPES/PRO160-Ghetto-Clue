@@ -33,9 +33,9 @@ namespace GhettoClue.UserControls
 			RoomEnum rm = suggestion.Room;
 			WeaponEnum wp = suggestion.Weapon;
 
-			CharacterSelection.ItemsSource = ch;
-			RoomSelection.ItemsSource = rm;
-			WeaponSelection.ItemsSource = wp;
+			//CharacterSelection.ItemsSource = ch;
+			//RoomSelection.ItemsSource = rm;
+			//WeaponSelection.ItemsSource = wp;
 		}
 
 		private void DisproveButton_Click(object sender, RoutedEventArgs e)
