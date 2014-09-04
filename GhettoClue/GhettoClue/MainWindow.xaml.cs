@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 namespace GhettoClue
 {
 
@@ -29,6 +30,7 @@ namespace GhettoClue
         Player currentPlayer = null;
 		Random rand = new Random();
         Random gen = new Random();
+        private int timerLoop=0;
 		public int rolled;
         private int _roll;
         public int NumRoll
@@ -242,17 +244,37 @@ namespace GhettoClue
         {
             //rolls the dice and calls the method to change the background
             this.InvalidateVisual();
-            NumRoll = gen.Next(1, 7);
-            gameControl.HighlightSpots(NumRoll);
-            roll_Die(NumRoll);
-            roll.IsEnabled = false;
-            turn.IsEnabled = true;
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(1000);
+            timer.Tick += timer_Tick;
+            timer.Start();
+            
+
+            //NumRoll = gen.Next(1, 7);
+            //gameControl.HighlightSpots(NumRoll);
+            //roll_Die(NumRoll);
+            //roll.IsEnabled = false;
+            //turn.IsEnabled = true;
 
             //This bool will be set by movement actions but is always set to true for testing
            
 
 
                 
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            if (timerLoop == 10)
+            {
+                ((DispatcherTimer)sender).Stop();
+                roll.IsEnabled = false;
+                turn.IsEnabled = true;
+            }
+            timerLoop++;
+            int num = gen.Next(1, 7);
+            gameControl.HighlightSpots(num);
+            roll_Die(num);
         }
 
 		public void roll_Die(int num)
@@ -283,9 +305,8 @@ namespace GhettoClue
 						break;
 					default:
 						break;
-
-
 				}
+                die_placement.InvalidateVisual();
 		}
 		#endregion
 
