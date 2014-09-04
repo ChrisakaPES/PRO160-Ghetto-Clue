@@ -245,7 +245,7 @@ namespace GhettoClue
             //rolls the dice and calls the method to change the background
             this.InvalidateVisual();
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(1000);
+            timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += timer_Tick;
             timer.Start();
             
@@ -265,16 +265,19 @@ namespace GhettoClue
 
         void timer_Tick(object sender, EventArgs e)
         {
-            if (timerLoop == 10)
+            int num = gen.Next(1, 7);
+            //gameControl.HighlightSpots(num);
+            roll_Die(num);
+            if (timerLoop == 30)
             {
                 ((DispatcherTimer)sender).Stop();
                 roll.IsEnabled = false;
                 turn.IsEnabled = true;
+                gameControl.HighlightSpots(num);
+                timerLoop = 0;
             }
             timerLoop++;
-            int num = gen.Next(1, 7);
-            gameControl.HighlightSpots(num);
-            roll_Die(num);
+            
         }
 
 		public void roll_Die(int num)
