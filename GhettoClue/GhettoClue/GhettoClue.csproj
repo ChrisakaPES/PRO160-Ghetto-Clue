@@ -164,14 +164,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Character Pictures\Clue Directions Final.jpg" />
     <Resource Include="Character Pictures\demarcas.jpg" />
     <Resource Include="Character Pictures\jake.jpg" />
     <Resource Include="Character Pictures\juancarlos.jpg" />
     <Resource Include="Character Pictures\la-a.jpg" />
     <Resource Include="Character Pictures\lafawnda.jpg" />
     <Resource Include="Character Pictures\watermelondrea.jpg" />
-    <Resource Include="Character Pictures\Clue Directions.jpg" />
     <Content Include="Tokens\GHETTOGIRL.jpg" />
   </ItemGroup>
   <ItemGroup>

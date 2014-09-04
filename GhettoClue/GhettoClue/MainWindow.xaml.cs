@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using GhettoClue.UserControls;
 namespace GhettoClue
 {
 
@@ -192,7 +193,7 @@ namespace GhettoClue
 			gameControl.CreateBoard();
 			turn.IsEnabled = false;
 			this.InvalidateVisual();
-            playerComboBox.InvalidateVisual();
+			playerComboBox.InvalidateVisual();
 			//playerComboBox.DataContext = this;
 		}
 
@@ -243,25 +244,16 @@ namespace GhettoClue
 		#region Die Click / Rolling methods
 		private void roll_Click(object sender, RoutedEventArgs e)
 		{
+
 			//rolls the dice and calls the method to change the background
 			this.InvalidateVisual();
 			DispatcherTimer timer = new DispatcherTimer();
-			timer.Interval = TimeSpan.FromMilliseconds(100);
+			timer.Interval = TimeSpan.FromMilliseconds(90);
 			timer.Tick += timer_Tick;
 			timer.Start();
-			
 
-			//NumRoll = gen.Next(1, 7);
-			//gameControl.HighlightSpots(NumRoll);
-			//roll_Die(NumRoll);
-			//roll.IsEnabled = false;
-			//turn.IsEnabled = true;
-
-			//This bool will be set by movement actions but is always set to true for testing
-		   
-
-
-				
+			//Hide the guide
+			userGuide.HideGuide();
 		}
 
 		void timer_Tick(object sender, EventArgs e)
@@ -276,6 +268,8 @@ namespace GhettoClue
 				turn.IsEnabled = true;
 				gameControl.HighlightSpots(num);
 				timerLoop = 0;
+				userGuide.helptext.Content = "Movement: \n Click your game piece on the gameboard. \n(Your color is shown at the top right) \nNow click on one of the now highlighted squares to move your piece.\nClick End Turn when you're done.";
+				userGuide.ShowGuide();
 			}
 			timerLoop++;
 			

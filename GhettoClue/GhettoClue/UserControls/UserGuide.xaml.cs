@@ -24,6 +24,17 @@ namespace GhettoClue.UserControls
 		public UserGuide()
 		{
 			InitializeComponent();
+			helptext.Content = "Welcome to Ghetto Clue!\n This is a mystery game where you've given a hand of cards and a list of items that you'll use as a player to deduce who is the murderer. \n Lets get started! Click the Roll button below.";
+		}
+
+		public void ShowGuide()
+		{
+			ShowUserGuide();
+		}
+
+		public void HideGuide()
+		{
+			HideUserGuide();
 		}
 
 		private void ShowUserGuide()
@@ -68,10 +79,10 @@ namespace GhettoClue.UserControls
 			HideUserGuide();
 		}
 
-		private void CanvasClick(object sender, MouseButtonEventArgs e)
-		{
-			ShowUserGuide();
-		}
+		//private void CanvasClick(object sender, MouseButtonEventArgs e)
+		//{
+		//	ShowUserGuide();
+		//}
 
 	}
 }
