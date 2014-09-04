@@ -73,10 +73,13 @@ namespace GhettoClue
             }
 
             MessageBox.Show("Please prepare to show the current player the card you chose.");
+            ParentWin.DetectiveNotes.Visibility = System.Windows.Visibility.Visible;
+            ParentWin.PlayerHand.Visibility = System.Windows.Visibility.Visible;
             this.Close();
             MessageBox.Show(matchingCardsComboBox.SelectedItem.ToString());
 
         }
+
 
 
     }

@@ -49,8 +49,11 @@ namespace GhettoClue
 
             ParentWin.CurrentSuggestion = suggest;
 
+            ParentWin.DetectiveNotes.Visibility = System.Windows.Visibility.Hidden;
+            ParentWin.PlayerHand.Visibility = System.Windows.Visibility.Hidden;
 
             ((Window)((StackPanel)confirm.Parent).Parent).Close();
         }
+
     }
 }

@@ -56,7 +56,7 @@
 
 
         <!--Region Detective Notes-->
-        <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="Beige">
+        <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="Beige" Visibility="{Binding SuggestionPopUpWindow.ConfirmButton_Click}">
             <Label Content="Detective Notes:" FontSize="20" HorizontalAlignment="Center" />
             <DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" AutoGenerateColumns="False" ItemsSource="{Binding}">
                 <DataGrid.Columns>
@@ -80,7 +80,7 @@
         <!--End Region-->
 
         <!--Region Player Hand-->
-        <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="LightBlue" Grid.Row="1" Grid.Column="1">
+        <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="LightBlue" Grid.Row="1" Grid.Column="1"  Visibility="{Binding SuggestionPopUpWindow.ConfirmButton_Click}">
             <Label FontSize="20" HorizontalAlignment="Center">YO HAND</Label>
             <DataGrid CanUserAddRows="False" x:Name="CharacterHand" AutoGenerateColumns="False">
                 <DataGrid.Columns>
@@ -101,6 +101,7 @@
 
         </StackPanel>
         <!--End Region-->
+
 
         <gb:GameBoard x:Name="gameControl"/>
 
@@ -125,14 +126,6 @@
         </Image>
         <Button Background="Blue" x:Name="help" Foreground="Yellow" Content="Help" FontSize="18" Grid.Column="2" Margin="202,304,10,10" Grid.Row="1" Click="help_MouseDown" RenderTransformOrigin="0.5,0.5"/>
 
-        <!--End Region-->
-
-        <!--Region Spash Screen-->
-
-        <Label Background="White" x:Name="SpashScreen" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="{Binding ElementName=start, Path=start_Click}">
-            <Image Source="Character Pictures/Clue Directions.jpg" Height="860" Width="1496"/>
-        </Label>
-        <Button x:Name="start" Click="start_Click" Height="100" Width="200" Content="Start Game" FontSize="25" Margin="769,239,218,10" Grid.Row="1" Grid.ColumnSpan="2"/>
         <!--End Region-->
 
     </Grid>

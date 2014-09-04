@@ -192,6 +192,7 @@ namespace GhettoClue
 			gameControl.CreateBoard();
 			turn.IsEnabled = false;
 			this.InvalidateVisual();
+            playerComboBox.InvalidateVisual();
 			//playerComboBox.DataContext = this;
 		}
 
@@ -454,17 +455,6 @@ namespace GhettoClue
 			//accuse the murder
 		}
 		#endregion
-
-
-
-	   private void start_Click(object sender, RoutedEventArgs e)
-	   {
-		   SpashScreen.Visibility = System.Windows.Visibility.Hidden;
-		  
-		   start.Visibility = System.Windows.Visibility.Hidden;
-		   playerComboBox.InvalidateVisual();
-
-	   }
 
 		private void help_MouseDown(object sender, RoutedEventArgs e)
 		{
