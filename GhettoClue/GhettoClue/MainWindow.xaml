@@ -42,10 +42,10 @@
                         <Label Grid.Column="1" Grid.Row="0"  Content="{Binding Name}" Foreground="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}" 
                                FontSize="15"/>
                         <Label Grid.Column="1" Grid.Row="1"  Content="{Binding background}" FontSize="13"/>
-                        <Rectangle Grid.Column="0" Grid.RowSpan="2" Height="50px" Width="50px" 
-                                   Fill="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}">
+                        <Image Grid.Column="0" Grid.RowSpan="2" Height="50px" Width="50px" 
+                                   Source="{Binding Converter={StaticResource ResourceKey=CharacterToImage}}">
 
-                        </Rectangle>
+                        </Image>
                     </Grid>
                 </DataTemplate>
             </ComboBox.ItemTemplate>

@@ -14,33 +14,56 @@ namespace GhettoClue.Converters
 
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            ImageBrush brush = new ImageBrush();
             Player p = (Player)value;
             if (p.Name == CharacterEnum.Lafawnduh)
             {
-                brush.ImageSource = new BitmapImage(new Uri("CharacterPictures/lawfawnda.jpg", UriKind.Relative));
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri("Character Pictures/lafawnda.jpg", UriKind.Relative);
+                bi3.EndInit();
+                return bi3;
             }
             else if (p.Name == CharacterEnum.DaMarcus)
             {
-                brush.ImageSource = new BitmapImage(new Uri("CharacterPictures/demarcus.jpg", UriKind.Relative));
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri("Character Pictures/demarcas.jpg", UriKind.Relative);
+                bi3.EndInit();
+                return bi3;
             }
             else if (p.Name == CharacterEnum.Watermelondrea)
             {
-                brush.ImageSource = new BitmapImage(new Uri("CharacterPictures/watermelondrea.jpg", UriKind.Relative));
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri("Character Pictures/watermelondrea.jpg", UriKind.Relative);
+                bi3.EndInit();
+                return bi3;
             }
             else if (p.Name == CharacterEnum.Jake)
             {
-                brush.ImageSource = new BitmapImage(new Uri("CharacterPictures/jake.jpg", UriKind.Relative));
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri("Character Pictures/jake.jpg", UriKind.Relative);
+                bi3.EndInit();
+                return bi3;
             }
             else if (p.Name == CharacterEnum.Ladasha)
             {
-                brush.ImageSource = new BitmapImage(new Uri("CharacterPictures/la-a.jpg", UriKind.Relative));
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri("Character Pictures/la-a.jpg", UriKind.Relative);
+                bi3.EndInit();
+                return bi3;
             }
             else if (p.Name == CharacterEnum.JuanCarlos)
             {
-                brush.ImageSource = new BitmapImage(new Uri("CharacterPictures/juancarlos.jpg", UriKind.Relative));
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri("Character Pictures/juancarlos.jpg", UriKind.Relative);
+                bi3.EndInit();
+                return bi3;
             }
-            return brush;
+            return null;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
