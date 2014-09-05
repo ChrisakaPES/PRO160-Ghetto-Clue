@@ -464,8 +464,8 @@ namespace GhettoClue
 
 		private void start_Click(object sender, RoutedEventArgs e)
 		{
-            Splash.Visibility = System.Windows.Visibility.Hidden;
-            start.Visibility = System.Windows.Visibility.Hidden;
+			//Splash.Visibility = System.Windows.Visibility.Hidden;
+			//start.Visibility = System.Windows.Visibility.Hidden;
 		}
 	}
 }
