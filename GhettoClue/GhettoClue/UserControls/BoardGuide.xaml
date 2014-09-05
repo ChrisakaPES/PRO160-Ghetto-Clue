@@ -3,7 +3,7 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
-			 Height="220" Width="220">
+			 MaxHeight="180" Width="220">
 	<DockPanel x:Name="boardGuideSection" Visibility="Collapsed" Background="CadetBlue">
 		<Border DockPanel.Dock="Left" Width="8">
 			<Border.Background>
@@ -13,7 +13,7 @@
 				</LinearGradientBrush>
 			</Border.Background>
 		</Border>
-		<Border Padding="2,5,5,5"
+		<Border Padding="0,5,5,5"
 		  Background="{StaticResource {x:Static SystemColors.ControlLightLightBrushKey}}"
 		  BorderThickness="1"
 		  BorderBrush="{StaticResource {x:Static SystemColors.ControlDarkBrushKey}}">
@@ -23,14 +23,21 @@
 						<ColumnDefinition Width="1*"/>
 					</Grid.ColumnDefinitions>
 					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto" />
-						<RowDefinition Height="30" />
+						<RowDefinition Height="120" />
+						<RowDefinition Height="50" />
 					</Grid.RowDefinitions>
 					<TextBlock x:Name="board_helptext"
 								 Grid.Row="0"
 								 Grid.Column="0"
-								 TextWrapping="Wrap"/>
-					<Button x:Name="board_hidebutton" Grid.ColumnSpan="2" Grid.Row="1" Margin="2,20,0,-20" HorizontalAlignment="Left" DockPanel.Dock="Bottom" Click="DoHideBoardGuide"/>
+								 TextWrapping="WrapWithOverflow"/>
+					<Button x:Name="board_hidebutton" Grid.Column="0" Grid.Row="1" Margin="10,10,10,10" HorizontalAlignment="Left" Content="Hide" Click="DoHideBoardGuide"/>
+                    <Button x:Name="board_nextbutton" Grid.Column="0" Grid.Row="1" Margin="45,10,10,10" HorizontalAlignment="Left" Content="Next" Click="NextButtonClick" />
+                    <Label x:Name="board_guidepages" Grid.Column="0" Grid.Row="1" Margin="75,10,10,10" HorizontalAlignment="Left" Content="1 / 4" />
+					<Image x:Name="downarrow" Grid.Column="1" Grid.Row="1" Width="50" Height="50" HorizontalAlignment="Right">
+						<Image.Source>
+							<BitmapImage UriSource="../Images/downarrow.png" />
+						</Image.Source>
+					</Image>
 				</Grid>
 			</DockPanel>
 		</Border>

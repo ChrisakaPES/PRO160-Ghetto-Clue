@@ -177,6 +177,9 @@
     <Resource Include="Character Pictures\la-a.jpg" />
     <Resource Include="Character Pictures\lafawnda.jpg" />
     <Resource Include="Character Pictures\watermelondrea.jpg" />
+    <Resource Include="Character Pictures\GhettoClue.jpg" />
+    <Resource Include="Images\downarrow.png" />
+    <Resource Include="Images\uparrow.png" />
     <Content Include="Tokens\GHETTOGIRL.jpg" />
   </ItemGroup>
   <ItemGroup>

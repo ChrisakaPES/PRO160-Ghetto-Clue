@@ -21,9 +21,49 @@ namespace GhettoClue.UserControls
 	/// </summary>
 	public partial class BoardGuide : UserControl
 	{
+		private int page = 2;
+
 		public BoardGuide()
 		{
 			InitializeComponent();
+			downarrow.Visibility = Visibility.Hidden;
+			board_helptext.Text = "Movement:\nAfter you roll, the board will mark spaces you can move to in purple.\n\nClick the Next button to continue...";
+		}
+
+		private void NextButtonClick(object sender, RoutedEventArgs e)
+		{
+
+			if (page < 5)
+			{
+				switch (page)
+				{
+					case 2:
+						board_helptext.Text = "To move your piece you must first click it to pick it up.\nIt will disappear, but don't worry you're holding it.\n\nClick the Next button to continue...";
+						board_guidepages.Content = "2 / 4";
+						break;
+
+					case 3:
+						board_helptext.Text = "While holding your piece, click once on any of the purple squares to move it there.\n\nClick the Next button to continue...";
+						board_guidepages.Content = "3 / 4";
+						break;
+
+					case 4:
+						board_helptext.Text = "Go ahead move your piece now!\n(Under the blue arrow)";
+						board_hidebutton.Content = "Okay";
+						downarrow.Visibility = Visibility.Visible;
+						board_nextbutton.Visibility = Visibility.Hidden;						
+						board_guidepages.Content = "4 / 4";
+						break;
+
+					default:
+						break;
+				}
+				page++;
+			}
+			else
+			{
+				board_nextbutton.Visibility = Visibility.Hidden;
+			}
 		}
 
 		public void ShowGuide()
@@ -77,5 +117,6 @@ namespace GhettoClue.UserControls
 		{
 			HideBoardGuide();
 		}
+
 	}
 }

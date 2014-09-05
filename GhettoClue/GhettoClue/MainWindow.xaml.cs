@@ -268,8 +268,6 @@ namespace GhettoClue
 				turn.IsEnabled = true;
 				gameControl.HighlightSpots(num);
 				timerLoop = 0;
-				boardGuide.board_helptext.Text = "Movement: \n\nClick your game piece on the gameboard.\n\nDon't panic! It wil disappear, waiting for you to click a purple square to move it to.\n\nClick End Turn when you're done.";
-				boardGuide.board_hidebutton.Content = "Hide";
 				boardGuide.ShowGuide();
 				
 			}
@@ -463,11 +461,11 @@ namespace GhettoClue
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-        private void start_Click(object sender, RoutedEventArgs e)
-        {
-            Splash.Visibility = System.Windows.Visibility.Hidden;
-            start.Visibility = System.Windows.Visibility.Hidden;
-        }
+		private void start_Click(object sender, RoutedEventArgs e)
+		{
+			//Splash.Visibility = System.Windows.Visibility.Hidden;
+			//start.Visibility = System.Windows.Visibility.Hidden;
+		}
 	}
 }
 
