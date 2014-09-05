@@ -29,6 +29,7 @@ namespace GhettoClue
 		#region Variables
 		List<Player> players = new List<Player>();
 		Player currentPlayer = null;
+        
 		Random rand = new Random();
 		Random gen = new Random();
 		private int timerLoop=0;
@@ -422,8 +423,8 @@ namespace GhettoClue
 				gameControl.UpdateNextTurn((Player)playerComboBox.SelectedItem);
 				gameControl.clearHighlights();
 
-				MessageBox.Show("It is now "+ playerComboBox.SelectedItem.ToString()+"\'s roll!");
-				this.InvalidateVisual();
+                //MessageBox.Show("It is now "+ playerComboBox.SelectedItem.ToString()+"\'s roll!");
+                //this.InvalidateVisual();
 				turn.IsEnabled = false;
 				userGuide.helptext.Text = "Hey "+ playerComboBox.SelectedItem.ToString()+"! \n\n It is now your turn.";
 				userGuide.ShowGuide();
