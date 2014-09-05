@@ -185,8 +185,8 @@ namespace GhettoClue
 					weaponCards = allCharacterWeaponsLists[5]
 				}
 			};
-			playerComboBox.ItemsSource = players;
-			playerComboBox.SelectedIndex = 0;
+			playerListBox.ItemsSource = players;
+			playerListBox.SelectedIndex = 0;
 
 #endregion
 			
@@ -194,7 +194,7 @@ namespace GhettoClue
 			gameControl.CreateBoard();
 			turn.IsEnabled = false;
 			this.InvalidateVisual();
-			playerComboBox.InvalidateVisual();
+			playerListBox.InvalidateVisual();
 			userGuide.ShowGuide();
 		}
 
@@ -225,7 +225,7 @@ namespace GhettoClue
 
 		private void player_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			int i = playerComboBox.SelectedIndex;
+			int i = playerListBox.SelectedIndex;
 
 			currentPlayer = players[i]; 
 			DetectiveNotes.DataContext = currentPlayer.MyDetectiveList;
@@ -237,6 +237,7 @@ namespace GhettoClue
 			RoomHand.ItemsSource = currentPlayer.roomCards;
 			WeaponHand.ItemsSource = currentPlayer.weaponCards;
 
+            playerListBox.ScrollIntoView(playerListBox.SelectedItem);
 		}
 
 
@@ -336,7 +337,7 @@ namespace GhettoClue
 					this.InvalidateVisual();
 					AccuseWindow accuseWindow = new AccuseWindow();
 					accuseWindow.ParentWin = this;
-					accuseWindow.CurrentPlayer = players[playerComboBox.SelectedIndex];
+					accuseWindow.CurrentPlayer = players[playerListBox.SelectedIndex];
 					accuseWindow.ShowDialog();
 
 					if (CurrentAccusation.CheckForPlayerWin(theAnswer))
@@ -347,15 +348,15 @@ namespace GhettoClue
 					else
 					{
 						MessageBox.Show("Oh SugarSnaps you done messed up yous outta da game.");
-						players.RemoveAt(playerComboBox.SelectedIndex);
-						int playerSelect = playerComboBox.SelectedIndex;
+						players.RemoveAt(playerListBox.SelectedIndex);
+						int playerSelect = playerListBox.SelectedIndex;
 						playerSelect--;
 						if (playerSelect == -1)
 						{
 							playerSelect = players.Count() - 1;
 						}
-						playerComboBox.ItemsSource = players;
-						playerComboBox.SelectedIndex = playerSelect; 
+						playerListBox.ItemsSource = players;
+						playerListBox.SelectedIndex = playerSelect; 
 						this.InvalidateVisual();
 
 
@@ -371,12 +372,12 @@ namespace GhettoClue
 					{
 						SuggestionPopUpWindow suggestPop = new SuggestionPopUpWindow();
 						suggestPop.ParentWin = this;
-						suggestPop.currentPlayer = (Player)playerComboBox.SelectedItem;
+						suggestPop.currentPlayer = (Player)playerListBox.SelectedItem;
 						suggestPop.ShowDialog();
 						this.InvalidateVisual();
 
 
-						int i = playerComboBox.SelectedIndex + 1;
+						int i = playerListBox.SelectedIndex + 1;
 						if (i == players.Count())
 						{
 							i = 0;
@@ -412,21 +413,21 @@ namespace GhettoClue
 					
 				}
 			}
-				int currentPlayerIndex = playerComboBox.SelectedIndex;
+				int currentPlayerIndex = playerListBox.SelectedIndex;
 				currentPlayerIndex++;
 				if (currentPlayerIndex == players.Count())
 				{
 					currentPlayerIndex = 0;
 				}
-				playerComboBox.SelectedIndex = currentPlayerIndex;
+				playerListBox.SelectedIndex = currentPlayerIndex;
 				rolled = 0;
-				gameControl.UpdateNextTurn((Player)playerComboBox.SelectedItem);
+				gameControl.UpdateNextTurn((Player)playerListBox.SelectedItem);
 				gameControl.clearHighlights();
 
-                //MessageBox.Show("It is now "+ playerComboBox.SelectedItem.ToString()+"\'s roll!");
+                //MessageBox.Show("It is now "+ playerListBox.SelectedItem.ToString()+"\'s roll!");
                 //this.InvalidateVisual();
 				turn.IsEnabled = false;
-				userGuide.helptext.Text = "Hey "+ playerComboBox.SelectedItem.ToString()+"! \n\n It is now your turn.";
+				userGuide.helptext.Text = "Hey "+ playerListBox.SelectedItem.ToString()+"! \n\n It is now your turn.";
 				userGuide.ShowGuide();
 				roll.IsEnabled = true;
 	   }

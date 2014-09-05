@@ -28,30 +28,32 @@
         <MediaElement Source="Music/Trap Banger Instrumental Beat 2014 - Hold up.mp3" LoadedBehavior="Play"/>
 
         <!--Region PlayerBox-->
-		<ComboBox x:Name="playerComboBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,342" SelectionChanged="player_SelectionChanged" IsReadOnly="True" IsEnabled="False">
-			<ComboBox.ItemTemplate>
+		<ListBox x:Name="playerListBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,342" SelectionChanged="player_SelectionChanged" IsEnabled="False">
+			<ListBox.ItemTemplate>
 				<DataTemplate>
-					<Grid>
+					<Grid Height="110px">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="50"/>
 							<ColumnDefinition/>
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
 						<Grid.RowDefinitions>
-							<RowDefinition Height="25px"/>
+                            <RowDefinition Height="25px"/>
+                            <RowDefinition Height="25px"/>
+                            <RowDefinition Height="25px"/>
 							<RowDefinition Height="25px"/>
 						</Grid.RowDefinitions>
-						<Label Grid.Column="1" Grid.Row="0"  Content="{Binding Name}" Foreground="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}" 
+						<Label Grid.Column="1" Grid.Row="1"  Content="{Binding Name}" Foreground="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}" 
 							   FontSize="15"/>
-						<Label Grid.Column="1" Grid.Row="1"  Content="{Binding background}" FontSize="13"/>
-						<Image Grid.Column="0" Grid.RowSpan="2" Height="50px" Width="50px" 
+						<Label Grid.Column="1" Grid.Row="2"  Content="{Binding background}" FontSize="13"/>
+						<Image Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Height="50px" Width="50px" 
 								   Source="{Binding Converter={StaticResource ResourceKey=CharacterToImage}}">
 
 						</Image>
 					</Grid>
 				</DataTemplate>
-			</ComboBox.ItemTemplate>
-		</ComboBox>
+			</ListBox.ItemTemplate>
+		</ListBox>
 
 		<Label Content="Characters:" FontSize="20" HorizontalAlignment="Center" Grid.Column="2" Margin="82,10,78,446" Width="107"/>
 		<!--End Region-->
