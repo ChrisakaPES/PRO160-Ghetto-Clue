@@ -56,8 +56,8 @@
 
 
         <!--Region Detective Notes-->
-        <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="Beige" Visibility="{Binding SuggestionPopUpWindow.ConfirmButton_Click}">
-            <Label Content="Detective Notes:" FontSize="20" HorizontalAlignment="Center" />
+        <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="DarkRed" Visibility="{Binding SuggestionPopUpWindow.ConfirmButton_Click}">
+            <Label Content="Detective Notes:" Foreground="White" FontFamily="Chiller" FontSize="35" HorizontalAlignment="Center" />
             <DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" AutoGenerateColumns="False" ItemsSource="{Binding}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Character"  Binding="{Binding Path=CharacterValue}"/>
@@ -80,8 +80,8 @@
         <!--End Region-->
 
         <!--Region Player Hand-->
-        <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="LightBlue" Grid.Row="1" Grid.Column="1"  Visibility="{Binding SuggestionPopUpWindow.ConfirmButton_Click}">
-            <Label FontSize="20" HorizontalAlignment="Center">YO HAND</Label>
+        <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="DarkRed" Grid.Row="1" Grid.Column="1"  Visibility="{Binding SuggestionPopUpWindow.ConfirmButton_Click}">
+            <Label FontSize="35" HorizontalAlignment="Center" Foreground="White" FontFamily="chiller">YO HAND:</Label>
             <DataGrid CanUserAddRows="False" x:Name="CharacterHand" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Character"  Binding="{Binding}"/>
@@ -141,5 +141,9 @@
 
         <!--End Region-->
 
+        <!--<Label x:Name="Splash" Background="Black" Grid.ColumnSpan="3" Grid.RowSpan="3">
+            <Image Source="Character Pictures/Ghetto Clue.jpg" Height="860" Width="1708"/>
+        </Label>
+        <Button x:Name="start" Content="START" FontSize="45" Height="100" Width="150" Background="Black" Foreground="Red" FontFamily="Chiller" Grid.ColumnSpan="2" Grid.Column="1" Margin="110,195,247,54" Grid.Row="1" Click="start_Click" />-->
     </Grid>
 </Window>
