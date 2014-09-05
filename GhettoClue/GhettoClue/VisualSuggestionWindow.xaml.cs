@@ -19,9 +19,13 @@ namespace GhettoClue
     /// </summary>
     public partial class VisualSuggestionWindow : Window
     {
+        public MainWindow ParentWin { get; set; }
+        public Player currentPlayer { get; set; }
         public VisualSuggestionWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
+            
         }
     }
 }
