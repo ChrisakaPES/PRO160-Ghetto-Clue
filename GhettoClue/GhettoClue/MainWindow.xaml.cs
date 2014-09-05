@@ -29,6 +29,7 @@ namespace GhettoClue
 		#region Variables
 		List<Player> players = new List<Player>();
 		Player currentPlayer = null;
+        
 		Random rand = new Random();
 		Random gen = new Random();
 		private int timerLoop=0;
