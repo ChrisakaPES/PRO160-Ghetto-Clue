@@ -13,7 +13,7 @@
         <con:CharacterToImage x:Key="CharacterToImage"/>
 
     </Window.Resources>
-    <Grid Height="860" VerticalAlignment="Top">
+    <Grid Height="860" Background="DimGray" VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="508"/>
             <RowDefinition Height="349"/>
@@ -26,32 +26,31 @@
         </Grid.ColumnDefinitions>
 
         <!--Region PlayerBox-->
-        <ComboBox x:Name="playerComboBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,342" SelectionChanged="player_SelectionChanged" IsReadOnly="True" IsEnabled="False">
-            <ComboBox.ItemTemplate>
+        <ListBox x:Name="playerComboBox" Grid.Column="2"  Margin="0,57,0,342" SelectionChanged="player_SelectionChanged" IsEnabled="False">
+            <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="100"/>
                             <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="25px"/>
-                            <RowDefinition Height="25px"/>
+                            <RowDefinition Height="100px"/>
+                            
                         </Grid.RowDefinitions>
                         <Label Grid.Column="1" Grid.Row="0"  Content="{Binding Name}" Foreground="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}" 
                                FontSize="15"/>
-                        <Label Grid.Column="1" Grid.Row="1"  Content="{Binding background}" FontSize="13"/>
-                        <Image Grid.Column="0" Grid.RowSpan="2" Height="50px" Width="50px" 
+                        <Image Grid.Column="0" Grid.RowSpan="2" Height="100px" Width="100px" 
                                    Source="{Binding Converter={StaticResource ResourceKey=CharacterToImage}}">
 
                         </Image>
                     </Grid>
                 </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
-        <Label Content="Characters:" FontSize="20" HorizontalAlignment="Center" Grid.Column="2" Margin="82,10,78,446" Width="107"/>
+        <Label Content="Players:" FontSize="35" FontFamily="Chiller" HorizontalAlignment="Center" Grid.Column="2" Margin="82,10,78,446" Width="107"/>
         <!--End Region-->
 
 
@@ -141,9 +140,9 @@
 
         <!--End Region-->
 
-        <!--<Label x:Name="Splash" Background="Black" Grid.ColumnSpan="3" Grid.RowSpan="3">
+        <Label x:Name="Splash" Background="Black" Grid.ColumnSpan="3" Grid.RowSpan="3">
             <Image Source="Character Pictures/Ghetto Clue.jpg" Height="860" Width="1708"/>
         </Label>
-        <Button x:Name="start" Content="START" FontSize="45" Height="100" Width="150" Background="Black" Foreground="Red" FontFamily="Chiller" Grid.ColumnSpan="2" Grid.Column="1" Margin="110,195,247,54" Grid.Row="1" Click="start_Click" />-->
+        <Button x:Name="start" Content="START" FontSize="45" Height="100" Width="150" Background="Black" Foreground="Red" FontFamily="Chiller" Grid.ColumnSpan="2" Grid.Column="1" Margin="94,195,263,54" Grid.Row="1" Click="start_Click" />
     </Grid>
 </Window>
