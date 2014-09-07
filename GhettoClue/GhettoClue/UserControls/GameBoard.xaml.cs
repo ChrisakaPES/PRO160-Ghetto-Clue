@@ -62,7 +62,7 @@ namespace GhettoClue
                         {
                             squares[j, i].IsRoom = true;
                             squares[j, i].IsOpen = false;
-                            block.Fill = new SolidColorBrush { Color = Colors.Gray };
+                            block.Fill = new SolidColorBrush { Color = Colors.Transparent};
                             Binding b = new Binding("IsOpen");
                             b.Source = squares[j, i];
                             gameGrid.Children.Add(block);

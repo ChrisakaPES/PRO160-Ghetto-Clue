@@ -17,8 +17,10 @@
 <!--End Region-->
     
     <Canvas x:Name="gameboard" Grid.Column="0" Background="LightGray" Grid.RowSpan="3"  Margin="0,0,0,3">
-        <UniformGrid Background="Black" x:Name="gameGrid" Height="860" Width="947" Rows="10" Columns="9">
-
+        <UniformGrid  x:Name="gameGrid" Height="860" Width="947" Rows="10" Columns="9">
+            <UniformGrid.Background>
+                <ImageBrush ImageSource="Gameboard.png"/>
+            </UniformGrid.Background>
         </UniformGrid>
     </Canvas>
 </UserControl>
