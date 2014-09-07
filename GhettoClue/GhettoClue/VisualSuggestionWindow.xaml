@@ -1,42 +1,245 @@
 ﻿<Window x:Class="GhettoClue.VisualSuggestionWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="VisualSuggestionWindow" Height="300" Width="300">
+        xmlns:con="clr-namespace:GhettoClue.Converters"
+        Title="VisualSuggestionWindow" Height="1000" Width="600">
+    <Window.Resources>
+        <con:CharacterToColor x:Key="CharacterToColor"/>
+    </Window.Resources>
+    
     <StackPanel>
         <Label HorizontalAlignment="Center" FontSize="24px">Suggestion Time</Label>
         <Label Content="{Binding Path=currentPlayer}" Foreground="{Binding Path=currentPlayer, Converter={StaticResource ResourceKey=CharacterToColor}}" HorizontalAlignment="Center" 
                FontSize="18px"/>
         <Label Content="Who you think done it?" HorizontalAlignment="Center" />
+        
+        <!-- Choosing the Murder Suspect-->
+        <Label Content="Choose a Suspect" FontSize="18pt" HorizontalAlignment="Center"/>
+        <Label Content="(Click on the picture of the Murderer)"  HorizontalAlignment="Center"/>
+        
+        <StackPanel Orientation="Horizontal" Height="100px" HorizontalAlignment="Center">
+            <StackPanel>
+                <Button x:Name="LaFawndaButton" Width="100px" Height="75px" Click="LaFawndaButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Character Pictures/lafawnda.jpg"/>
+                    </Button.Background>
+                </Button>
+                <Label Content="LaFawnda" HorizontalAlignment="Center"/>
+            
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="DamarcusButton" Width="100px" Height="75px" Click="DamarcusButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Character Pictures/demarcas.jpg"/>
+                    </Button.Background>
+                </Button>
+                <Label Content="Damarcus" HorizontalAlignment="Center"/>
 
-        <RadioButton GroupName="Characters" Content="LaFawnda" IsChecked="True" >
-            <RadioButton.Background>
-                <ImageBrush ImageSource="Character Pictures/lafawnda.jpg"/>
-            </RadioButton.Background>
-        </RadioButton>
-        <RadioButton GroupName="Characters" Content="Damarcus" >
-            <RadioButton.Background>
-                <ImageBrush ImageSource="Character Pictures/demarcas.jpg"/>
-            </RadioButton.Background>
-        </RadioButton>
-        <RadioButton GroupName="Characters" Content="Jake" >
-            <RadioButton.Background>
-                <ImageBrush ImageSource="Character Pictures/jake.jpg"/>
-            </RadioButton.Background>
-        </RadioButton>
-        <RadioButton GroupName="Characters" Content="La-a" >
-            <RadioButton.Background>
-                <ImageBrush ImageSource="Character Pictures/la-a.jpg"/>
-            </RadioButton.Background>
-        </RadioButton>
-        <RadioButton GroupName="Characters" Content="Juan Carlos" >
-            <RadioButton.Background>
-                <ImageBrush ImageSource="Character Pictures/juancarlos.jpg"/>
-            </RadioButton.Background>
-        </RadioButton>
-        <RadioButton GroupName="Characters" Content="Watermelondrea" >
-            <RadioButton.Background>
-                <ImageBrush ImageSource="Character Pictures/watermelondrea.jpg"/>
-            </RadioButton.Background>
-        </RadioButton>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="JakeButton" Width="100px" Height="75px" Click="JakeButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Character Pictures/jake.jpg"/>
+                    </Button.Background>
+                </Button>
+                <Label Content="Jake" HorizontalAlignment="Center"/>
+
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="LadashaButton" Width="100px" Height="75px" Click="LadashaButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Character Pictures/la-a.jpg"/>
+                    </Button.Background>
+                </Button>
+                <Label Content="La-a" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="JuanCarlosButton" Width="100px" Height="75px" Click="JuanCarlosButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Character Pictures/juancarlos.jpg"/>
+                    </Button.Background>
+                </Button>
+                <Label Content="Juan Carlos" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="WatermelondreaButton" Width="100px" Height="75px" Click="WatermelondreaButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Character Pictures/watermelondrea.jpg"/>
+                    </Button.Background>
+                </Button>
+                <Label Content="Watermelondrea" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        <Label x:Name="MurderSuspectLabel" Content="Murder Suspect: " HorizontalAlignment="Center"/>
+        
+        <!--Choosing the Murder Weapon-->
+        <Label Content="Choose a Murder Weapon" FontSize="18pt" HorizontalAlignment="Center"/>
+        <Label Content="(Click on the picture of the Weapon)"  HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Height="100px" HorizontalAlignment="Center">
+            <StackPanel>
+                <Button x:Name="DaHeataButton" Width="100px" Height="75px" Click="DaHeataButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/gun.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="Da Heata" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="ShankButton" Width="100px" Height="75px" Click="ShankButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/knife.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="Shank" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="PoisonedLeanButton" Width="100px" Height="75px" Click="PoisonedLeanButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/lean.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="Poisoned Lean" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="SmackButton" Width="100px" Height="75px" Click="SmackButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/smack.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="Smack" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="WeaveButton" Width="100px" Height="75px" Click="WeaveButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/weave.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="Weave" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        <Label x:Name="MurderWeaponLabel" Content="Murder Weapon: " HorizontalAlignment="Center"/>
+
+        <Label Content="Choose a Murder Site" FontSize="18pt" HorizontalAlignment="Center"/>
+        <Label Content="(Click on the picture of the Site)"  HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Height="100px" HorizontalAlignment="Center" >
+            <StackPanel>
+                <Button x:Name="TheCornerButton" Width="100px" Height="75px" Click="TheCornerButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/gun.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="The Corner " HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="GrowHouseButton" Width="100px" Height="75px" Click="GrowHouseButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/gun.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="Grow House" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="BackAlleyButton" Width="100px" Height="75px" Click="BackAlleyButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/gun.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="Back Alley" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="BMommasPadButton" Width="100px" Height="75px" Click="BMommasPadButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/gun.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="BabyMomma's Pad" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="LaundryMatButton" Width="100px" Height="75px" Click="LaundryMatButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/gun.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="LaundryMat" HorizontalAlignment="Center"/>
+            </StackPanel>
+            
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="100px" HorizontalAlignment="Center" >
+            <StackPanel>
+                <Button x:Name="PrisonButton" Width="100px" Height="75px" Click="PrisonButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/gun.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="Prison" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="LiquorStoreButton" Width="100px" Height="75px" Click="LiquorStoreButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/gun.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="Grow House" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="LightRoomButton" Width="100px" Height="75px" Click="LightRoomButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/gun.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="Light Room" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="KFCButton" Width="100px" Height="75px" Click="KFCButton_Click"
+                        Content="">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Tokens/gun.png" />
+                    </Button.Background>
+                </Button>
+                <Label Content="KFC" HorizontalAlignment="Center"/>
+            </StackPanel>
+            
+        </StackPanel>
+        <Label x:Name="MurderSiteLabel" HorizontalAlignment="Center" Content="Murder Site: " />
+        
+        <!-- Suggestion Listed-->
+
+        <Label Content="Your Suggestion" FontSize="14pt" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Height="100px" HorizontalAlignment="Center">
+            <StackPanel Margin="20, 0">
+                <Image x:Name="SuspectImage"  Height="75px" Width="100px" Source="Images/CrossBackground.jpg" />
+                <Label Content="Suspect" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Margin="20, 0">
+                <Image x:Name="WeaponImage"  Height="75px" Width="100px" Source="Images/CrossBackground.jpg" />
+                <Label Content="Weapon" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Margin="20, 0">
+                <Image x:Name="SiteImage"  Height="75px" Width="100px" Source="Images/CrossBackground.jpg" />
+                <Label Content="Sitet" HorizontalAlignment="Center"/>
+            </StackPanel>
+            
+        </StackPanel>
+        
+        
     </StackPanel>
 </Window>
