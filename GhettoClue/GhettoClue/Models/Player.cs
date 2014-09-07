@@ -14,6 +14,7 @@ namespace GhettoClue.Models
 	{
 
         private bool _isTurn;
+        private bool _isInRoom;
 
 		public Player()
 		{
@@ -24,6 +25,23 @@ namespace GhettoClue.Models
 		public string background { get; set; }
         public ImageBrush imgBrush { get; set; }
 		public DetectiveList MyDetectiveList { get; set; }
+
+        public bool IsInRoom
+        {
+            get
+            {
+                return _isInRoom;
+            }
+            set
+            {
+                _isInRoom = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("IsInRoom"));
+                }
+            }
+        }
+
         public bool IsTurn 
         {
             get 

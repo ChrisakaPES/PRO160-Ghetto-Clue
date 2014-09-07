@@ -29,6 +29,7 @@ namespace GhettoClue
         public int myRow = 10;
         List<Player> players;
         Player[] playerList;
+        private bool isPlayerInRoom;
 
         public GameBoard()
         {
@@ -174,8 +175,33 @@ namespace GhettoClue
                 {
                     for (int j = 0; j < gameGrid.Columns; j++)
                     {
-                        if(p == squares[j,i].Player){
+                        if(p == squares[j,i].Player)
+                        {
                             squares[j, i].IsCurrent = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        public void inRoom(Player p)
+        {
+            for (int k = 0; k < 6; k++)
+            {
+                for (int i = 0; i < gameGrid.Rows; i++)
+                {
+                    for (int j = 0; j < gameGrid.Columns; j++)
+                    {
+                        if (p == squares[j, i].Player)
+                        {
+                            if (BackAlleyCheck(j, i) || LaundroMatCheck(j, i) || BBMommasPadCheck(j, i) || GrowHouseCheck(j, i) || KFCCheck(j, i) || TheCornerCheck(j, i))
+                            {
+                                p.IsInRoom = true;
+                            }
+                            else
+                            {
+                                p.IsInRoom = false;
+                            }
                         }
                     }
                 }
@@ -234,6 +260,225 @@ namespace GhettoClue
             if (y != 0)
                 if (squares[x, y - 1].IsRoom)
                     squares[x, y - 1].IsAvailable = true;
+
+        }
+
+        public bool BackAlleyCheck(int x, int y)
+        {
+            bool check = false;
+
+            // Check cell on the left.
+            if (x != 0)
+                if (squares[x - 1, y] == squares[0,1])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the top.
+            if (y != 0)
+                if (squares[x, y - 1] == squares[1, 0])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            return check;
+        }
+
+        public bool LaundroMatCheck(int x, int y)
+        {
+            bool check = false;
+
+            // Check cell on the right.
+            if (x != myColumn - 1)
+                if (squares[x + 1, y] == squares[5, 1])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the left.
+            if (x != 0)
+                if (squares[x - 1, y] == squares[3, 1])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the top.
+            if (y != 0)
+                if (squares[x, y - 1] == squares[4, 0])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            return check;
+        }
+
+        public bool BBMommasPadCheck(int x, int y)
+        {
+            bool check = false;
+
+            // Check cell on the right.
+            if (x != myColumn - 1)
+                if (squares[x + 1, y] == squares[8, 1])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the top.
+            if (y != 0)
+                if (squares[x, y - 1] == squares[7, 0])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            return check;
+        }
+
+        public bool GrowHouseCheck(int x, int y)
+        {
+            bool check = false;
+
+            // Check cell on the bottom.
+            if (y != myRow - 1)
+                if (squares[x, y + 1] == squares[1, 5])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the left.
+            if (x != 0)
+                if (squares[x - 1, y] == squares[0, 4])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the top.
+            if (y != 0)
+                if (squares[x, y - 1] == squares[1, 3])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            return check;
+        }
+
+        public bool KFCCheck(int x, int y)
+        {
+            bool check = false;
+
+            // Check cell on the right.
+            if (x != myColumn - 1)
+                if (squares[x + 1, y] == squares[8, 4])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the bottom.
+            if (y != myRow - 1)
+                if (squares[x, y + 1] == squares[7, 5])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the top.
+            if (y != 0)
+                if (squares[x, y - 1] == squares[7, 3])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            return check;
+        }
+
+        public bool TheCornerCheck(int x, int y)
+        {
+            bool check = false;
+
+            // Check cell on the bottom.
+            if (y != myRow - 1)
+                if (squares[x, y + 1] == squares[1, 9])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the left.
+            if (x != 0)
+                if (squares[x - 1, y] == squares[0, 8])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the top.
+            if (y != 0)
+                if (squares[x, y - 1] == squares[1, 7])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            return check;
         }
     }
 }
