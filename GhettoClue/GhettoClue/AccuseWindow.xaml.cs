@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GhettoClue.Models;
 
 namespace GhettoClue
 {
@@ -51,7 +52,7 @@ namespace GhettoClue
             Accusation acc = new Accusation(suspect, suspectedMurderScene, suspectedMurderWeapon);
 
             ParentWin.CurrentAccusation = acc;
-
+           
 
             this.Close();
         }

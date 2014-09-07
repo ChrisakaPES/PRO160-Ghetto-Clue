@@ -25,7 +25,6 @@
 			<ColumnDefinition Width="251*"/>
 		</Grid.ColumnDefinitions>
 
-        <MediaElement Source="Music/Trap Banger Instrumental Beat 2014 - Hold up.mp3" LoadedBehavior="Play"/>
 
         <!--Region PlayerBox-->
 		<ListBox x:Name="playerListBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,342" SelectionChanged="player_SelectionChanged" IsEnabled="False">

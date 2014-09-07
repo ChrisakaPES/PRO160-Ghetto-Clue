@@ -29,7 +29,8 @@ namespace GhettoClue
 		#region Variables
 		List<Player> players = new List<Player>();
 		Player currentPlayer = null;
-        
+        MediaPlayer music = new MediaPlayer();
+
 		Random rand = new Random();
 		Random gen = new Random();
 		private int timerLoop=0;
@@ -196,7 +197,17 @@ namespace GhettoClue
 			this.InvalidateVisual();
 			playerListBox.InvalidateVisual();
 			userGuide.ShowGuide();
+
+            music.Open(new Uri("Music/Trap Banger Instrumental Beat 2014 - Hold up.mp3", UriKind.RelativeOrAbsolute));
+            music.MediaEnded += music_MediaEnded;
+            music.Play();
 		}
+
+        private void music_MediaEnded(object sender, EventArgs e)
+        {
+            music.Position = TimeSpan.Zero;
+            music.Play();
+        }
 
 		/** 
 		 * Hey this is the how things should work 
@@ -397,7 +408,9 @@ namespace GhettoClue
 							}
 							if (timesLoopedThrough >= 5)
 							{
-								MessageBox.Show("None of the other players have any matching cards.", "Well what do you know?"); 
+								MessageBox.Show("None of the other players have any matching cards.", "Well what do you know?");
+                                DetectiveNotes.Visibility = System.Windows.Visibility.Visible;
+                                PlayerHand.Visibility = System.Windows.Visibility.Visible;
 								break;
 							}
 							i++;
