@@ -45,7 +45,7 @@ namespace GhettoClue.Movement
                 }
                 else
                 {
-                    brush.Color = Colors.Pink;
+                    brush.Color = Colors.Gray;
                 }
             }
             //}
@@ -56,7 +56,7 @@ namespace GhettoClue.Movement
             //}
             else if ((bool)values[2])
             {
-                brush.Color = Colors.Brown;
+                brush.Color = Colors.Transparent;
                 //Avalable
             }
             else if ((bool)values[3])
