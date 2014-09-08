@@ -213,7 +213,7 @@
                 <Button x:Name="KFCButton" Width="100px" Height="75px" Click="KFCButton_Click"
                         Content="">
                     <Button.Background>
-                        <ImageBrush ImageSource="Tokens/gun.png" />
+                        <ImageBrush ImageSource="rooms/kfc.jpg" />
                     </Button.Background>
                 </Button>
                 <Label Content="KFC" HorizontalAlignment="Center"/>
