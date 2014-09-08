@@ -26,6 +26,8 @@ namespace GhettoClue.Models
         public ImageBrush imgBrush { get; set; }
 		public DetectiveList MyDetectiveList { get; set; }
 
+        public bool hasRolled = false;
+
         public bool IsInRoom
         {
             get

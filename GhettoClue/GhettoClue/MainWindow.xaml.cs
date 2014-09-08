@@ -30,6 +30,7 @@ namespace GhettoClue
 		List<Player> players = new List<Player>();
 		Player currentPlayer = null;
         MediaPlayer music = new MediaPlayer();
+        
 
 		Random rand = new Random();
 		Random gen = new Random();
@@ -264,7 +265,7 @@ namespace GhettoClue
 			timer.Interval = TimeSpan.FromMilliseconds(90);
 			timer.Tick += timer_Tick;
 			timer.Start();
-
+            currentPlayer.hasRolled = true;
 			//Hide the guide
 			userGuide.HideGuide();
 		}
@@ -338,7 +339,7 @@ namespace GhettoClue
 		{
 			//turn taking
 			bool isPlayerInRoom = false;
-
+            currentPlayer.hasRolled = false;
             //if (currentPlayer.IsInRoom)
             //{
             //    MessageBoxResult res = MessageBox.Show("Would You like to Accuse Someone?", "Accuse?", MessageBoxButton.YesNo);
