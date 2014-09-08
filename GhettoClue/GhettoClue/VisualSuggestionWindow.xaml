@@ -25,7 +25,7 @@
                         <ImageBrush ImageSource="Character Pictures/lafawnda.jpg"/>
                     </Button.Background>
                 </Button>
-                <Label Content="LaFawnda" HorizontalAlignment="Center"/>
+                <Label Content="LaFawnduh" HorizontalAlignment="Center"/>
             
             </StackPanel>
             <StackPanel>
@@ -137,7 +137,7 @@
                 <Button x:Name="TheCornerButton" Width="100px" Height="75px" Click="TheCornerButton_Click"
                         Content="">
                     <Button.Background>
-                        <ImageBrush ImageSource="Tokens/gun.png" />
+                        <ImageBrush ImageSource="rooms/thecorner.jpg" />
                     </Button.Background>
                 </Button>
                 <Label Content="The Corner " HorizontalAlignment="Center"/>
@@ -146,7 +146,7 @@
                 <Button x:Name="GrowHouseButton" Width="100px" Height="75px" Click="GrowHouseButton_Click"
                         Content="">
                     <Button.Background>
-                        <ImageBrush ImageSource="Tokens/gun.png" />
+                        <ImageBrush ImageSource="rooms/growhouse.jpg" />
                     </Button.Background>
                 </Button>
                 <Label Content="Grow House" HorizontalAlignment="Center"/>
@@ -155,7 +155,7 @@
                 <Button x:Name="BackAlleyButton" Width="100px" Height="75px" Click="BackAlleyButton_Click"
                         Content="">
                     <Button.Background>
-                        <ImageBrush ImageSource="Tokens/gun.png" />
+                        <ImageBrush ImageSource="rooms/backalley.jpg" />
                     </Button.Background>
                 </Button>
                 <Label Content="Back Alley" HorizontalAlignment="Center"/>
@@ -164,7 +164,7 @@
                 <Button x:Name="BMommasPadButton" Width="100px" Height="75px" Click="BMommasPadButton_Click"
                         Content="">
                     <Button.Background>
-                        <ImageBrush ImageSource="Tokens/gun.png" />
+                        <ImageBrush ImageSource="rooms/bmommapad.jpg" />
                     </Button.Background>
                 </Button>
                 <Label Content="BabyMomma's Pad" HorizontalAlignment="Center"/>
@@ -173,7 +173,7 @@
                 <Button x:Name="LaundryMatButton" Width="100px" Height="75px" Click="LaundryMatButton_Click"
                         Content="">
                     <Button.Background>
-                        <ImageBrush ImageSource="Tokens/gun.png" />
+                        <ImageBrush ImageSource="rooms/Laundromat.jpg" />
                     </Button.Background>
                 </Button>
                 <Label Content="LaundryMat" HorizontalAlignment="Center"/>
@@ -185,7 +185,7 @@
                 <Button x:Name="PrisonButton" Width="100px" Height="75px" Click="PrisonButton_Click"
                         Content="">
                     <Button.Background>
-                        <ImageBrush ImageSource="Tokens/gun.png" />
+                        <ImageBrush ImageSource="rooms/localprison.jpg" />
                     </Button.Background>
                 </Button>
                 <Label Content="Prison" HorizontalAlignment="Center"/>
@@ -194,16 +194,16 @@
                 <Button x:Name="LiquorStoreButton" Width="100px" Height="75px" Click="LiquorStoreButton_Click"
                         Content="">
                     <Button.Background>
-                        <ImageBrush ImageSource="Tokens/gun.png" />
+                        <ImageBrush ImageSource="rooms/liquorstore.jpg" />
                     </Button.Background>
                 </Button>
-                <Label Content="Grow House" HorizontalAlignment="Center"/>
+                <Label Content="Liquor Store" HorizontalAlignment="Center"/>
             </StackPanel>
             <StackPanel>
                 <Button x:Name="LightRoomButton" Width="100px" Height="75px" Click="LightRoomButton_Click"
                         Content="">
                     <Button.Background>
-                        <ImageBrush ImageSource="Tokens/gun.png" />
+                        <ImageBrush ImageSource="rooms/lightroom.jpg" />
                     </Button.Background>
                 </Button>
                 <Label Content="Light Room" HorizontalAlignment="Center"/>
@@ -240,6 +240,6 @@
             
         </StackPanel>
         
-        
+        <Button x:Name="ConfirmButton"  Height="50px" Width="200" Margin="0,25"  Content="Confirm Suggestion" Click="ConfirmButton_Click" />
     </StackPanel>
 </Window>
