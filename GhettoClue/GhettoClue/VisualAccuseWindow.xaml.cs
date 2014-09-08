@@ -1,5 +1,4 @@
-﻿using GhettoClue.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using GhettoClue.Models;
+
 namespace GhettoClue
 {
     /// <summary>
-    /// Interaction logic for VisualSuggestionWindow.xaml
+    /// Interaction logic for VisualAccuseWindow.xaml
     /// </summary>
-    public partial class VisualSuggestionWindow : Window
+    public partial class VisualAccuseWindow : Window
     {
         public MainWindow ParentWin { get; set; }
-        public Player currentPlayer { get; set; }
-        public Suggestion suggest { get; set; }
+        public Player CurrentPlayer { get; set; }
+        public Accusation accuse { get; set; }
 
         private RoomEnum murderSite;
         private bool hasRoomBeenPicked = false;
@@ -33,13 +33,12 @@ namespace GhettoClue
 
         private bool buttonPromptedClose = false;
 
-        public VisualSuggestionWindow(RoomEnum room)
+        public VisualAccuseWindow()
         {
             InitializeComponent();
             this.DataContext = this;
-            
-        }
 
+        }
         private void LaFawndaButton_Click(object sender, RoutedEventArgs e)
         {
             hasCharacterBeenPicked = true;
@@ -99,7 +98,7 @@ namespace GhettoClue
             hasWeaponBeenPicked = true;
             murderWeapon = WeaponEnum.DaHeata;
 
-            WeaponImage.Source= new BitmapImage(new Uri("Tokens/gun.png",UriKind.Relative));
+            WeaponImage.Source = new BitmapImage(new Uri("Tokens/gun.png", UriKind.Relative));
             MurderWeaponLabel.Content = "Murder Weapon: DaHeata";
         }
 
@@ -225,12 +224,9 @@ namespace GhettoClue
         {
             if (hasCharacterBeenPicked && hasRoomBeenPicked && hasWeaponBeenPicked)
             {
-                suggest = new Suggestion(murderCharacter, murderSite, murderWeapon);
+                accuse = new Accusation(murderCharacter, murderSite, murderWeapon);
 
-                ParentWin.CurrentSuggestion = suggest;
-
-                ParentWin.DetectiveNotes.Visibility = System.Windows.Visibility.Hidden;
-                ParentWin.PlayerHand.Visibility = System.Windows.Visibility.Hidden;
+                ParentWin.CurrentAccusation = accuse;
                 buttonPromptedClose = true;
                 this.Close();
             }
@@ -245,19 +241,17 @@ namespace GhettoClue
         {
             if (!buttonPromptedClose)
             {
-            
+
                 if (hasCharacterBeenPicked && hasRoomBeenPicked && hasWeaponBeenPicked)
                 {
                     MessageBoxResult res = MessageBox.Show("If you close this window your current suggestions will be used as your suggestion is this OK?", "You Sure?", MessageBoxButton.YesNo);
                     if (res == MessageBoxResult.Yes)
                     {
-                        suggest = new Suggestion(murderCharacter, murderSite, murderWeapon);
+                        accuse = new Accusation(murderCharacter, murderSite, murderWeapon);
 
-                        ParentWin.CurrentSuggestion = suggest;
+                        ParentWin.CurrentAccusation = accuse;
 
-                        ParentWin.DetectiveNotes.Visibility = System.Windows.Visibility.Hidden;
-                        ParentWin.PlayerHand.Visibility = System.Windows.Visibility.Hidden;
-
+                        
                     }
                     else
                     {
@@ -272,7 +266,5 @@ namespace GhettoClue
                 }
             }
         }
-
-        
     }
 }

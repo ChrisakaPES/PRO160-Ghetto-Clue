@@ -93,6 +93,12 @@
     <Compile Include="UserControls\UserGuide.xaml.cs">
       <DependentUpon>UserGuide.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VisualAccuseWindow.xaml.cs">
+      <DependentUpon>VisualAccuseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VisualSuggestionWindow.xaml.cs">
+      <DependentUpon>VisualSuggestionWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="AccuseWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -137,6 +143,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="VisualAccuseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="VisualSuggestionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Character.cs" />
@@ -171,6 +185,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="UserControls\Gameboard.png" />
     <Resource Include="Character Pictures\demarcas.jpg" />
     <Resource Include="Character Pictures\jake.jpg" />
     <Resource Include="Character Pictures\juancarlos.jpg" />
@@ -180,6 +195,17 @@
     <Resource Include="Character Pictures\GhettoClue.jpg" />
     <Resource Include="Images\downarrow.png" />
     <Resource Include="Images\uparrow.png" />
+    <Resource Include="Images\CrossBackground.jpg" />
+    <Content Include="Music\Trap Banger Instrumental Beat 2014 - Hold up.mp3" />
+    <Resource Include="rooms\backalley.jpg" />
+    <Resource Include="rooms\bmommapad.jpg" />
+    <Resource Include="rooms\growhouse.jpg" />
+    <Resource Include="rooms\kfc.jpg" />
+    <Resource Include="rooms\Laundromat.jpg" />
+    <Resource Include="rooms\lightroom.jpg" />
+    <Resource Include="rooms\liquorstore.jpg" />
+    <Resource Include="rooms\localprison.jpg" />
+    <Resource Include="rooms\thecorner.jpg" />
     <Content Include="Tokens\GHETTOGIRL.jpg" />
   </ItemGroup>
   <ItemGroup>

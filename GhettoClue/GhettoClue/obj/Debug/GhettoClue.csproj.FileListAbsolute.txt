@@ -129,3 +129,12 @@ G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\Gh
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\UserGuide.g.cs
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\BoardGuide.baml
 G:\Quarters\2014\Summer\PRO160 Application Development Lab\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\BoardGuide.g.cs
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\GhettoClue.csprojResolveAssemblyReference.cache
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\BoardGuide.baml
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\UserGuide.baml
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\BoardGuide.g.cs
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\UserControls\UserGuide.g.cs
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\VisualAccuseWindow.g.cs
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\VisualSuggestionWindow.g.cs
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\VisualAccuseWindow.baml
+C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\obj\Debug\VisualSuggestionWindow.baml

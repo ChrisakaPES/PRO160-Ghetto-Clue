@@ -430,16 +430,7 @@ namespace GhettoClue
             Player lastPlayer = new Player();
             lastPlayer = (Player)playerListBox.SelectedItem;
             gameControl.inRoom(lastPlayer);
-				int currentPlayerIndex = playerListBox.SelectedIndex;
-				currentPlayerIndex++;
-				if (currentPlayerIndex == players.Count())
-				{
-					currentPlayerIndex = 0;
-				}
-				playerListBox.SelectedIndex = currentPlayerIndex;
-				rolled = 0;
-				gameControl.UpdateNextTurn((Player)playerListBox.SelectedItem);
-				gameControl.clearHighlights();
+				
 
                 if (lastPlayer.IsInRoom)
                 {
@@ -448,7 +439,7 @@ namespace GhettoClue
                     {
                         //Do Accuse shenanigans 
                         this.InvalidateVisual();
-                        AccuseWindow accuseWindow = new AccuseWindow();
+                        VisualAccuseWindow accuseWindow = new VisualAccuseWindow();
                         accuseWindow.ParentWin = this;
                         accuseWindow.CurrentPlayer = players[playerListBox.SelectedIndex];
                         accuseWindow.ShowDialog();
@@ -479,7 +470,7 @@ namespace GhettoClue
                         res = MessageBox.Show("Would You like to Suggest a scenario?", "Suggest?", MessageBoxButton.YesNo);
                         if (res == MessageBoxResult.Yes)
                         {
-                            SuggestionPopUpWindow suggestPop = new SuggestionPopUpWindow();
+                            VisualSuggestionWindow suggestPop = new VisualSuggestionWindow(RoomEnum.BackAlley);
                             suggestPop.ParentWin = this;
                             suggestPop.currentPlayer = (Player)playerListBox.SelectedItem;
                             suggestPop.ShowDialog();
@@ -529,6 +520,18 @@ namespace GhettoClue
 
                 //MessageBox.Show("It is now "+ playerListBox.SelectedItem.ToString()+"\'s roll!");
                 //this.InvalidateVisual();
+
+                int currentPlayerIndex = playerListBox.SelectedIndex;
+                currentPlayerIndex++;
+                if (currentPlayerIndex == players.Count())
+                {
+                    currentPlayerIndex = 0;
+                }
+                playerListBox.SelectedIndex = currentPlayerIndex;
+                rolled = 0;
+                gameControl.UpdateNextTurn((Player)playerListBox.SelectedItem);
+                gameControl.clearHighlights();
+
 				turn.IsEnabled = false;
 				userGuide.helptext.Text = "Hey "+ playerListBox.SelectedItem.ToString()+"! \n\n It is now your turn.";
 				userGuide.ShowGuide();
