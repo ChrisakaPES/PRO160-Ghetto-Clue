@@ -141,18 +141,20 @@ namespace GhettoClue.Movement
             if (IsInHand)
             {
                 if(!HasPlayer){
-
-                if (IsAvailable)
-                {
-                    IsCurrent = !IsCurrent;
-                    IsInHand = !IsInHand;
-                    if(playerTransfer.Name != CharacterEnum.Empty)
+                    if (IsAvailable)
                     {
-                        HasPlayer = !HasPlayer;
+                        IsCurrent = !IsCurrent;
+                        IsOpen = !IsOpen;
+                       
+                        IsInHand = !IsInHand;
+                        //if(playerTransfer.Name != CharacterEnum.Empty)
+                        //{
+                            HasPlayer = true;
+                        //}
+                        Player = playerTransfer;
+                        Player.pickedUp = false;
+                        playerTransfer = new Player { Name = CharacterEnum.Empty };
                     }
-                    Player = playerTransfer;
-                    playerTransfer = new Player { Name = CharacterEnum.Empty };
-                }
                 }
             }
             else if (IsCurrent)
@@ -160,12 +162,14 @@ namespace GhettoClue.Movement
                 if(Player.hasRolled)
                 {
                     IsInHand = !IsInHand;
+                    Player.pickedUp = true;
+                    IsOpen = !IsOpen;
                     IsCurrent = !IsCurrent;
                     playerTransfer = Player;
-                    if (Player.Name != CharacterEnum.Empty)
-                    {
-                        HasPlayer = !HasPlayer;
-                    }
+                    //if (Player.Name != CharacterEnum.Empty)
+                    //{
+                        HasPlayer = false;
+                    //}
                     Player = new Player { Name = CharacterEnum.Empty};
                 }
             }

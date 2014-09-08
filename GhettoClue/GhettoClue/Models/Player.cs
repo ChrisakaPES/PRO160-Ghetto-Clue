@@ -15,6 +15,7 @@ namespace GhettoClue.Models
 
         private bool _isTurn;
         private bool _isInRoom;
+        public bool pickedUp;
 
 		public Player()
 		{

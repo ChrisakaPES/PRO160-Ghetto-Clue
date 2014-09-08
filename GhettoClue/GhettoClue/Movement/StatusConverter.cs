@@ -61,7 +61,7 @@ namespace GhettoClue.Movement
             }
             else if ((bool)values[3])
             {
-                brush.Color = Colors.Gray;
+                brush.Color = Colors.Bisque;
                 //Open
             }
             else if ((bool)values[4])

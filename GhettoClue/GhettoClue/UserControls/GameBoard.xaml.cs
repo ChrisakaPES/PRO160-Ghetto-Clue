@@ -58,7 +58,9 @@ namespace GhettoClue
                             || i == 3 && j == 4 || i == 4 && j == 4 || i == 3 && j == 7 || i == 5 && j == 7 || i == 3 && j == 8 || i == 4 && j == 8 || i == 5 && j == 8 || i == 0 && j == 3 
                             || i == 0 && j == 4 || i == 0 && j == 5 || i == 1 && j == 3 || i == 1 && j == 5 || i == 7 && j == 0 || i == 8 && j == 0 || i == 9 && j == 0 || i == 7 && j == 1 
                             || i == 9 && j == 1 || i == 7 && j == 7 || i == 9 && j == 7 || i == 7 && j == 8 || i == 8 && j == 8 || i == 9 && j == 8 || i == 7 && j == 3 || i == 7 && j == 5 
-                            || i == 9 && j == 3 || i == 9 && j == 5)
+                            || i == 9 && j == 3 || i == 9 && j == 5
+                            || i == 7 && j == 3 || i == 7 && j ==5
+                            || i == 7 && j == 7 || i == 8 && j == 8 || i == 7 && j == 9)
                             
                         {
                             squares[j, i].IsRoom = true;
@@ -194,7 +196,7 @@ namespace GhettoClue
                     {
                         if (p == squares[j, i].Player)
                         {
-                            if (BackAlleyCheck(j, i) || LaundroMatCheck(j, i) || BBMommasPadCheck(j, i) || GrowHouseCheck(j, i) || KFCCheck(j, i) || TheCornerCheck(j, i))
+                            if (BackAlleyCheck(j, i) || LaundroMatCheck(j, i) || BBMommasPadCheck(j, i) || GrowHouseCheck(j, i) || KFCCheck(j, i) || TheCornerCheck(j, i) || ThePrisonCheck(j,i) || LiqourStoreCheck(j,i) || LightroomCheck(j,i))
                             {
                                 p.IsInRoom = true;
                             }
@@ -470,6 +472,104 @@ namespace GhettoClue
             // Check cell on the top.
             if (y != 0)
                 if (squares[x, y - 1] == squares[1, 7])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            return check;
+        }
+
+        public bool ThePrisonCheck(int x, int y)
+        {
+            bool check = false;
+
+            // Check cell on the right.
+            if (x != myColumn - 1)
+                if (squares[x + 1, y] == squares[3, 7])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the left.
+            if (x != 0)
+                if (squares[x - 1, y] == squares[5, 7])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            return check;
+        }
+
+        public bool LiqourStoreCheck(int x, int y)
+        {
+            bool check = false;
+
+            // Check cell on the right.
+            if (x != myColumn - 1)
+                if (squares[x + 1, y] == squares[3, 9])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the left.
+            if (x != 0)
+                if (squares[x - 1, y] == squares[5, 9])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            return check;
+        }
+
+        public bool LightroomCheck(int x, int y)
+        {
+            bool check = false;
+
+            // Check cell on the bottom.
+            if (y != myRow - 1)
+                if (squares[x, y + 1] == squares[7, 7])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the right.
+            if (x != myColumn - 1)
+                if (squares[x + 1, y] == squares[8, 8])
+                {
+                    check = true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            // Check cell on the top.
+            if (y != 0)
+                if (squares[x, y - 1] == squares[7, 9])
                 {
                     check = true;
                 }
