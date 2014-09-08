@@ -10,7 +10,7 @@
     </Window.Resources>
 
     <StackPanel>
-        <Label HorizontalAlignment="Center" FontSize="24px">Suggestion Time</Label>
+        <Label HorizontalAlignment="Center" FontSize="24px">Accuse Time</Label>
         <Label Content="{Binding Path=CurrentPlayer}" Foreground="{Binding Path=CurrentPlayer, Converter={StaticResource ResourceKey=CharacterToColor}}" HorizontalAlignment="Center" 
                FontSize="18px"/>
         <Label Content="Who you think done it?" HorizontalAlignment="Center" />
