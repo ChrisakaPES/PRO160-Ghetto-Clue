@@ -19,15 +19,27 @@ namespace GhettoClue.UserControls
 	/// <summary>
 	/// Interaction logic for BoardGuide.xaml
 	/// </summary>
+	/// 
+
+
 	public partial class BoardGuide : UserControl
 	{
+		public MainWindow MainWin { get; set; }
+
 		private int page = 2;
 
 		public BoardGuide()
 		{
 			InitializeComponent();
+			startBoardGuide();
+		}
+
+		private void startBoardGuide()
+		{
 			downarrow.Visibility = Visibility.Hidden;
 			board_helptext.Text = "Movement:\nAfter you roll, the board will mark spaces you can move to in purple.\n\nClick the Next button to continue...";
+			board_nextbutton.Visibility = Visibility.Visible;
+			board_guidepages.Content = "1 / 4";
 		}
 
 		private void NextButtonClick(object sender, RoutedEventArgs e)
@@ -51,7 +63,7 @@ namespace GhettoClue.UserControls
 						board_helptext.Text = "Go ahead move your piece now!\n(Under the blue arrow)";
 						board_hidebutton.Content = "Okay";
 						downarrow.Visibility = Visibility.Visible;
-						board_nextbutton.Visibility = Visibility.Hidden;						
+						board_nextbutton.Visibility = Visibility.Hidden;
 						board_guidepages.Content = "4 / 4";
 						break;
 
@@ -59,10 +71,6 @@ namespace GhettoClue.UserControls
 						break;
 				}
 				page++;
-			}
-			else
-			{
-				board_nextbutton.Visibility = Visibility.Hidden;
 			}
 		}
 
@@ -95,6 +103,7 @@ namespace GhettoClue.UserControls
 
 		private void HideBoardGuide()
 		{
+
 			ThicknessAnimation slideIn = new ThicknessAnimation();
 			slideIn.From = new Thickness(0, 0, 0, 0);
 			slideIn.To = new Thickness(this.ActualWidth, 0, 0, 0);
@@ -111,6 +120,8 @@ namespace GhettoClue.UserControls
 				boardGuideSection.Visibility = Visibility.Collapsed;
 			};
 			sb.Begin(this);
+
+			page = 2;
 		}
 
 		private void DoHideBoardGuide(object sender, RoutedEventArgs e)

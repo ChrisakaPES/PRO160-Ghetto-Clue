@@ -31,8 +31,8 @@
 								 Grid.Column="0"
 								 TextWrapping="WrapWithOverflow"/>
 					<Button x:Name="board_hidebutton" Grid.Column="0" Grid.Row="1" Margin="10,10,10,10" HorizontalAlignment="Left" Content="Hide" Click="DoHideBoardGuide"/>
-                    <Button x:Name="board_nextbutton" Grid.Column="0" Grid.Row="1" Margin="45,10,10,10" HorizontalAlignment="Left" Content="Next" Click="NextButtonClick" />
-                    <Label x:Name="board_guidepages" Grid.Column="0" Grid.Row="1" Margin="75,10,10,10" HorizontalAlignment="Left" Content="1 / 4" />
+					<Button x:Name="board_nextbutton" Grid.Column="0" Grid.Row="1" Margin="45,10,10,10" HorizontalAlignment="Left" Content="Next" Click="NextButtonClick" />
+					<Label x:Name="board_guidepages" Grid.Column="0" Grid.Row="1" Margin="75,10,10,10" HorizontalAlignment="Left" Content="1 / 4" />
 					<Image x:Name="downarrow" Grid.Column="1" Grid.Row="1" Width="50" Height="50" HorizontalAlignment="Right">
 						<Image.Source>
 							<BitmapImage UriSource="../Images/downarrow.png" />
