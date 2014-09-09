@@ -1,0 +1,11 @@
+﻿<Window x:Class="GhettoClue.CardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CardWindow" Height="300" Width="300">
+    <StackPanel>
+        <Label x:Name="cardNameLabel" Content="CardNameGoesHere" FontSize="24pt"/>
+
+        <Image Height="200px" Width="200px" Source="Images/CrossBackground.jpg"/>
+
+    </StackPanel>
+</Window>
