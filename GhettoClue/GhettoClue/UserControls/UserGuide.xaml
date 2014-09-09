@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             Height="350" Width="250">
+             Height="144" Width="250">
         <!--<Label Background="LightGray"
                 Width="40"
                Height="30"
                Content="Show"
                MouseDown="CanvasClick"/>-->
-        <DockPanel x:Name="userGuideSection" Visibility="Collapsed" Background="CadetBlue">
+        <DockPanel x:Name="userGuideSection" Visibility="Visible" Background="CadetBlue">
             <Border DockPanel.Dock="Left" Width="8">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">

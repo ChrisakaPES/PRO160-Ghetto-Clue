@@ -80,10 +80,7 @@ namespace GhettoClue.UserControls
 			HideUserGuide();
 		}
 
-		//private void CanvasClick(object sender, MouseButtonEventArgs e)
-		//{
-		//	ShowUserGuide();
-		//}
+
 
 	}
 }

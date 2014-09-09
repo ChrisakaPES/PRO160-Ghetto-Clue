@@ -107,8 +107,8 @@
 
 
         <gb:GameBoard x:Name="gameControl" />
-        <Button x:Name="suggest" Content="SUGGEST" FontSize="20" Click="suggest_Click" Width="150" Grid.Column="2" Margin="62,306,55,148"/>
-        <Button x:Name="accuse" Content="ACCUSE" FontSize="20" Click="accuse_Click" Width="150" Margin="62,409,55,35" Grid.Column="2" />
+        <Button x:Name="suggest" Content="SUGGEST" FontSize="20" Click="suggest_Click" Width="150" Grid.Column="2" Margin="60,306,57,148"/>
+        <Button x:Name="accuse" Content="ACCUSE" FontSize="20" Click="accuse_Click" Width="150" Margin="60,409,57,35" Grid.Column="2" />
         <!--Region Board Guide-->
         <uc:BoardGuide x:Name="boardGuide"
 					   Grid.Column="0"
@@ -126,7 +126,7 @@
 
         <!--Region Buttons-->
 
-        <Button x:Name="turn" Content="END TURN" FontSize="20" Grid.Column="2" Margin="62,194,55,249" Click="nextTurn_Click"/>
+        <Button x:Name="turn" Content="END TURN" FontSize="20" Grid.Column="2" Margin="60,194,57,249" Click="nextTurn_Click"/>
 
 
         <Button x:Name="roll" Click="roll_Click" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="67,145,100,156" Grid.Row="1"/>
@@ -147,10 +147,10 @@
 
         <!--End Region-->
 
-        <Label x:Name="Splash" Background="Black" Grid.ColumnSpan="3" Grid.RowSpan="3">
+        <!--<Label x:Name="Splash" Background="Black" Grid.ColumnSpan="3" Grid.RowSpan="3">
             <Image Source="Character Pictures/GhettoClue.jpg" Height="860" Width="1708"/>
         </Label>
-        <Button x:Name="start" Content="START" FontSize="45" Height="100" Width="150" Background="Black" Foreground="Red" FontFamily="Chiller" Grid.ColumnSpan="2" Grid.Column="1" Margin="94,195,263,54" Grid.Row="1" Click="start_Click" />
+        <Button x:Name="start" Content="START" FontSize="45" Height="100" Width="150" Background="Black" Foreground="Red" FontFamily="Chiller" Grid.ColumnSpan="2" Grid.Column="1" Margin="94,195,263,54" Grid.Row="1" Click="start_Click" />-->
 
 
 

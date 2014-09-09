@@ -517,7 +517,7 @@ namespace GhettoClue
                 gameControl.clearHighlights();
 
 				turn.IsEnabled = false;
-				userGuide.helptext.Text = "Hey "+ playerListBox.SelectedItem.ToString()+"! \n\n It is now your turn.";
+				userGuide.helptext.Text = "Hey "+ playerListBox.SelectedItem.ToString()+"! \n\n It is now your turn. Click the roll button to start your turn";
 				userGuide.ShowGuide();
 				roll.IsEnabled = true;
 	   }
@@ -611,11 +611,11 @@ namespace GhettoClue
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		private void start_Click(object sender, RoutedEventArgs e)
-		{
-			Splash.Visibility = System.Windows.Visibility.Hidden;
-			start.Visibility = System.Windows.Visibility.Hidden;
-		}
+        //private void start_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Splash.Visibility = System.Windows.Visibility.Hidden;
+        //    start.Visibility = System.Windows.Visibility.Hidden;
+        //}
 	}
 }
 
