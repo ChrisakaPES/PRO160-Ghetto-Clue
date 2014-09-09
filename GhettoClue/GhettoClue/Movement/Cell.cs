@@ -22,6 +22,9 @@ namespace GhettoClue.Movement
         private Player _player = new Player { Name = CharacterEnum.Empty };
         private static Player playerTransfer = new Player { Name = CharacterEnum.Empty };
         public static bool IsInHand = false;
+        public MainWindow ParentWin { get; set; }
+        public GameBoard GameBoard { get; set; } 
+
 
         public bool IsRoom
         {
@@ -147,6 +150,12 @@ namespace GhettoClue.Movement
                         IsOpen = !IsOpen;
                        
                         IsInHand = !IsInHand;
+                        if (GameBoard.inRoom(Player))
+                        {
+                            ParentWin.suggest.IsEnabled = true;
+                            ParentWin.accuse.IsEnabled = true;
+                            ParentWin.turn.IsEnabled = false;
+                        }
                         //if(playerTransfer.Name != CharacterEnum.Empty)
                         //{
                             HasPlayer = true;
@@ -166,6 +175,7 @@ namespace GhettoClue.Movement
                     IsOpen = !IsOpen;
                     IsCurrent = !IsCurrent;
                     playerTransfer = Player;
+                    
                     //if (Player.Name != CharacterEnum.Empty)
                     //{
                         HasPlayer = false;

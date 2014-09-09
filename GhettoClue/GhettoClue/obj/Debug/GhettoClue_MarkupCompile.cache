@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Christopher Quintani\Documents\Quarter 4\PRO160 Application Development Project\PRO160-Ghetto-Clue\GhettoClue\GhettoClue\App.xaml
-11-604591995
+11110870376
 21675375450
-33-166356362
+33-1229721903
 141755987458
-AccuseWindow.xaml;DisprovePopUp.xaml;Help.xaml;MainWindow.xaml;SuggestionPopUpWindow.xaml;UserControls\BoardGuide.xaml;UserControls\DetectiveControl.xaml;UserControls\GameBoard.xaml;UserControls\UserGuide.xaml;VisualAccuseWindow.xaml;VisualSuggestionWindow.xaml;
+AccuseWindow.xaml;DisprovePopUp.xaml;Help.xaml;MainWindow.xaml;SuggestionPopUpWindow.xaml;UserControls\BoardGuide.xaml;UserControls\GameBoard.xaml;UserControls\UserGuide.xaml;VisualAccuseWindow.xaml;VisualDismissal.xaml;VisualSuggestionWindow.xaml;
 
 False
 

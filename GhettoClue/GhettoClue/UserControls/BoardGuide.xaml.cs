@@ -68,6 +68,7 @@ namespace GhettoClue.UserControls
 						break;
 
 					default:
+                        //page = 1;
 						break;
 				}
 				page++;
@@ -122,6 +123,12 @@ namespace GhettoClue.UserControls
 			sb.Begin(this);
 
 			page = 2;
+            MainWin.gameControl.IsEnabled = true;
+            MainWin.DetectiveNotes.IsEnabled = true;
+            MainWin.PlayerHand.IsEnabled = true;
+            MainWin.turn.IsEnabled = true;
+            //MainWin.suggest.IsEnabled = true;
+            //MainWin.accuse.IsEnabled = true;
 		}
 
 		private void DoHideBoardGuide(object sender, RoutedEventArgs e)

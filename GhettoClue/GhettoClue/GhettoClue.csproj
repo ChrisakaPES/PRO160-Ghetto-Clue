@@ -84,9 +84,6 @@
     <Compile Include="UserControls\BoardGuide.xaml.cs">
       <DependentUpon>BoardGuide.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\DetectiveControl.xaml.cs">
-      <DependentUpon>DetectiveControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\GameBoard.xaml.cs">
       <DependentUpon>GameBoard.xaml</DependentUpon>
     </Compile>
@@ -95,6 +92,9 @@
     </Compile>
     <Compile Include="VisualAccuseWindow.xaml.cs">
       <DependentUpon>VisualAccuseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VisualDismissal.xaml.cs">
+      <DependentUpon>VisualDismissal.xaml</DependentUpon>
     </Compile>
     <Compile Include="VisualSuggestionWindow.xaml.cs">
       <DependentUpon>VisualSuggestionWindow.xaml</DependentUpon>
@@ -131,10 +131,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\DetectiveControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="UserControls\GameBoard.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -144,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VisualAccuseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="VisualDismissal.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

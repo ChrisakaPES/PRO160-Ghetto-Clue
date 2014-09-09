@@ -29,6 +29,7 @@ namespace GhettoClue
         public int myRow = 10;
         List<Player> players;
         Player[] playerList;
+        public MainWindow ParentWin { get; set; }
         private bool isPlayerInRoom;
 
         public GameBoard()
@@ -48,7 +49,8 @@ namespace GhettoClue
                     for (int j = 0; j < gameGrid.Columns; j++)
                     {
                         squares[j, i] = new Cell();
-
+                        squares[j, i].GameBoard = this;
+                        squares[j, i].ParentWin = ParentWin;
                         Rectangle block = new Rectangle();
                         block.DataContext = squares[j, i];
                         block.MouseLeftButtonDown += squares[j, i].parentClicked;
@@ -186,7 +188,7 @@ namespace GhettoClue
             }
         }
 
-        public void inRoom(Player p)
+        public bool inRoom(Player p)
         {
             for (int k = 0; k < 6; k++)
             {
@@ -199,6 +201,7 @@ namespace GhettoClue
                             if (BackAlleyCheck(j, i) || LaundroMatCheck(j, i) || BBMommasPadCheck(j, i) || GrowHouseCheck(j, i) || KFCCheck(j, i) || TheCornerCheck(j, i) || ThePrisonCheck(j,i) || LiqourStoreCheck(j,i) || LightroomCheck(j,i))
                             {
                                 p.IsInRoom = true;
+                                return true;
                             }
                             else
                             {
@@ -208,6 +211,7 @@ namespace GhettoClue
                     }
                 }
             }
+            return false;
         }
 
         public void getOpenSpots(int x, int y)
