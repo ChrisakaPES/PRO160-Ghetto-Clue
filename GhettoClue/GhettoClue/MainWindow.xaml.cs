@@ -487,7 +487,8 @@ namespace GhettoClue
                             {
                                 if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
                                 {
-                                    DisprovePopUp disprovePop = new DisprovePopUp(players[i], CurrentSuggestion);
+                                    VisualDismissal disprovePop = new VisualDismissal(players[i], CurrentSuggestion);
+                                    disprovePop.InvalidateVisual();
                                     disprovePop.ParentWin = this;
 
                                     disprovePop.ShowDialog();

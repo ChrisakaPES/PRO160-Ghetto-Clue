@@ -1,0 +1,50 @@
+﻿<Window x:Class="GhettoClue.VisualDismissal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:con="clr-namespace:GhettoClue.Converters"
+        Title="VisualDismissal" Height="400" Width="606"
+        Closing="Window_Closing" >
+
+
+    <Window.Resources>
+        <con:CharacterToColor x:Key="CharacterToColor" />
+    </Window.Resources>
+    <StackPanel>
+
+        <Label Content="Disprove" FontSize="24px" HorizontalAlignment="Center"></Label>
+        <Label Content="{Binding Path=disprovingPlayer}" Foreground="{Binding Path=disprovingPlayer, Converter={StaticResource ResourceKey=CharacterToColor}}" HorizontalAlignment="Center" 
+               FontSize="18px"/>
+        <Label Content="Show em they wrong! " HorizontalAlignment="Center" FontSize="12pt"/>
+        <Label Content="(Click on the Image of the card you wish to show the suggesting player)" HorizontalAlignment="Center" />
+        <StackPanel Orientation="Horizontal" Height="100px" HorizontalAlignment="Center" Margin="0,25">
+
+            <StackPanel Margin="20, 0">
+                <Button x:Name="SuspectButton"  Height="75px" Width="100px" Click="SuspectButton_Click" IsEnabled="False">
+                    <Image x:Name="SuspectImage" Source="Images/CrossBackground.jpg"/>
+                </Button>
+                <Label Content="Suspect" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Margin="20, 0">
+                <Button x:Name="WeaponButton"  Height="75px" Width="100px" Click="WeaponButton_Click" IsEnabled="False">
+                    <Image x:Name="WeaponImage" Source="Images/CrossBackground.jpg" />
+                </Button>
+                <Label Content="Weapon" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Margin="20, 0">
+                <Button x:Name="SiteButton"  Height="75px" Width="100px" Click="SiteButton_Click" IsEnabled="False">
+                        <Image x:Name="SiteImage" Source="Images/CrossBackground.jpg"/>                    
+                </Button>
+                <Label Content="Site" HorizontalAlignment="Center"/>
+            </StackPanel>
+           
+
+        </StackPanel>
+         
+        <Label x:Name="SelectedCardLabel" Content="Selected Card: " HorizontalAlignment="Center"/>
+
+        
+        <Button x:Name="confirmButton" Width="100px" Height="25px" Margin="0,25" Content="Confirm Selection" Click="ConfirmButton_Click"/>
+    </StackPanel>
+
+</Window>
