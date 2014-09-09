@@ -544,9 +544,47 @@ namespace GhettoClue
 		private void suggest_Click(object sender, RoutedEventArgs e)
 		{
 			//suggest a card
-			SuggestionPopUpWindow suggestPopUp = new SuggestionPopUpWindow();
-			suggestPopUp.Show();
-			suggestPopUp.Activate();
+            VisualSuggestionWindow suggestPop = new VisualSuggestionWindow(RoomEnum.BackAlley);
+            suggestPop.ParentWin = this;
+            suggestPop.currentPlayer = (Player)playerListBox.SelectedItem;
+            suggestPop.ShowDialog();
+            this.InvalidateVisual();
+
+
+            int i = playerListBox.SelectedIndex + 1;
+            if (i == players.Count())
+            {
+                i = 0;
+            }
+            int timesLoopedThrough = 0;
+            do
+            {
+                if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
+                {
+                    VisualDismissal disprovePop = new VisualDismissal(players[i], CurrentSuggestion);
+                    disprovePop.InvalidateVisual();
+                    disprovePop.ParentWin = this;
+
+                    disprovePop.ShowDialog();
+                    this.InvalidateVisual();
+
+                    break;
+                }
+                if (timesLoopedThrough >= 5)
+                {
+                    MessageBox.Show("None of the other players have any matching cards.", "Well what do you know?");
+                    DetectiveNotes.Visibility = System.Windows.Visibility.Visible;
+                    PlayerHand.Visibility = System.Windows.Visibility.Visible;
+                    break;
+                }
+                i++;
+                if (i == players.Count())
+                {
+                    i = 0;
+                }
+                timesLoopedThrough++;
+
+            } while (true);
 			
 		}
 
@@ -558,6 +596,31 @@ namespace GhettoClue
 		private void accuse_Click(object sender, RoutedEventArgs e)
 		{
 			//accuse the murder
+            this.InvalidateVisual();
+            VisualAccuseWindow accuseWindow = new VisualAccuseWindow();
+            accuseWindow.ParentWin = this;
+            accuseWindow.CurrentPlayer = players[playerListBox.SelectedIndex];
+            accuseWindow.ShowDialog();
+
+            if (CurrentAccusation.CheckForPlayerWin(theAnswer))
+            {
+                MessageBox.Show("Ayo YOU WON DA GAME!");
+                System.Windows.Application.Current.Shutdown();
+            }
+            else
+            {
+                MessageBox.Show("Oh SugarSnaps you done messed up yous outta da game.");
+                players.RemoveAt(playerListBox.SelectedIndex);
+                int playerSelect = playerListBox.SelectedIndex;
+                playerSelect--;
+                if (playerSelect == -1)
+                {
+                    playerSelect = players.Count() - 1;
+                }
+                playerListBox.ItemsSource = players;
+                playerListBox.SelectedIndex = playerSelect;
+                this.InvalidateVisual();
+            }
 		}
 		#endregion
 
