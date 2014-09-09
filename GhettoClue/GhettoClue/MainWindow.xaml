@@ -109,6 +109,17 @@
         <gb:GameBoard x:Name="gameControl" />
         <Button x:Name="suggest" Content="SUGGEST" FontSize="20" Click="suggest_Click" Width="150" Grid.Column="2" Margin="60,306,57,148"/>
         <Button x:Name="accuse" Content="ACCUSE" FontSize="20" Click="accuse_Click" Width="150" Margin="60,409,57,35" Grid.Column="2" />
+        <Button x:Name="play" Click="play_Click" Width="50" Height="50" Content="" Grid.Column="2" Margin="198,209,23,90" Grid.Row="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/play.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="pause" Click="pause_Click" Width="50" Height="50" Content="" Grid.Column="2" Margin="198,155,23,144" Grid.Row="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/pause.png"/>
+            </Button.Background>
+        </Button>
         <!--Region Board Guide-->
         <uc:BoardGuide x:Name="boardGuide"
 					   Grid.Column="0"

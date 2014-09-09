@@ -216,6 +216,16 @@ namespace GhettoClue
             music.Play();
         }
 
+        private void play_Click(object sender, RoutedEventArgs e)
+        {
+            music.Play();
+        }
+
+        private void pause_Click(object sender, RoutedEventArgs e)
+        {
+            music.Pause();
+        }
+
 		/** 
 		 * Hey this is the how things should work 
 		 */
