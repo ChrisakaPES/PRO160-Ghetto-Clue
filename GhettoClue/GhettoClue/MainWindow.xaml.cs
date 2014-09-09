@@ -328,93 +328,6 @@ namespace GhettoClue
 			//turn taking
 			bool isPlayerInRoom = false;
             currentPlayer.hasRolled = false;
-            //if (currentPlayer.IsInRoom)
-            //{
-            //    MessageBoxResult res = MessageBox.Show("Would You like to Accuse Someone?", "Accuse?", MessageBoxButton.YesNo);
-            //    if (res == MessageBoxResult.Yes)
-            //    {
-            //        //Do Accuse shenanigans 
-            //        this.InvalidateVisual();
-            //        AccuseWindow accuseWindow = new AccuseWindow();
-            //        accuseWindow.ParentWin = this;
-            //        accuseWindow.CurrentPlayer = players[playerListBox.SelectedIndex];
-            //        accuseWindow.ShowDialog();
-
-            //        if (CurrentAccusation.CheckForPlayerWin(theAnswer))
-            //        {
-            //            MessageBox.Show("Ayo YOU WON DA GAME!");
-            //            System.Windows.Application.Current.Shutdown();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Oh SugarSnaps you done messed up yous outta da game.");
-            //            players.RemoveAt(playerListBox.SelectedIndex);
-            //            int playerSelect = playerListBox.SelectedIndex;
-            //            playerSelect--;
-            //            if (playerSelect == -1)
-            //            {
-            //                playerSelect = players.Count() - 1;
-            //            }
-            //            playerListBox.ItemsSource = players;
-            //            playerListBox.SelectedIndex = playerSelect; 
-            //            this.InvalidateVisual();
-
-
-            //        }
-
-					
-            //    }
-            //    else
-            //    {
-            //        this.InvalidateVisual();
-            //        res = MessageBox.Show("Would You like to Suggest a scenario?", "Suggest?", MessageBoxButton.YesNo);
-            //        if (res == MessageBoxResult.Yes)
-            //        {
-            //            SuggestionPopUpWindow suggestPop = new SuggestionPopUpWindow();
-            //            suggestPop.ParentWin = this;
-            //            suggestPop.currentPlayer = (Player)playerListBox.SelectedItem;
-            //            suggestPop.ShowDialog();
-            //            this.InvalidateVisual();
-
-
-            //            int i = playerListBox.SelectedIndex + 1;
-            //            if (i == players.Count())
-            //            {
-            //                i = 0;
-            //            }
-            //            int timesLoopedThrough = 0;
-            //            do
-            //            {
-            //                if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
-            //                {
-            //                    DisprovePopUp disprovePop = new DisprovePopUp(players[i], CurrentSuggestion);
-            //                    disprovePop.ParentWin = this;
-
-            //                    disprovePop.ShowDialog();
-            //                    this.InvalidateVisual();
-
-            //                    break;
-            //                }
-            //                if (timesLoopedThrough >= 5)
-            //                {
-            //                    MessageBox.Show("None of the other players have any matching cards.", "Well what do you know?");
-            //                    DetectiveNotes.Visibility = System.Windows.Visibility.Visible;
-            //                    PlayerHand.Visibility = System.Windows.Visibility.Visible;
-            //                    break;
-            //                }
-            //                i++;
-            //                if (i == players.Count())
-            //                {
-            //                    i = 0;
-            //                }
-            //                timesLoopedThrough++;
-							
-            //            } while (true);
-            //        }
-            //        roll.IsEnabled = true;
-					
-            //    }
-            //}
             Player lastPlayer = new Player();
             lastPlayer = (Player)playerListBox.SelectedItem;
             gameControl.inRoom(lastPlayer);
@@ -610,6 +523,16 @@ namespace GhettoClue
 
 
 		public event PropertyChangedEventHandler PropertyChanged;
+
+        private void play_Click(object sender, RoutedEventArgs e)
+        {
+            music.Play();
+        }
+
+        private void pause_Click(object sender, RoutedEventArgs e)
+        {
+            music.Pause();
+        }
 
         //private void start_Click(object sender, RoutedEventArgs e)
         //{
