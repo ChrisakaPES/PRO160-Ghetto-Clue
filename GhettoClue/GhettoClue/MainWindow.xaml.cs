@@ -717,11 +717,11 @@ namespace GhettoClue
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		//private void start_Click(object sender, RoutedEventArgs e)
-		//{
-		//    Splash.Visibility = System.Windows.Visibility.Hidden;
-		//    start.Visibility = System.Windows.Visibility.Hidden;
-		//}
+        private void start_Click(object sender, RoutedEventArgs e)
+        {
+            Splash.Visibility = System.Windows.Visibility.Hidden;
+            start.Visibility = System.Windows.Visibility.Hidden;
+        }
 	}
 }
 
