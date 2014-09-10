@@ -6,164 +6,164 @@
 		xmlns:con="clr-namespace:GhettoClue.Converters"
 		Title="MainWindow" Height="890.135" Width="1461.636">
 
-    <Window.Resources>
-        <con:EnumToString x:Key="EnumToString"/>
-        <ObjectDataProvider x:Key="possibleActionsEnum" MethodName="GetValues"/>
-        <con:CharacterToColor x:Key="CharacterToColor"/>
-        <con:CharacterToImage x:Key="CharacterToImage"/>
+	<Window.Resources>
+		<con:EnumToString x:Key="EnumToString"/>
+		<ObjectDataProvider x:Key="possibleActionsEnum" MethodName="GetValues"/>
+		<con:CharacterToColor x:Key="CharacterToColor"/>
+		<con:CharacterToImage x:Key="CharacterToImage"/>
 
-    </Window.Resources>
-    <Grid Height="860" VerticalAlignment="Top">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="508"/>
-            <RowDefinition Height="349"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="947"/>
-            <ColumnDefinition Width="225*"/>
-            <ColumnDefinition Width="251*"/>
-        </Grid.ColumnDefinitions>
+	</Window.Resources>
+	<Grid Height="860" VerticalAlignment="Top">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="508"/>
+			<RowDefinition Height="349"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="947"/>
+			<ColumnDefinition Width="225*"/>
+			<ColumnDefinition Width="251*"/>
+		</Grid.ColumnDefinitions>
 
 
-        <!--Region PlayerBox-->
-        <ListBox x:Name="playerListBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,342" SelectionChanged="player_SelectionChanged" IsEnabled="False">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Height="110px">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="25px"/>
-                            <RowDefinition Height="25px"/>
-                            <RowDefinition Height="25px"/>
-                            <RowDefinition Height="25px"/>
-                        </Grid.RowDefinitions>
-                        <Label Grid.Column="1" Grid.Row="1"  Content="{Binding Name}" Foreground="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}" 
+		<!--Region PlayerBox-->
+		<ListBox x:Name="playerListBox" Grid.Column="2" ScrollViewer.CanContentScroll="False" Margin="0,57,0,342" SelectionChanged="player_SelectionChanged" IsEnabled="False">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Grid Height="110px">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="50"/>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="25px"/>
+							<RowDefinition Height="25px"/>
+							<RowDefinition Height="25px"/>
+							<RowDefinition Height="25px"/>
+						</Grid.RowDefinitions>
+						<Label Grid.Column="1" Grid.Row="1"  Content="{Binding Name}" Foreground="{Binding Converter={StaticResource ResourceKey=CharacterToColor}}" 
 							   FontSize="15"/>
-                        <Label Grid.Column="1" Grid.Row="2"  Content="{Binding background}" FontSize="13"/>
-                        <Image Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Height="50px" Width="50px" 
+						<Label Grid.Column="1" Grid.Row="2"  Content="{Binding background}" FontSize="13"/>
+						<Image Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Height="50px" Width="50px" 
 								   Source="{Binding Converter={StaticResource ResourceKey=CharacterToImage}}">
 
-                        </Image>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+						</Image>
+					</Grid>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
 
-        <Label Content="Characters:" FontSize="20" HorizontalAlignment="Center" Grid.Column="2" Margin="82,10,78,446" Width="107"/>
-        <!--End Region-->
-
-
-        <!--Region Detective Notes-->
-        <StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="DarkRed" Visibility="{Binding SuggestionPopUpWindow.ConfirmButton_Click}">
-            <Label Content="Detective Notes:" Foreground="White" FontFamily="Chiller" FontSize="35" HorizontalAlignment="Center" />
-            <DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" AutoGenerateColumns="False" ItemsSource="{Binding}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Character"  Binding="{Binding Path=CharacterValue}"/>
-                    <DataGridCheckBoxColumn Header="Known" Binding="{Binding Path=Show}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <DataGrid CanUserAddRows="False" AutoGenerateColumns="False" x:Name="DNotes_Weapons" ItemsSource="{Binding}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Weapon" Binding="{Binding Path=WeaponValue}"/>
-                    <DataGridCheckBoxColumn Header="Known" Binding="{Binding Path=Show}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <DataGrid CanUserAddRows="False" x:Name="DNotes_Rooms" ItemsSource="{Binding}" AutoGenerateColumns="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Room" Binding="{Binding Path=RoomValue}"/>
-                    <DataGridCheckBoxColumn Header="Known" Binding="{Binding Path=Show}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-        </StackPanel>
-        <!--End Region-->
-
-        <!--Region Player Hand-->
-        <StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="DarkRed" Grid.Row="1" Grid.Column="1"  Visibility="{Binding SuggestionPopUpWindow.ConfirmButton_Click}">
-            <Label FontSize="35" HorizontalAlignment="Center" Foreground="White" FontFamily="chiller">YO HAND:</Label>
-            <DataGrid CanUserAddRows="False" x:Name="CharacterHand" AutoGenerateColumns="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Character"  Binding="{Binding}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <DataGrid CanUserAddRows="False" AutoGenerateColumns="False" x:Name="WeaponHand">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Weapon" Binding="{Binding}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <DataGrid CanUserAddRows="False" x:Name="RoomHand" AutoGenerateColumns="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Room" Binding="{Binding}"/>
-                </DataGrid.Columns>
-            </DataGrid>
+		<Label Content="Characters:" FontSize="20" HorizontalAlignment="Center" Grid.Column="2" Margin="82,10,78,446" Width="107"/>
+		<!--End Region-->
 
 
-        </StackPanel>
-        <!--End Region-->
+		<!--Region Detective Notes-->
+		<StackPanel x:Name="DetectiveNotes" Grid.Column="1" Background="DarkRed" Visibility="{Binding SuggestionPopUpWindow.ConfirmButton_Click}">
+			<Label Content="Detective Notes:" Foreground="White" FontFamily="Chiller" FontSize="35" HorizontalAlignment="Center" />
+			<DataGrid CanUserAddRows="False" x:Name="DNotes_Characters" AutoGenerateColumns="False" ItemsSource="{Binding}">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Character"  Binding="{Binding Path=CharacterValue}"/>
+					<DataGridCheckBoxColumn Header="Known" Binding="{Binding Path=Show}"/>
+				</DataGrid.Columns>
+			</DataGrid>
+			<DataGrid CanUserAddRows="False" AutoGenerateColumns="False" x:Name="DNotes_Weapons" ItemsSource="{Binding}">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Weapon" Binding="{Binding Path=WeaponValue}"/>
+					<DataGridCheckBoxColumn Header="Known" Binding="{Binding Path=Show}"/>
+				</DataGrid.Columns>
+			</DataGrid>
+			<DataGrid CanUserAddRows="False" x:Name="DNotes_Rooms" ItemsSource="{Binding}" AutoGenerateColumns="False">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Room" Binding="{Binding Path=RoomValue}"/>
+					<DataGridCheckBoxColumn Header="Known" Binding="{Binding Path=Show}"/>
+				</DataGrid.Columns>
+			</DataGrid>
+		</StackPanel>
+		<!--End Region-->
+
+		<!--Region Player Hand-->
+		<StackPanel x:Name="PlayerHand" Grid.RowSpan="2" Background="DarkRed" Grid.Row="1" Grid.Column="1"  Visibility="{Binding SuggestionPopUpWindow.ConfirmButton_Click}">
+			<Label FontSize="35" HorizontalAlignment="Center" Foreground="White" FontFamily="chiller">YO HAND:</Label>
+			<DataGrid CanUserAddRows="False" x:Name="CharacterHand" AutoGenerateColumns="False">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Character"  Binding="{Binding}"/>
+				</DataGrid.Columns>
+			</DataGrid>
+			<DataGrid CanUserAddRows="False" AutoGenerateColumns="False" x:Name="WeaponHand">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Weapon" Binding="{Binding}"/>
+				</DataGrid.Columns>
+			</DataGrid>
+			<DataGrid CanUserAddRows="False" x:Name="RoomHand" AutoGenerateColumns="False">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Room" Binding="{Binding}"/>
+				</DataGrid.Columns>
+			</DataGrid>
 
 
-        <gb:GameBoard x:Name="gameControl" />
-        <Button x:Name="suggest" Content="SUGGEST" FontSize="20" Click="suggest_Click" Width="150" Grid.Column="2" Margin="60,306,57,148"/>
-        <Button x:Name="accuse" Content="ACCUSE" FontSize="20" Click="accuse_Click" Width="150" Margin="60,409,57,35" Grid.Column="2" />
-        <Button x:Name="play" Click="play_Click" Width="50" Height="50" Content="" Grid.Column="2" Margin="198,209,23,90" Grid.Row="1">
-            <Button.Background>
-                <ImageBrush ImageSource="Images/play.png"/>
-            </Button.Background>
-        </Button>
+		</StackPanel>
+		<!--End Region-->
 
-        <Button x:Name="pause" Click="pause_Click" Width="50" Height="50" Content="" Grid.Column="2" Margin="198,155,23,144" Grid.Row="1">
-            <Button.Background>
-                <ImageBrush ImageSource="Images/pause.png"/>
-            </Button.Background>
-        </Button>
-        <!--Region Board Guide-->
-        <uc:BoardGuide x:Name="boardGuide"
+
+		<gb:GameBoard x:Name="gameControl" />
+		<Button x:Name="suggest" Content="SUGGEST" FontSize="20" Click="suggest_Click" Width="150" Grid.Column="2" Margin="60,306,57,148"/>
+		<Button x:Name="accuse" Content="ACCUSE" FontSize="20" Click="accuse_Click" Width="150" Margin="60,409,57,35" Grid.Column="2" />
+		<Button x:Name="play" Click="play_Click" Width="50" Height="50" Content="" Grid.Column="2" Margin="198,209,23,90" Grid.Row="1">
+			<Button.Background>
+				<ImageBrush ImageSource="Images/play.png"/>
+			</Button.Background>
+		</Button>
+
+		<Button x:Name="pause" Click="pause_Click" Width="50" Height="50" Content="" Grid.Column="2" Margin="198,155,23,144" Grid.Row="1">
+			<Button.Background>
+				<ImageBrush ImageSource="Images/pause.png"/>
+			</Button.Background>
+		</Button>
+		<!--Region Board Guide-->
+		<uc:BoardGuide x:Name="boardGuide"
 					   Grid.Column="0"
 					   Grid.Row="0"
 					   HorizontalAlignment="Right"
 					   VerticalAlignment="Top"/>
-        <!--End Region-->
+		<!--End Region-->
 
-        <!--Region User Guide-->
-        <uc:UserGuide x:Name="userGuide"
+		<!--Region User Guide-->
+		<uc:UserGuide x:Name="userGuide"
 					  Grid.Column="2"
 					  Margin="11,478,6,225"
 					  Grid.RowSpan="2" />
-        <!--End Region-->
+		<!--End Region-->
 
-        <!--Region Buttons-->
+		<!--Region Buttons-->
 
-        <Button x:Name="turn" Content="END TURN" FontSize="20" Grid.Column="2" Margin="60,194,57,249" Click="nextTurn_Click"/>
-
-
-        <Button x:Name="roll" Click="roll_Click" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="67,145,100,156" Grid.Row="1"/>
-        <Image x:Name="die_placement" Margin="60,203,92,65" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-            <Image.Source>
-                <BitmapImage UriSource="Images/1.png" />
-            </Image.Source>
-        </Image>
-        <Button Background="Blue" x:Name="help" Foreground="Yellow" Content="Help" FontSize="18" Grid.Column="2" Margin="202,304,10,10" Grid.Row="1" Click="help_MouseDown" RenderTransformOrigin="0.5,0.5"/>
-
-        <!--End Region-->
-
-        <Label x:Name="Splash" Background="Black" Grid.ColumnSpan="3" Grid.RowSpan="3">
-            <Image Source="Character Pictures/GhettoClue.jpg" Height="860" Width="1708"/>
-        </Label>
-        <Button x:Name="start" Content="START" FontSize="45" Height="100" Width="150" Background="Black" Foreground="Red" FontFamily="Chiller" Grid.ColumnSpan="2" Grid.Column="1" Margin="94,195,263,54" Grid.Row="1" Click="start_Click" />
+		<Button x:Name="turn" Content="END TURN" FontSize="20" Grid.Column="2" Margin="60,194,57,249" Click="nextTurn_Click"/>
 
 
+		<Button x:Name="roll" Click="roll_Click" Content="ROLL" FontSize="20"  Grid.Column="2" Margin="67,145,100,156" Grid.Row="1"/>
+		<Image x:Name="die_placement" Margin="60,203,92,65" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+			<Image.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleY="-1"/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Image.RenderTransform>
+			<Image.Source>
+				<BitmapImage UriSource="Images/1.png" />
+			</Image.Source>
+		</Image>
+		<Button Background="Blue" x:Name="help" Foreground="Yellow" Content="Help" FontSize="18" Grid.Column="2" Margin="202,304,10,10" Grid.Row="1" Click="help_MouseDown" RenderTransformOrigin="0.5,0.5"/>
 
-    </Grid>
+		<!--End Region-->
+
+		<!--<Label x:Name="Splash" Background="Black" Grid.ColumnSpan="3" Grid.RowSpan="3">
+			<Image Source="Character Pictures/GhettoClue.jpg" Height="860" Width="1708"/>
+		</Label>
+		<Button x:Name="start" Content="START" FontSize="45" Height="100" Width="150" Background="Black" Foreground="Red" FontFamily="Chiller" Grid.ColumnSpan="2" Grid.Column="1" Margin="94,195,263,54" Grid.Row="1" Click="start_Click" />-->
+
+
+
+	</Grid>
 </Window>

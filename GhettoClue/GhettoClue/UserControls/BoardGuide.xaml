@@ -4,7 +4,7 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
 			 MaxHeight="180" Width="220">
-	<DockPanel x:Name="boardGuideSection" Visibility="Visible" Background="CadetBlue">
+	<DockPanel x:Name="boardGuideSection" Visibility="Collapsed" Background="CadetBlue">
 		<Border DockPanel.Dock="Left" Width="8">
 			<Border.Background>
 				<LinearGradientBrush StartPoint="0,0" EndPoint="1,0">

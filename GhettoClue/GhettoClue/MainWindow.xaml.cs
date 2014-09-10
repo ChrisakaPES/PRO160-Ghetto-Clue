@@ -38,7 +38,7 @@ namespace GhettoClue
 		private int timerLoop = 0;
 		public int rolled;
 		private int _roll;
-		private int players_turn = 5;
+		private int players_turn = 6;
 
 		public int NumRoll
 		{
@@ -323,6 +323,7 @@ namespace GhettoClue
 						case 4:
 							//Move to the left and switch button / arrow sides
 							boardGuide.HorizontalAlignment = HorizontalAlignment.Left;
+							boardGuide.VerticalAlignment = VerticalAlignment.Top;
 							boardGuide.board_hidebutton.HorizontalAlignment = HorizontalAlignment.Right;
 							boardGuide.board_nextbutton.HorizontalAlignment = HorizontalAlignment.Right;
 							boardGuide.downarrow.HorizontalAlignment = HorizontalAlignment.Left;
@@ -331,15 +332,13 @@ namespace GhettoClue
 
 						case 3:
 							//Move to the top and keep the arrow in place
-							boardGuide.VerticalAlignment = VerticalAlignment.Top;
+							boardGuide.VerticalAlignment = VerticalAlignment.Bottom;
 							break;
 
 						case 2:
-							//Flip the buttons and arrow to the top of the control, rotate the arrow
-							
+							boardGuide.VerticalAlignment = VerticalAlignment.Top;
 							//change top row height
 							boardGuide.top_row.Height = new GridLength(50);
-
 
 							//change bottom row height
 							boardGuide.bot_row.Height = new GridLength(120);
@@ -719,8 +718,8 @@ namespace GhettoClue
 
         private void start_Click(object sender, RoutedEventArgs e)
         {
-            Splash.Visibility = System.Windows.Visibility.Hidden;
-            start.Visibility = System.Windows.Visibility.Hidden;
+			//Splash.Visibility = System.Windows.Visibility.Hidden;
+			//start.Visibility = System.Windows.Visibility.Hidden;
         }
 	}
 }
