@@ -31,6 +31,7 @@ namespace GhettoClue
 		Player currentPlayer = null;
 		MediaPlayer music = new MediaPlayer();
 
+		GridLengthConverter MyGridLengthConverter = new GridLengthConverter();
 
 		Random rand = new Random();
 		Random gen = new Random();
@@ -315,23 +316,55 @@ namespace GhettoClue
 					switch (players_turn)
 					{
 						case 5:
+							//Move to bottom right
 							boardGuide.VerticalAlignment = VerticalAlignment.Bottom;
 							break;
 
 						case 4:
+							//Move to the left and switch button / arrow sides
 							boardGuide.HorizontalAlignment = HorizontalAlignment.Left;
+							boardGuide.board_hidebutton.HorizontalAlignment = HorizontalAlignment.Right;
+							boardGuide.board_nextbutton.HorizontalAlignment = HorizontalAlignment.Right;
+							boardGuide.downarrow.HorizontalAlignment = HorizontalAlignment.Left;
+							boardGuide.board_nextbutton.Margin = new Thickness(10, 10, 45, 10);
 							break;
 
 						case 3:
+							//Move to the top and keep the arrow in place
 							boardGuide.VerticalAlignment = VerticalAlignment.Top;
 							break;
 
 						case 2:
-							//Switch the side of the buttons and rotate the image of the arrow
+							//Flip the buttons and arrow to the top of the control, rotate the arrow
+							
+							//change top row height
+							boardGuide.top_row.Height = new GridLength(50);
+
+
+							//change bottom row height
+							boardGuide.bot_row.Height = new GridLength(120);
+
+							//Move the text box to the bottom
+							boardGuide.board_helptext.SetValue(Grid.RowProperty, 1);
+
+							//Move the buttons and arrows to the top
+							boardGuide.board_hidebutton.SetValue(Grid.RowProperty, 0);
+							boardGuide.board_hidebutton.HorizontalAlignment = HorizontalAlignment.Left;
+							boardGuide.board_nextbutton.SetValue(Grid.RowProperty, 0);
+							boardGuide.board_nextbutton.HorizontalAlignment = HorizontalAlignment.Left;
+							boardGuide.board_nextbutton.Margin = new Thickness(45, 10, 10, 10);
+							boardGuide.board_guidepages.SetValue(Grid.RowProperty, 0);
+							boardGuide.downarrow.SetValue(Grid.RowProperty, 0);
+							boardGuide.downarrow.HorizontalAlignment = HorizontalAlignment.Right;
 							break;
 
 						case 1:
+							//Move the control to the right for the final move, rotate the arrow
 							boardGuide.HorizontalAlignment = HorizontalAlignment.Right;
+							boardGuide.board_hidebutton.HorizontalAlignment = HorizontalAlignment.Right;
+							boardGuide.board_nextbutton.HorizontalAlignment = HorizontalAlignment.Right;
+							boardGuide.downarrow.HorizontalAlignment = HorizontalAlignment.Left;
+							boardGuide.board_nextbutton.Margin = new Thickness(10, 10, 45, 10);
 							break;
 							
 						default:
