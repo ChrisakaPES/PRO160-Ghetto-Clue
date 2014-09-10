@@ -29,14 +29,16 @@ namespace GhettoClue
 		#region Variables
 		List<Player> players = new List<Player>();
 		Player currentPlayer = null;
-        MediaPlayer music = new MediaPlayer();
-        
+		MediaPlayer music = new MediaPlayer();
+
 
 		Random rand = new Random();
 		Random gen = new Random();
-		private int timerLoop=0;
+		private int timerLoop = 0;
 		public int rolled;
 		private int _roll;
+		private int players_turn = 5;
+
 		public int NumRoll
 		{
 			get
@@ -94,10 +96,10 @@ namespace GhettoClue
 				new ObservableCollection<CharacterEnum>()
 			};
 			int playerListIndex = 0;
-			while(startupCharacters.Count()>0)
+			while (startupCharacters.Count() > 0)
 			{
 				int characterSelectionIndex = rand.Next(startupCharacters.Count());
-				allCharacterLists[playerListIndex%6].Add(startupCharacters[characterSelectionIndex]);
+				allCharacterLists[playerListIndex % 6].Add(startupCharacters[characterSelectionIndex]);
 				startupCharacters.RemoveAt(characterSelectionIndex);
 				playerListIndex++;
 			}
@@ -190,41 +192,41 @@ namespace GhettoClue
 			playerListBox.ItemsSource = players;
 			playerListBox.SelectedIndex = 0;
 
-#endregion
+			#endregion
 
-            boardGuide.MainWin = this;
-            gameControl.ParentWin = this;
+			boardGuide.MainWin = this;
+			gameControl.ParentWin = this;
 			gameControl.UpdatePlayers(players);
 			gameControl.CreateBoard();
-            gameControl.ParentWin = this;
+			gameControl.ParentWin = this;
 			turn.IsEnabled = false;
-            suggest.IsEnabled = false;
-            accuse.IsEnabled = false;
+			suggest.IsEnabled = false;
+			accuse.IsEnabled = false;
 
 			this.InvalidateVisual();
 			playerListBox.InvalidateVisual();
 			userGuide.ShowGuide();
 
-            music.Open(new Uri("Music/Trap Banger Instrumental Beat 2014 - Hold up.mp3", UriKind.RelativeOrAbsolute));
-            music.MediaEnded += music_MediaEnded;
-            music.Play();
+			music.Open(new Uri("Music/Trap Banger Instrumental Beat 2014 - Hold up.mp3", UriKind.RelativeOrAbsolute));
+			music.MediaEnded += music_MediaEnded;
+			music.Play();
 		}
 
-        private void music_MediaEnded(object sender, EventArgs e)
-        {
-            music.Position = TimeSpan.Zero;
-            music.Play();
-        }
+		private void music_MediaEnded(object sender, EventArgs e)
+		{
+			music.Position = TimeSpan.Zero;
+			music.Play();
+		}
 
-        private void play_Click(object sender, RoutedEventArgs e)
-        {
-            music.Play();
-        }
+		private void play_Click(object sender, RoutedEventArgs e)
+		{
+			music.Play();
+		}
 
-        private void pause_Click(object sender, RoutedEventArgs e)
-        {
-            music.Pause();
-        }
+		private void pause_Click(object sender, RoutedEventArgs e)
+		{
+			music.Pause();
+		}
 
 		/** 
 		 * Hey this is the how things should work 
@@ -233,7 +235,7 @@ namespace GhettoClue
 		{
 			int totalNumberOfCharacters = startupCharacters.Count();
 			int totalNumberOfRooms = startupRooms.Count();
-			int totalNumberOfWeapons = startupWeapons.Count(); 
+			int totalNumberOfWeapons = startupWeapons.Count();
 
 			int index = rand.Next(totalNumberOfCharacters);
 			CharacterEnum murderer = startupCharacters[index];
@@ -255,7 +257,7 @@ namespace GhettoClue
 		{
 			int i = playerListBox.SelectedIndex;
 
-			currentPlayer = players[i]; 
+			currentPlayer = players[i];
 			DetectiveNotes.DataContext = currentPlayer.MyDetectiveList;
 			DNotes_Characters.ItemsSource = currentPlayer.MyDetectiveList.CharactersList;
 			DNotes_Weapons.ItemsSource = currentPlayer.MyDetectiveList.WeaponsList;
@@ -265,11 +267,11 @@ namespace GhettoClue
 			RoomHand.ItemsSource = currentPlayer.roomCards;
 			WeaponHand.ItemsSource = currentPlayer.weaponCards;
 
-            turn.IsEnabled = false;
-            suggest.IsEnabled = false;
-            accuse.IsEnabled = false;
+			turn.IsEnabled = false;
+			suggest.IsEnabled = false;
+			accuse.IsEnabled = false;
 
-            playerListBox.ScrollIntoView(playerListBox.SelectedItem);
+			playerListBox.ScrollIntoView(playerListBox.SelectedItem);
 		}
 
 
@@ -285,9 +287,12 @@ namespace GhettoClue
 			timer.Interval = TimeSpan.FromMilliseconds(90);
 			timer.Tick += timer_Tick;
 			timer.Start();
-            currentPlayer.hasRolled = true;
+			currentPlayer.hasRolled = true;
+
 			//Hide the guide
 			userGuide.HideGuide();
+
+
 		}
 
 		void timer_Tick(object sender, EventArgs e)
@@ -302,51 +307,86 @@ namespace GhettoClue
 				turn.IsEnabled = true;
 				gameControl.HighlightSpots(num);
 				timerLoop = 0;
-				boardGuide.ShowGuide();
-                
-                //Disabling other things
-                gameControl.IsEnabled = false;
-                PlayerHand.IsEnabled = false;
-                DetectiveNotes.IsEnabled = false;
-                turn.IsEnabled = false;
-                suggest.IsEnabled = false;
-                accuse.IsEnabled = false;
-				
+
+
+				//Change board position
+				if (players_turn > 0)
+				{
+					switch (players_turn)
+					{
+						case 5:
+							boardGuide.VerticalAlignment = VerticalAlignment.Bottom;
+							break;
+
+						case 4:
+							boardGuide.HorizontalAlignment = HorizontalAlignment.Left;
+							break;
+
+						case 3:
+							boardGuide.VerticalAlignment = VerticalAlignment.Top;
+							break;
+
+						case 2:
+							//Switch the side of the buttons and rotate the image of the arrow
+							break;
+
+						case 1:
+							boardGuide.HorizontalAlignment = HorizontalAlignment.Right;
+							break;
+							
+						default:
+							break;
+
+					}
+					boardGuide.ShowGuide();
+					players_turn--;
+				}
+
+
+
+				//Disabling other things
+				gameControl.IsEnabled = false;
+				PlayerHand.IsEnabled = false;
+				DetectiveNotes.IsEnabled = false;
+				turn.IsEnabled = false;
+				suggest.IsEnabled = false;
+				accuse.IsEnabled = false;
+
 			}
 			timerLoop++;
-			
+
 		}
 
 		public void roll_Die(int num)
-		{			
+		{
 			//Clear current background
 			die_placement.Source = null;
 
-				//Determine which new die face will be displayed then change image source
-				switch (num)
-				{
-					case 1:
-						die_placement.Source = new BitmapImage(new Uri(@"/Images/1.png", UriKind.Relative));
-						break;
-					case 2:
-						die_placement.Source = new BitmapImage(new Uri(@"/Images/2.png", UriKind.Relative));
-						break;
-					case 3:
-						die_placement.Source = new BitmapImage(new Uri(@"/Images/3.png", UriKind.Relative));
-						break;
-					case 4:
-						die_placement.Source = new BitmapImage(new Uri(@"/Images/4.png", UriKind.Relative));
-						break;
-					case 5:
-						die_placement.Source = new BitmapImage(new Uri(@"/Images/5.png", UriKind.Relative));
-						break;
-					case 6:
-						die_placement.Source = new BitmapImage(new Uri(@"/Images/6.png", UriKind.Relative));
-						break;
-					default:
-						break;
-				}
-				die_placement.InvalidateVisual();
+			//Determine which new die face will be displayed then change image source
+			switch (num)
+			{
+				case 1:
+					die_placement.Source = new BitmapImage(new Uri(@"/Images/1.png", UriKind.Relative));
+					break;
+				case 2:
+					die_placement.Source = new BitmapImage(new Uri(@"/Images/2.png", UriKind.Relative));
+					break;
+				case 3:
+					die_placement.Source = new BitmapImage(new Uri(@"/Images/3.png", UriKind.Relative));
+					break;
+				case 4:
+					die_placement.Source = new BitmapImage(new Uri(@"/Images/4.png", UriKind.Relative));
+					break;
+				case 5:
+					die_placement.Source = new BitmapImage(new Uri(@"/Images/5.png", UriKind.Relative));
+					break;
+				case 6:
+					die_placement.Source = new BitmapImage(new Uri(@"/Images/6.png", UriKind.Relative));
+					break;
+				default:
+					break;
+			}
+			die_placement.InvalidateVisual();
 		}
 		#endregion
 
@@ -355,283 +395,283 @@ namespace GhettoClue
 		{
 			//turn taking
 			bool isPlayerInRoom = false;
-            currentPlayer.hasRolled = false;
-            //if (currentPlayer.IsInRoom)
-            //{
-            //    MessageBoxResult res = MessageBox.Show("Would You like to Accuse Someone?", "Accuse?", MessageBoxButton.YesNo);
-            //    if (res == MessageBoxResult.Yes)
-            //    {
-            //        //Do Accuse shenanigans 
-            //        this.InvalidateVisual();
-            //        AccuseWindow accuseWindow = new AccuseWindow();
-            //        accuseWindow.ParentWin = this;
-            //        accuseWindow.CurrentPlayer = players[playerListBox.SelectedIndex];
-            //        accuseWindow.ShowDialog();
+			currentPlayer.hasRolled = false;
+			//if (currentPlayer.IsInRoom)
+			//{
+			//    MessageBoxResult res = MessageBox.Show("Would You like to Accuse Someone?", "Accuse?", MessageBoxButton.YesNo);
+			//    if (res == MessageBoxResult.Yes)
+			//    {
+			//        //Do Accuse shenanigans 
+			//        this.InvalidateVisual();
+			//        AccuseWindow accuseWindow = new AccuseWindow();
+			//        accuseWindow.ParentWin = this;
+			//        accuseWindow.CurrentPlayer = players[playerListBox.SelectedIndex];
+			//        accuseWindow.ShowDialog();
 
-            //        if (CurrentAccusation.CheckForPlayerWin(theAnswer))
-            //        {
-            //            MessageBox.Show("Ayo YOU WON DA GAME!");
-            //            System.Windows.Application.Current.Shutdown();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Oh SugarSnaps you done messed up yous outta da game.");
-            //            players.RemoveAt(playerListBox.SelectedIndex);
-            //            int playerSelect = playerListBox.SelectedIndex;
-            //            playerSelect--;
-            //            if (playerSelect == -1)
-            //            {
-            //                playerSelect = players.Count() - 1;
-            //            }
-            //            playerListBox.ItemsSource = players;
-            //            playerListBox.SelectedIndex = playerSelect; 
-            //            this.InvalidateVisual();
-
-
-            //        }
-
-					
-            //    }
-            //    else
-            //    {
-            //        this.InvalidateVisual();
-            //        res = MessageBox.Show("Would You like to Suggest a scenario?", "Suggest?", MessageBoxButton.YesNo);
-            //        if (res == MessageBoxResult.Yes)
-            //        {
-            //            SuggestionPopUpWindow suggestPop = new SuggestionPopUpWindow();
-            //            suggestPop.ParentWin = this;
-            //            suggestPop.currentPlayer = (Player)playerListBox.SelectedItem;
-            //            suggestPop.ShowDialog();
-            //            this.InvalidateVisual();
+			//        if (CurrentAccusation.CheckForPlayerWin(theAnswer))
+			//        {
+			//            MessageBox.Show("Ayo YOU WON DA GAME!");
+			//            System.Windows.Application.Current.Shutdown();
+			//        }
+			//        else
+			//        {
+			//            MessageBox.Show("Oh SugarSnaps you done messed up yous outta da game.");
+			//            players.RemoveAt(playerListBox.SelectedIndex);
+			//            int playerSelect = playerListBox.SelectedIndex;
+			//            playerSelect--;
+			//            if (playerSelect == -1)
+			//            {
+			//                playerSelect = players.Count() - 1;
+			//            }
+			//            playerListBox.ItemsSource = players;
+			//            playerListBox.SelectedIndex = playerSelect; 
+			//            this.InvalidateVisual();
 
 
-            //            int i = playerListBox.SelectedIndex + 1;
-            //            if (i == players.Count())
-            //            {
-            //                i = 0;
-            //            }
-            //            int timesLoopedThrough = 0;
-            //            do
-            //            {
-            //                if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
-            //                {
-            //                    DisprovePopUp disprovePop = new DisprovePopUp(players[i], CurrentSuggestion);
-            //                    disprovePop.ParentWin = this;
-
-            //                    disprovePop.ShowDialog();
-            //                    this.InvalidateVisual();
-
-            //                    break;
-            //                }
-            //                if (timesLoopedThrough >= 5)
-            //                {
-            //                    MessageBox.Show("None of the other players have any matching cards.", "Well what do you know?");
-            //                    DetectiveNotes.Visibility = System.Windows.Visibility.Visible;
-            //                    PlayerHand.Visibility = System.Windows.Visibility.Visible;
-            //                    break;
-            //                }
-            //                i++;
-            //                if (i == players.Count())
-            //                {
-            //                    i = 0;
-            //                }
-            //                timesLoopedThrough++;
-							
-            //            } while (true);
-            //        }
-            //        roll.IsEnabled = true;
-					
-            //    }
-            //}
-            Player lastPlayer = new Player();
-            lastPlayer = (Player)playerListBox.SelectedItem;
-            gameControl.inRoom(lastPlayer);
-				
-
-                if (lastPlayer.IsInRoom)
-                {
-                    MessageBoxResult res = MessageBox.Show("Would You like to Accuse Someone?", "Accuse?", MessageBoxButton.YesNo);
-                    if (res == MessageBoxResult.Yes)
-                    {
-                        //Do Accuse shenanigans 
-                        this.InvalidateVisual();
-                        VisualAccuseWindow accuseWindow = new VisualAccuseWindow();
-                        accuseWindow.ParentWin = this;
-                        accuseWindow.CurrentPlayer = players[playerListBox.SelectedIndex];
-                        accuseWindow.ShowDialog();
-
-                        if (CurrentAccusation.CheckForPlayerWin(theAnswer))
-                        {
-                            MessageBox.Show("Ayo YOU WON DA GAME!");
-                            System.Windows.Application.Current.Shutdown();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Oh SugarSnaps you done messed up yous outta da game.");
-                            players.RemoveAt(playerListBox.SelectedIndex);
-                            int playerSelect = playerListBox.SelectedIndex;
-                            playerSelect--;
-                            if (playerSelect == -1)
-                            {
-                                playerSelect = players.Count() - 1;
-                            }
-                            playerListBox.ItemsSource = players;
-                            playerListBox.SelectedIndex = playerSelect;
-                            this.InvalidateVisual();
-                        }
-                    }
-                    else
-                    {
-                        this.InvalidateVisual();
-                        res = MessageBox.Show("Would You like to Suggest a scenario?", "Suggest?", MessageBoxButton.YesNo);
-                        if (res == MessageBoxResult.Yes)
-                        {
-                            VisualSuggestionWindow suggestPop = new VisualSuggestionWindow(RoomEnum.BackAlley);
-                            suggestPop.ParentWin = this;
-                            suggestPop.currentPlayer = (Player)playerListBox.SelectedItem;
-                            suggestPop.ShowDialog();
-                            this.InvalidateVisual();
+			//        }
 
 
-                            int i = playerListBox.SelectedIndex + 1;
-                            if (i == players.Count())
-                            {
-                                i = 0;
-                            }
-                            int timesLoopedThrough = 0;
-                            do
-                            {
-                                if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
-                                {
-                                    VisualDismissal disprovePop = new VisualDismissal(players[i], CurrentSuggestion);
-                                    disprovePop.InvalidateVisual();
-                                    disprovePop.ParentWin = this;
+			//    }
+			//    else
+			//    {
+			//        this.InvalidateVisual();
+			//        res = MessageBox.Show("Would You like to Suggest a scenario?", "Suggest?", MessageBoxButton.YesNo);
+			//        if (res == MessageBoxResult.Yes)
+			//        {
+			//            SuggestionPopUpWindow suggestPop = new SuggestionPopUpWindow();
+			//            suggestPop.ParentWin = this;
+			//            suggestPop.currentPlayer = (Player)playerListBox.SelectedItem;
+			//            suggestPop.ShowDialog();
+			//            this.InvalidateVisual();
 
-                                    disprovePop.ShowDialog();
-                                    this.InvalidateVisual();
 
-                                    break;
-                                }
-                                if (timesLoopedThrough >= 5)
-                                {
-                                    MessageBox.Show("None of the other players have any matching cards.", "Well what do you know?");
-                                    DetectiveNotes.Visibility = System.Windows.Visibility.Visible;
-                                    PlayerHand.Visibility = System.Windows.Visibility.Visible;
-                                    break;
-                                }
-                                i++;
-                                if (i == players.Count())
-                                {
-                                    i = 0;
-                                }
-                                timesLoopedThrough++;
+			//            int i = playerListBox.SelectedIndex + 1;
+			//            if (i == players.Count())
+			//            {
+			//                i = 0;
+			//            }
+			//            int timesLoopedThrough = 0;
+			//            do
+			//            {
+			//                if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
+			//                {
+			//                    DisprovePopUp disprovePop = new DisprovePopUp(players[i], CurrentSuggestion);
+			//                    disprovePop.ParentWin = this;
 
-                            } while (true);
-                        }
-                        roll.IsEnabled = true;
+			//                    disprovePop.ShowDialog();
+			//                    this.InvalidateVisual();
 
-                    }
-                }
+			//                    break;
+			//                }
+			//                if (timesLoopedThrough >= 5)
+			//                {
+			//                    MessageBox.Show("None of the other players have any matching cards.", "Well what do you know?");
+			//                    DetectiveNotes.Visibility = System.Windows.Visibility.Visible;
+			//                    PlayerHand.Visibility = System.Windows.Visibility.Visible;
+			//                    break;
+			//                }
+			//                i++;
+			//                if (i == players.Count())
+			//                {
+			//                    i = 0;
+			//                }
+			//                timesLoopedThrough++;
 
-                int currentPlayerIndex = playerListBox.SelectedIndex;
-                currentPlayerIndex++;
-                if (currentPlayerIndex == players.Count())
-                {
-                    currentPlayerIndex = 0;
-                }
-                playerListBox.SelectedIndex = currentPlayerIndex;
-                rolled = 0;
-                gameControl.UpdateNextTurn((Player)playerListBox.SelectedItem);
-                gameControl.clearHighlights();
+			//            } while (true);
+			//        }
+			//        roll.IsEnabled = true;
 
-				turn.IsEnabled = false;
-				userGuide.helptext.Text = "Hey "+ playerListBox.SelectedItem.ToString()+"! \n\n It is now your turn. Click the roll button to start your turn";
-				userGuide.ShowGuide();
-				roll.IsEnabled = true;
-	   }
-			
-		
+			//    }
+			//}
+			Player lastPlayer = new Player();
+			lastPlayer = (Player)playerListBox.SelectedItem;
+			gameControl.inRoom(lastPlayer);
+
+
+			if (lastPlayer.IsInRoom)
+			{
+				MessageBoxResult res = MessageBox.Show("Would You like to Accuse Someone?", "Accuse?", MessageBoxButton.YesNo);
+				if (res == MessageBoxResult.Yes)
+				{
+					//Do Accuse shenanigans 
+					this.InvalidateVisual();
+					VisualAccuseWindow accuseWindow = new VisualAccuseWindow();
+					accuseWindow.ParentWin = this;
+					accuseWindow.CurrentPlayer = players[playerListBox.SelectedIndex];
+					accuseWindow.ShowDialog();
+
+					if (CurrentAccusation.CheckForPlayerWin(theAnswer))
+					{
+						MessageBox.Show("Ayo YOU WON DA GAME!");
+						System.Windows.Application.Current.Shutdown();
+					}
+					else
+					{
+						MessageBox.Show("Oh SugarSnaps you done messed up yous outta da game.");
+						players.RemoveAt(playerListBox.SelectedIndex);
+						int playerSelect = playerListBox.SelectedIndex;
+						playerSelect--;
+						if (playerSelect == -1)
+						{
+							playerSelect = players.Count() - 1;
+						}
+						playerListBox.ItemsSource = players;
+						playerListBox.SelectedIndex = playerSelect;
+						this.InvalidateVisual();
+					}
+				}
+				else
+				{
+					this.InvalidateVisual();
+					res = MessageBox.Show("Would You like to Suggest a scenario?", "Suggest?", MessageBoxButton.YesNo);
+					if (res == MessageBoxResult.Yes)
+					{
+						VisualSuggestionWindow suggestPop = new VisualSuggestionWindow(RoomEnum.BackAlley);
+						suggestPop.ParentWin = this;
+						suggestPop.currentPlayer = (Player)playerListBox.SelectedItem;
+						suggestPop.ShowDialog();
+						this.InvalidateVisual();
+
+
+						int i = playerListBox.SelectedIndex + 1;
+						if (i == players.Count())
+						{
+							i = 0;
+						}
+						int timesLoopedThrough = 0;
+						do
+						{
+							if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
+							{
+								VisualDismissal disprovePop = new VisualDismissal(players[i], CurrentSuggestion);
+								disprovePop.InvalidateVisual();
+								disprovePop.ParentWin = this;
+
+								disprovePop.ShowDialog();
+								this.InvalidateVisual();
+
+								break;
+							}
+							if (timesLoopedThrough >= 5)
+							{
+								MessageBox.Show("None of the other players have any matching cards.", "Well what do you know?");
+								DetectiveNotes.Visibility = System.Windows.Visibility.Visible;
+								PlayerHand.Visibility = System.Windows.Visibility.Visible;
+								break;
+							}
+							i++;
+							if (i == players.Count())
+							{
+								i = 0;
+							}
+							timesLoopedThrough++;
+
+						} while (true);
+					}
+					roll.IsEnabled = true;
+
+				}
+			}
+
+			int currentPlayerIndex = playerListBox.SelectedIndex;
+			currentPlayerIndex++;
+			if (currentPlayerIndex == players.Count())
+			{
+				currentPlayerIndex = 0;
+			}
+			playerListBox.SelectedIndex = currentPlayerIndex;
+			rolled = 0;
+			gameControl.UpdateNextTurn((Player)playerListBox.SelectedItem);
+			gameControl.clearHighlights();
+
+			turn.IsEnabled = false;
+			userGuide.helptext.Text = "Hey " + playerListBox.SelectedItem.ToString() + "! \n\n It is now your turn. Click the roll button to start your turn";
+			userGuide.ShowGuide();
+			roll.IsEnabled = true;
+		}
+
+
 
 		private void suggest_Click(object sender, RoutedEventArgs e)
 		{
 			//suggest a card
-            VisualSuggestionWindow suggestPop = new VisualSuggestionWindow(RoomEnum.BackAlley);
-            suggestPop.ParentWin = this;
-            suggestPop.currentPlayer = (Player)playerListBox.SelectedItem;
-            suggestPop.ShowDialog();
-            this.InvalidateVisual();
+			VisualSuggestionWindow suggestPop = new VisualSuggestionWindow(RoomEnum.BackAlley);
+			suggestPop.ParentWin = this;
+			suggestPop.currentPlayer = (Player)playerListBox.SelectedItem;
+			suggestPop.ShowDialog();
+			this.InvalidateVisual();
 
 
-            int i = playerListBox.SelectedIndex + 1;
-            if (i == players.Count())
-            {
-                i = 0;
-            }
-            int timesLoopedThrough = 0;
-            do
-            {
-                if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
-                {
-                    VisualDismissal disprovePop = new VisualDismissal(players[i], CurrentSuggestion);
-                    disprovePop.InvalidateVisual();
-                    disprovePop.ParentWin = this;
+			int i = playerListBox.SelectedIndex + 1;
+			if (i == players.Count())
+			{
+				i = 0;
+			}
+			int timesLoopedThrough = 0;
+			do
+			{
+				if (CurrentSuggestion.CheckForDisproveEligibility(players[i]))
+				{
+					VisualDismissal disprovePop = new VisualDismissal(players[i], CurrentSuggestion);
+					disprovePop.InvalidateVisual();
+					disprovePop.ParentWin = this;
 
-                    disprovePop.ShowDialog();
-                    this.InvalidateVisual();
+					disprovePop.ShowDialog();
+					this.InvalidateVisual();
 
-                    break;
-                }
-                if (timesLoopedThrough >= 5)
-                {
-                    MessageBox.Show("None of the other players have any matching cards.", "Well what do you know?");
-                    DetectiveNotes.Visibility = System.Windows.Visibility.Visible;
-                    PlayerHand.Visibility = System.Windows.Visibility.Visible;
-                    break;
-                }
-                i++;
-                if (i == players.Count())
-                {
-                    i = 0;
-                }
-                timesLoopedThrough++;
+					break;
+				}
+				if (timesLoopedThrough >= 5)
+				{
+					MessageBox.Show("None of the other players have any matching cards.", "Well what do you know?");
+					DetectiveNotes.Visibility = System.Windows.Visibility.Visible;
+					PlayerHand.Visibility = System.Windows.Visibility.Visible;
+					break;
+				}
+				i++;
+				if (i == players.Count())
+				{
+					i = 0;
+				}
+				timesLoopedThrough++;
 
-            } while (true);
-            turn.IsEnabled = true;
-            suggest.IsEnabled = false;
-            accuse.IsEnabled = false;
+			} while (true);
+			turn.IsEnabled = true;
+			suggest.IsEnabled = false;
+			accuse.IsEnabled = false;
 		}
-		
+
 		private void accuse_Click(object sender, RoutedEventArgs e)
 		{
 			//accuse the murder
-            this.InvalidateVisual();
-            VisualAccuseWindow accuseWindow = new VisualAccuseWindow();
-            accuseWindow.ParentWin = this;
-            accuseWindow.CurrentPlayer = players[playerListBox.SelectedIndex];
-            accuseWindow.ShowDialog();
+			this.InvalidateVisual();
+			VisualAccuseWindow accuseWindow = new VisualAccuseWindow();
+			accuseWindow.ParentWin = this;
+			accuseWindow.CurrentPlayer = players[playerListBox.SelectedIndex];
+			accuseWindow.ShowDialog();
 
-            if (CurrentAccusation.CheckForPlayerWin(theAnswer))
-            {
-                MessageBox.Show("Ayo YOU WON DA GAME!");
-                System.Windows.Application.Current.Shutdown();
-            }
-            else
-            {
-                MessageBox.Show("Oh SugarSnaps you done messed up yous outta da game.");
-                players.RemoveAt(playerListBox.SelectedIndex);
-                int playerSelect = playerListBox.SelectedIndex;
-                playerSelect--;
-                if (playerSelect == -1)
-                {
-                    playerSelect = players.Count() - 1;
-                }
-                playerListBox.ItemsSource = players;
-                playerListBox.SelectedIndex = playerSelect;
-                this.InvalidateVisual();
-            }
-            turn.IsEnabled = true;
-            suggest.IsEnabled = false;
-            accuse.IsEnabled = false;
+			if (CurrentAccusation.CheckForPlayerWin(theAnswer))
+			{
+				MessageBox.Show("Ayo YOU WON DA GAME!");
+				System.Windows.Application.Current.Shutdown();
+			}
+			else
+			{
+				MessageBox.Show("Oh SugarSnaps you done messed up yous outta da game.");
+				players.RemoveAt(playerListBox.SelectedIndex);
+				int playerSelect = playerListBox.SelectedIndex;
+				playerSelect--;
+				if (playerSelect == -1)
+				{
+					playerSelect = players.Count() - 1;
+				}
+				playerListBox.ItemsSource = players;
+				playerListBox.SelectedIndex = playerSelect;
+				this.InvalidateVisual();
+			}
+			turn.IsEnabled = true;
+			suggest.IsEnabled = false;
+			accuse.IsEnabled = false;
 		}
 		#endregion
 
@@ -644,11 +684,11 @@ namespace GhettoClue
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-        //private void start_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Splash.Visibility = System.Windows.Visibility.Hidden;
-        //    start.Visibility = System.Windows.Visibility.Hidden;
-        //}
+		//private void start_Click(object sender, RoutedEventArgs e)
+		//{
+		//    Splash.Visibility = System.Windows.Visibility.Hidden;
+		//    start.Visibility = System.Windows.Visibility.Hidden;
+		//}
 	}
 }
 

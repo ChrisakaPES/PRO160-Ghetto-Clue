@@ -58,6 +58,9 @@
     <Compile Include="AccuseWindow.xaml.cs">
       <DependentUpon>AccuseWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CardWindow.xaml.cs">
+      <DependentUpon>CardWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\CharacterToColor.cs" />
     <Compile Include="Converters\CharacterToImage.cs" />
     <Compile Include="Converters\EnumToString.cs" />
@@ -100,6 +103,10 @@
       <DependentUpon>VisualSuggestionWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AccuseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CardWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -196,6 +203,8 @@
     <Resource Include="Images\downarrow.png" />
     <Resource Include="Images\uparrow.png" />
     <Resource Include="Images\CrossBackground.jpg" />
+    <Resource Include="Images\pause.png" />
+    <Resource Include="Images\play.png" />
     <Content Include="Music\Trap Banger Instrumental Beat 2014 - Hold up.mp3" />
     <Resource Include="rooms\backalley.jpg" />
     <Resource Include="rooms\bmommapad.jpg" />

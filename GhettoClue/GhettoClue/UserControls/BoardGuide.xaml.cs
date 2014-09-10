@@ -26,7 +26,7 @@ namespace GhettoClue.UserControls
 	{
 		public MainWindow MainWin { get; set; }
 
-		private int page = 2;
+		public int page = 2;
 
 		public BoardGuide()
 		{
@@ -36,9 +36,11 @@ namespace GhettoClue.UserControls
 
 		private void startBoardGuide()
 		{
+			page = 2;
 			downarrow.Visibility = Visibility.Hidden;
-			board_helptext.Text = "Movement:\nAfter you roll, the board will mark spaces you can move to in purple.\n\nClick the Next button to continue...";
 			board_nextbutton.Visibility = Visibility.Visible;
+			board_helptext.Text = "Movement:\nAfter you roll, the board will mark spaces you can move to in purple.\n\nClick the Next button to continue...";
+			board_hidebutton.Content = "Hide";
 			board_guidepages.Content = "1 / 4";
 		}
 
@@ -68,7 +70,7 @@ namespace GhettoClue.UserControls
 						break;
 
 					default:
-                        //page = 1;
+						page = 1;
 						break;
 				}
 				page++;
@@ -87,6 +89,8 @@ namespace GhettoClue.UserControls
 
 		private void ShowBoardGuide()
 		{
+			startBoardGuide();
+
 			ThicknessAnimation slideIn = new ThicknessAnimation();
 			slideIn.From = new Thickness(this.ActualWidth, 0, 0, 0);
 			slideIn.To = new Thickness(0, 0, 0, 0);
@@ -123,12 +127,12 @@ namespace GhettoClue.UserControls
 			sb.Begin(this);
 
 			page = 2;
-            MainWin.gameControl.IsEnabled = true;
-            MainWin.DetectiveNotes.IsEnabled = true;
-            MainWin.PlayerHand.IsEnabled = true;
-            MainWin.turn.IsEnabled = true;
-            //MainWin.suggest.IsEnabled = true;
-            //MainWin.accuse.IsEnabled = true;
+			MainWin.gameControl.IsEnabled = true;
+			MainWin.DetectiveNotes.IsEnabled = true;
+			MainWin.PlayerHand.IsEnabled = true;
+			MainWin.turn.IsEnabled = true;
+			//MainWin.suggest.IsEnabled = true;
+			//MainWin.accuse.IsEnabled = true;
 		}
 
 		private void DoHideBoardGuide(object sender, RoutedEventArgs e)
